@@ -1,0 +1,55 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: url(https://images.pexels.com/photos/8853189/pexels-photo-8853189.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.Rectangulo {
+    width: 70vh;
+    background: #beb7b7;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#HeaderRectangulo {
+    background: #beb7b7;
+    height: 20vh;
+    margin-bottom:10vh;
+}
+
+#ContenidoRectangulo {
+    width: 300px;
+    height: 200px;
+    display: table;
+    text-align: right;
+    margin: auto;
+    color-scheme: dark;
+}
+
+.mb-3 {
+    padding-bottom: 30px;
+    font-size: x-large;
+}
+
+.form-select {
+    font-size: large;
+    color-scheme: dark;
+}
+
+.btn-primary {
+    font-size: large;
+    color-scheme: dark;
+}
