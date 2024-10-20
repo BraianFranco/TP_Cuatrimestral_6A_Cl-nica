@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="TP_Cuatrimestral_6A_Clínica.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- Codigo de Bootstrap -->
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #ff3333; 
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .nav-link {
+            color: white !important; 
+            transition: color 0.3s ease; 
+        }
+        .nav-link:hover {
+            color: #ccc !important; 
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!-- Contenido de la masterpage  -->
+
+              <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+
+                <!-- Logo -->
+
+                <a class="navbar-brand" href="#">
+                    <img src="https://app.logomakr.com/554quF" alt="Logo">
+                </a>
+               
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Home.aspx">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Turnos.aspx">Turnos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="AcercaDe.aspx">Acerca de</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="MisGestiones.aspx">Mis gestiones</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    </form>
+</body>
+</html>
