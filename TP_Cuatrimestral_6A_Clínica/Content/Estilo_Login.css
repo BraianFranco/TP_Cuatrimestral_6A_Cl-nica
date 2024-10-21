@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     background-image: url(https://images.pexels.com/photos/8853189/pexels-photo-8853189.jpeg);
     background-position: center center;
@@ -17,7 +16,7 @@ body {
 
 .Rectangulo {
     width: 70vh;
-    background: #beb7b7;
+    background: #e8e8e5;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -27,29 +26,74 @@ body {
 #HeaderRectangulo {
     background: #beb7b7;
     height: 20vh;
-    margin-bottom:10vh;
+    margin-bottom: 10vh;
 }
 
 #ContenidoRectangulo {
     width: 300px;
     height: 200px;
     display: table;
-    text-align: right;
+    text-align: center;
     margin: auto;
     color-scheme: dark;
 }
 
 .mb-3 {
-    padding-bottom: 30px;
+    padding-bottom: 10vh;
     font-size: x-large;
+    height: 100px;
 }
+
+#txtDni::placeholder {
+    color: #beb7b7;
+}
+
+#txtContraseña::placeholder {
+    color: #beb7b7;
+}
+
+
+#txtContraseña {
+    font-family: "Libre Bodoni", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#txtDni {
+    font-family: "Libre Bodoni", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
 
 .form-select {
     font-size: large;
     color-scheme: dark;
+    text-align: center;
 }
 
-.btn-primary {
+#btnIngresar {
+    text-align: center;
+    margin-top: 150px;
     font-size: large;
-    color-scheme: dark;
+    margin-left: -5px;
+    padding: 1px 50px;
+}
+
+#center {
+    text-align: center;
+}
+
+#HeaderRectangulo {
+    background: #e8e8e5;
+}
+
+#Titulo {
+    font-family: "Libre Bodoni", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin-top: -100px;
+    font-size: 60px;
+    text-align: center;
 }
