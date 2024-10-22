@@ -121,6 +121,9 @@
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
     <Content Include="NuevoTurno.aspx" />
+    <Content Include="Turnos.aspx" />
+    <Content Include="AcercaDe.aspx" />
+    <Content Include="MisGestiones.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgregarEspecialidad.aspx.cs">
@@ -169,6 +172,27 @@
     </Compile>
     <Compile Include="NuevoTurno.aspx.designer.cs">
       <DependentUpon>NuevoTurno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Turnos.aspx.cs">
+      <DependentUpon>Turnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Turnos.aspx.designer.cs">
+      <DependentUpon>Turnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AcercaDe.aspx.cs">
+      <DependentUpon>AcercaDe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AcercaDe.aspx.designer.cs">
+      <DependentUpon>AcercaDe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisGestiones.aspx.cs">
+      <DependentUpon>MisGestiones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisGestiones.aspx.designer.cs">
+      <DependentUpon>MisGestiones.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -32,7 +32,7 @@
                 </select>
 
                 <div id="center">
-                    <asp:Button ID="btnIngresar" runat="server" CssClass="btn btn-default btn-lg" Text="Ingresar" />
+                    <asp:Button ID="btnIngresar" runat="server" CssClass="btn btn-default btn-lg" Text="Ingresar" OnClick="btnIngresar_Click" />
                 </div>
             </div>
         </div>
