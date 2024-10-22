@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url(https://ghcscw.com/wp-content/uploads/2023/07/GettyImages-1468497276-scaled.jpg);
+    background-image: url(https://cipherhealth.com/wp-content/uploads/2021/12/Home-caregiver-with-patient-3.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,21 +17,29 @@ body {
 
 .col-md-11 {
     padding-bottom: 20px;
-    padding-left:40px;
+}
+
+#lblPaisMedico {
+    display: inline-block;
+    width: 300px;
 }
 
 #ContenedorRegistroMedico {
     border-radius: 5%;
     display: grid;
     place-content: center;
-    height: 500px;
-    width: 500px;
-    margin-left: 73vh;
-    margin-top: 5vh;
+    height: 700px;
+    width: 450px;
+    margin-left: 72vh;
+    margin-top: 4vh;
     background: #808080;
 }
 
 .col-md-12 {
-   padding-left: 70px;
+    padding-left: 4vh;
+    padding-top: 1vh;
 }
 
+input {
+    color-scheme: dark;
+}

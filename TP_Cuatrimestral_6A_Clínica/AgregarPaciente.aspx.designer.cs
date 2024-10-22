@@ -11,35 +11,35 @@ namespace TP_Cuatrimestral_6A_Clínica
 {
 
 
-    public partial class AgregarMedico
+    public partial class AgregarPaciente
     {
 
         /// <summary>
-        /// txtDniMedico control.
+        /// txtDniPaciente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDniMedico;
+        protected global::System.Web.UI.WebControls.TextBox txtDniPaciente;
 
         /// <summary>
-        /// txtNombreMedico control.
+        /// txtNombrePaciente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreMedico;
+        protected global::System.Web.UI.WebControls.TextBox txtNombrePaciente;
 
         /// <summary>
-        /// txtApellido control.
+        /// txtApellidoPaciente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellido;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoPaciente;
 
         /// <summary>
         /// txtContraseñaMedico control.
@@ -51,31 +51,40 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected global::System.Web.UI.WebControls.TextBox txtContraseñaMedico;
 
         /// <summary>
-        /// txtCorreoMedico control.
+        /// txtCorreoPaciente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCorreoMedico;
+        protected global::System.Web.UI.WebControls.TextBox txtCorreoPaciente;
 
         /// <summary>
-        /// txtTelMedico control.
+        /// txtTelPaciente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelMedico;
+        protected global::System.Web.UI.WebControls.TextBox txtTelPaciente;
 
         /// <summary>
-        /// lblPaisMedico control.
+        /// FechaNacimientoPaciente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPaisMedico;
+        protected global::System.Web.UI.WebControls.TextBox FechaNacimientoPaciente;
+
+        /// <summary>
+        /// lblPaisPaciente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPaisPaciente;
 
         /// <summary>
         /// ddlPais control.
@@ -87,21 +96,21 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected global::System.Web.UI.WebControls.DropDownList ddlPais;
 
         /// <summary>
-        /// btnAgregarMedico control.
+        /// btnAgregarPaciente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarMedico;
+        protected global::System.Web.UI.WebControls.Button btnAgregarPaciente;
 
         /// <summary>
-        /// btnCancelarMedico control.
+        /// btnCancelar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelarMedico;
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

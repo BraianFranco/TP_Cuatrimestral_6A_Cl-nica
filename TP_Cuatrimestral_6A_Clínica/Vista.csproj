@@ -67,6 +67,7 @@
   <ItemGroup>
     <Content Include="AgregarEspecialidad.aspx" />
     <Content Include="AgregarMedico.aspx" />
+    <Content Include="AgregarPaciente.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\roslyn\csc.exe" />
@@ -109,6 +110,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Estilo_AgregarEspecialidad.css" />
     <Content Include="Content\Estilo_AgregarMedico.css" />
+    <Content Include="Content\Estilo_AgregarPaciente.css" />
     <Content Include="Content\Estilo_Login.css" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
@@ -139,6 +141,13 @@
     </Compile>
     <Compile Include="AgregarMedico.aspx.designer.cs">
       <DependentUpon>AgregarMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarPaciente.aspx.cs">
+      <DependentUpon>AgregarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarPaciente.aspx.designer.cs">
+      <DependentUpon>AgregarPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

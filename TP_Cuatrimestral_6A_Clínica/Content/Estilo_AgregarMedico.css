@@ -19,13 +19,6 @@ body {
     padding-bottom:20px;
 }
 
-.col-md-3{
-    padding-bottom: 20px;
-}
-.col-md-4{
-    padding-bottom: 20px;
-}
-
 #lblPaisMedico{
     display:inline-block;
     width:300px;
@@ -35,8 +28,8 @@ body {
     border-radius:5%;
     display: grid;
     place-content: center;
-    height: 800px;
-    width: 500px;
+    height: 600px;
+    width: 450px;
     margin-left: 72vh;
     margin-top: 4vh;
     background: #808080;
