@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_Cuatrimestral_6A_Clínica", "TP_Cuatrimestral_6A_Clínica\TP_Cuatrimestral_6A_Clínica.csproj", "{78A506FF-BF4D-49C0-9A95-143454A9FA16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vista", "TP_Cuatrimestral_6A_Clínica\Vista.csproj", "{78A506FF-BF4D-49C0-9A95-143454A9FA16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controlador", "Controlador\Controlador.csproj", "{F83C6768-7E7C-42FC-9312-78F5A94EA4B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{55AA84E6-DEE0-4F37-834D-55D67EB43D9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{78A506FF-BF4D-49C0-9A95-143454A9FA16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78A506FF-BF4D-49C0-9A95-143454A9FA16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78A506FF-BF4D-49C0-9A95-143454A9FA16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F83C6768-7E7C-42FC-9312-78F5A94EA4B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83C6768-7E7C-42FC-9312-78F5A94EA4B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83C6768-7E7C-42FC-9312-78F5A94EA4B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83C6768-7E7C-42FC-9312-78F5A94EA4B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55AA84E6-DEE0-4F37-834D-55D67EB43D9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55AA84E6-DEE0-4F37-834D-55D67EB43D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55AA84E6-DEE0-4F37-834D-55D67EB43D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55AA84E6-DEE0-4F37-834D-55D67EB43D9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

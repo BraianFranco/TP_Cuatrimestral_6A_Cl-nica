@@ -65,6 +65,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarEspecialidad.aspx" />
     <Content Include="AgregarMedico.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
@@ -106,6 +107,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Estilo_AgregarEspecialidad.css" />
     <Content Include="Content\Estilo_AgregarMedico.css" />
     <Content Include="Content\Estilo_Login.css" />
     <Content Include="Global.asax" />
@@ -121,6 +123,13 @@
     <Content Include="NuevoTurno.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarEspecialidad.aspx.cs">
+      <DependentUpon>AgregarEspecialidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarEspecialidad.aspx.designer.cs">
+      <DependentUpon>AgregarEspecialidad.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AgregarMedico.aspx.cs">
       <DependentUpon>AgregarMedico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
