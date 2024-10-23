@@ -7,22 +7,22 @@ using Modelo;
 
 namespace Controlador
 {
-    public class ControladorCategoria
+    public class ControladorPais
     {
-        public List<Categoria> Listar()
+        public List<Pais> Listar()
         {
-            List<Categoria> lista = new List<Categoria>();
+            List<Pais> lista = new List<Pais>();
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select Id, Descripcion from CATEGORIAS");
+                datos.setearConsulta("select ID, Nombre from Paises");
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
               
-                    Categoria aux = new Categoria();
-                    aux.Id = (int)datos.Lector["Id"];
-                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    Pais aux = new Pais();
+                    aux.ID= (int)datos.Lector["ID"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
                     lista.Add(aux);
 
 

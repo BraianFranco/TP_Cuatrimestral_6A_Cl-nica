@@ -11,7 +11,7 @@ namespace TP_Cuatrimestral_6A_Clínica
 {
 
 
-    public partial class WebForm3
+    public partial class VerPacientes
     {
     }
 }

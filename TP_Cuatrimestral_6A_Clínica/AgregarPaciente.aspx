@@ -29,6 +29,7 @@
                 <asp:TextBox ID="txtTelPaciente" CssClass="form-control bg-dark text-white" runat="server" placeholder="Teléfono..."></asp:TextBox>
             </div>
             <div class="col-md-11">
+                <asp:Label ID="lblFechaNacPaciente" runat="server" Text="Fecha de Nacimiento" CssClass="text-black"></asp:Label>
                 <asp:TextBox type="Date" ID="FechaNacimientoPaciente" CssClass="form-control bg-dark text-white" runat="server"></asp:TextBox>
             </div>
             <div class="col-md-11">

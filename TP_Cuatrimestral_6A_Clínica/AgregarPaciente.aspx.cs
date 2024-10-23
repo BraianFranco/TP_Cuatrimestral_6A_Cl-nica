@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Controlador;
+using Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,25 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            try
+            {
+                if (!IsPostBack)
+                {
+                    ControladorPais CP = new ControladorPais();
+                    List<Pais> ListaPaises = new List<Pais>();
+                    ListaPaises = CP.Listar();
+
+                    ddlPais.DataSource = ListaPaises;
+                    ddlPais.DataBind();
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
+
 }

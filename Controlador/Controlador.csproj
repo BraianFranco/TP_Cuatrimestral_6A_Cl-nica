@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControladorArticulo.cs" />
-    <Compile Include="ControladorCategoria.cs" />
+    <Compile Include="ControladorPais.cs" />
     <Compile Include="ControladorCliente.cs" />
     <Compile Include="ControladorFormulario.cs" />
     <Compile Include="ControladorImagen.cs" />
