@@ -13,5 +13,23 @@ namespace TP_Cuatrimestral_6A_Clínica
         {
 
         }
+
+
+        protected void txtDNI_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtDNI.Text))
+            {
+                // Hacemos visibles los DropDownList y sus etiquetas
+                especialidadGroup.Visible = true;
+                consultaGroup.Visible = true;
+            }
+            else
+            {
+                // Ocultamos si el DNI está vacío
+                especialidadGroup.Visible = false;
+                consultaGroup.Visible = false;
+            }
+        }
+
     }
 }
