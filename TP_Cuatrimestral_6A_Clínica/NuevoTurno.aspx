@@ -4,11 +4,11 @@
 
         <style>
         body {
-            background-color: #f0f0f0; /* gris claro */
-            color: #333; /* color oscuro para el texto */
+            background-color: #f0f0f0;
+            color: #333; 
         }
         .form-container {
-            background-color: #fff; /* blanco para el fondo del formulario */
+            background-color: #fff; 
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -16,7 +16,7 @@
             margin: 0 auto;
         }
         .form-label {
-            color: #333; /* Texto oscuro para los labels */
+            color: #333; 
         }
     </style>
 

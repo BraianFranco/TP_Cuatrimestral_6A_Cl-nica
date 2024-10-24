@@ -18,5 +18,10 @@ namespace TP_Cuatrimestral_6A_Clínica
         {
             Response.Redirect("MailObservacion.aspx");
         }
+
+        protected void btnCancelarObservacion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 }
