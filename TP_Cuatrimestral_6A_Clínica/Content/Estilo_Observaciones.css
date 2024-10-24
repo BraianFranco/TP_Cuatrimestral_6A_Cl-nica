@@ -1,0 +1,47 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(https://williamjoaqui.com/wp-content/uploads/2024/05/Medicina-Funcional-y-Regenerativa-WilliamJoaqui-img-blog-min-scaled.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.col-md-11 {
+    padding-bottom: 20px;
+}
+
+.col-md-12 {
+    padding-bottom: 20px;
+    padding-left: 60px;
+}
+
+
+#ContenedorRegistroObservacion {
+    border-radius: 5%;
+    display: grid;
+    place-content: center;
+    height: 900px;
+    width: 450px;
+    margin-left: 72vh;
+    margin-top: 4vh;
+    background: #808080;
+}
+
+
+#txtObservacion {
+    min-height: 150px;
+    min-width: 300px;
+    max-width: 300px;
+    max-height: 400px;
+    background: #2c313c;
+    color: white;
+}
