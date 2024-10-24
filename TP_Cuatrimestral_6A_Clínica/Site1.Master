@@ -9,85 +9,58 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
-    <!-- Codigo de Bootstrap -->
-
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-
-
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-
-        .navbar {
-            background-color: #ff3333;
-        }
-
-        .navbar-brand img {
-            height: 50px;
-        }
-
-        .nav-link {
-            color: white !important;
-            transition: color 0.3s ease;
-        }
-
-            .nav-link:hover {
-                color: #ccc !important;
-            }
-    </style>
 
 </head>
 
 <body>
     <form id="form1" runat="server">
-        <div>
-           
-           
-            <!-- Contenido Principal -->
-            <div class="container-fluid">
-                <div class="row">
+        <div class="d-flex flex-column min-vh-100 p-4" style="background-color: #F0F4F8;">
+            <!-- Contenido Main -->
 
 
-                    <!-- 20%  -->
-                    <div class="col-2 bg-lightblue p-3 rounded-lg shadow-sm" style="background-color: #E3F2FD;">
+            <div class="container-fluid flex-grow-1">
+                <div class="row h-100 g-3">
+                    <!-- Panel izquierdo (30%) -->
+                    <div class="col-2 bg-lightblue p-3 rounded-lg shadow-sm" style="background-color: #E3F2FD; margin-right: 2vh;">
                         <asp:ContentPlaceHolder ID="LeftPanel" runat="server">
-
-                            <a class="navbar-brand" href="#">
-                                <img src="https://i.imgur.com/xkufGX8.png" alt="Logo">
-                            </a>
-
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-
+                            <div class="container">
+                                <a href="Default.aspx">
+                                    <img src="https://i.imgur.com/xkufGX8.png" alt="Logo" class="img-fluid border  rounded shadow">
+                                </a>
+                            </div>
 
                             <asp:Button runat="server" PostBackUrl="~/Default.aspx" CssClass="btn btn-primary w-100 my-2" Text="Inicio"></asp:Button>
                             <asp:Button runat="server" PostBackUrl="~/Turnos.aspx" CssClass="btn btn-success w-100 my-2" Text="Turnos"></asp:Button>
                             <asp:Button runat="server" PostBackUrl="~/AcercaDe.aspx" CssClass="btn btn-info w-100 my-2" Text="Acerca de"></asp:Button>
-                            <asp:Button runat="server" PostBackUrl="~/MisGestiones.aspx" CssClass="btn btn-warning w-100 my-2" Text="Mis gestiones"></asp:Button>
+                            <asp:Button runat="server" PostBackUrl="#" CssClass="btn btn-warning w-100 my-2" Text="Opciones"></asp:Button>
                         </asp:ContentPlaceHolder>
                     </div>
 
-                    <!-- 80% -->
-                    <div class="col-10 p-3" style="background-color: #FFFFFF;">
-
-
+                    <!-- Panel derecho (70%) -->
+                    <div class=" col-md p-3" style="background-color: #E3F2FD;">
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         </asp:ContentPlaceHolder>
-
-
                     </div>
                 </div>
             </div>
 
+
+
+
+
+            <!-- Footer -->
+            <footer class="bg-light text-center text-lg-start">
+                <div class="container p-4">
+                    <p>Footer content goes here</p>
+                </div>
+            </footer>
         </div>
 
         <!-- Scripts de Bootstrap y jQuery -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
         <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     </form>
 </body>
 
