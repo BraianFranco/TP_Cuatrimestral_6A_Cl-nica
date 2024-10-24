@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,15 @@ namespace TP_Cuatrimestral_6A_Clínica
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
+
+            /*
+             
+            recuperamos el cliente de la db y lo agregamos a la session y redirigimos a la pagina default
+
+            */
+
+              
+
 
             Response.Redirect("default.aspx");
         }

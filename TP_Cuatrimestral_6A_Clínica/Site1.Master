@@ -4,79 +4,94 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
     <!-- Codigo de Bootstrap -->
 
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+
+
     <style>
         body {
             background-color: #f8f9fa;
         }
+
         .navbar {
-            background-color: #ff3333; 
+            background-color: #ff3333;
         }
+
         .navbar-brand img {
             height: 50px;
         }
+
         .nav-link {
-            color: white !important; 
-            transition: color 0.3s ease; 
+            color: white !important;
+            transition: color 0.3s ease;
         }
-        .nav-link:hover {
-            color: #ccc !important; 
-        }
+
+            .nav-link:hover {
+                color: #ccc !important;
+            }
     </style>
 
 </head>
+
 <body>
     <form id="form1" runat="server">
         <div>
-            <!-- Contenido de la masterpage  -->
+           
+           
+            <!-- Contenido Principal -->
+            <div class="container-fluid">
+                <div class="row">
 
-              <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
 
-                <!-- Logo -->
+                    <!-- 20%  -->
+                    <div class="col-2 bg-lightblue p-3 rounded-lg shadow-sm" style="background-color: #E3F2FD;">
+                        <asp:ContentPlaceHolder ID="LeftPanel" runat="server">
 
-                <a class="navbar-brand" href="#">
-                    <img src="https://i.imgur.com/xkufGX8.png" alt="Logo">
-                </a>
-               
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="Default.aspx">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Turnos.aspx">Turnos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="AcercaDe.aspx">Acerca de</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="MisGestiones.aspx">Mis gestiones</a>
-                        </li>
-                    </ul>
+                            <a class="navbar-brand" href="#">
+                                <img src="https://i.imgur.com/xkufGX8.png" alt="Logo">
+                            </a>
+
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+
+                            <asp:Button runat="server" PostBackUrl="~/Default.aspx" CssClass="btn btn-primary w-100 my-2" Text="Inicio"></asp:Button>
+                            <asp:Button runat="server" PostBackUrl="~/Turnos.aspx" CssClass="btn btn-success w-100 my-2" Text="Turnos"></asp:Button>
+                            <asp:Button runat="server" PostBackUrl="~/AcercaDe.aspx" CssClass="btn btn-info w-100 my-2" Text="Acerca de"></asp:Button>
+                            <asp:Button runat="server" PostBackUrl="~/MisGestiones.aspx" CssClass="btn btn-warning w-100 my-2" Text="Mis gestiones"></asp:Button>
+                        </asp:ContentPlaceHolder>
+                    </div>
+
+                    <!-- 80% -->
+                    <div class="col-10 p-3" style="background-color: #FFFFFF;">
+
+
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+
+
+                    </div>
                 </div>
             </div>
-        </nav>
 
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
         </div>
 
+        <!-- Scripts de Bootstrap y jQuery -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     </form>
 </body>
+
+
+
+
 </html>
