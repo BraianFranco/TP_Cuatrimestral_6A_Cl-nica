@@ -65,6 +65,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Administrar.aspx" />
     <Content Include="AgregarEspecialidad.aspx" />
     <Content Include="AgregarMedico.aspx" />
     <Content Include="AgregarPaciente.aspx" />
@@ -133,6 +134,13 @@
     <Content Include="MisGestiones.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrar.aspx.cs">
+      <DependentUpon>Administrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrar.aspx.designer.cs">
+      <DependentUpon>Administrar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AgregarEspecialidad.aspx.cs">
       <DependentUpon>AgregarEspecialidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

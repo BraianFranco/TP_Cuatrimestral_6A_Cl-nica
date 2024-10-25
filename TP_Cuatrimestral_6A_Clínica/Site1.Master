@@ -33,7 +33,8 @@
 
                             <asp:Button runat="server" PostBackUrl="~/Default.aspx" CssClass="btn btn-primary w-100 my-2" Text="Inicio"></asp:Button>
                             <asp:Button runat="server" PostBackUrl="~/Turnos.aspx" CssClass="btn btn-success w-100 my-2" Text="Turnos"></asp:Button>
-                            <asp:Button runat="server" PostBackUrl="~/AcercaDe.aspx" CssClass="btn btn-info w-100 my-2" Text="Acerca de"></asp:Button>
+                             <asp:Button runat="server" PostBackUrl="~/Administrar.aspx" CssClass="btn btn-warning w-100 my-2" Text="Administrar"></asp:Button>
+                            <asp:Button runat="server" PostBackUrl="~/AcercaDe.aspx" CssClass="btn btn-info w-100 my-2" Text="Acerca de"></asp:Button>                          
                             <asp:Button runat="server" PostBackUrl="#" CssClass="btn btn-warning w-100 my-2" Text="Opciones"></asp:Button>
                         </asp:ContentPlaceHolder>
                     </div>
