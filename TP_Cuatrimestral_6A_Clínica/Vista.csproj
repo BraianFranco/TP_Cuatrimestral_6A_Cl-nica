@@ -128,11 +128,13 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\ScriptMasterPage.js" />
+    <Content Include="TurnosActivos.aspx" />
+    <Content Include="TurnosFinalizados.aspx" />
     <Content Include="VerPacientes.aspx" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
     <Content Include="NuevoTurno.aspx" />
-    <Content Include="Turnos.aspx" />
     <Content Include="AcercaDe.aspx" />
     <Content Include="MisGestiones.aspx" />
   </ItemGroup>
@@ -225,13 +227,6 @@
     <Compile Include="NuevoTurno.aspx.designer.cs">
       <DependentUpon>NuevoTurno.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Turnos.aspx.cs">
-      <DependentUpon>Turnos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Turnos.aspx.designer.cs">
-      <DependentUpon>Turnos.aspx</DependentUpon>
-    </Compile>
     <Compile Include="AcercaDe.aspx.cs">
       <DependentUpon>AcercaDe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,6 +240,20 @@
     </Compile>
     <Compile Include="MisGestiones.aspx.designer.cs">
       <DependentUpon>MisGestiones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TurnosActivos.aspx.cs">
+      <DependentUpon>TurnosActivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TurnosActivos.aspx.designer.cs">
+      <DependentUpon>TurnosActivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TurnosFinalizados.aspx.cs">
+      <DependentUpon>TurnosFinalizados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TurnosFinalizados.aspx.designer.cs">
+      <DependentUpon>TurnosFinalizados.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerPacientes.aspx.cs">
       <DependentUpon>VerPacientes.aspx</DependentUpon>
@@ -300,6 +309,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\" />
     <Folder Include="Models\" />
     <Folder Include="obj\Debug\" />
   </ItemGroup>
