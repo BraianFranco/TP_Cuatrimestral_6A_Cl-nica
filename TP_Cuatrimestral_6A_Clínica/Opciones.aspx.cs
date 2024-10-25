@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace TP_Cuatrimestral_6A_Clínica
+{
+    public partial class Opciones : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+           Dispose();
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void btnAdministrarCuenta_Click(object sender, EventArgs e)
+        {
+        
+            Response.Redirect("AdministrarCuenta.aspx");
+        }
+
+      
+
+        protected void btnSoporte_Click(object sender, EventArgs e)
+        {
+           
+            Response.Redirect("Soporte.aspx");
+        }
+
+        protected void btnAjustes_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

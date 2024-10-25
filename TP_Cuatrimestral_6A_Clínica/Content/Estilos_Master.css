@@ -1,0 +1,26 @@
+﻿body {
+
+}
+
+
+.logo-container{
+
+    margin-bottom: 5vh;
+
+}
+header {
+    background: linear-gradient(to right, #36D1DC, #5B86E5);
+    color: white;
+    padding: 15px 0;
+}
+
+
+footer {
+    background: linear-gradient(to right, #5B86E5, #36D1DC);
+    color: white;
+    padding: 0px
+}
+
+.navbar-brand img {
+    max-height: 40px;
+}
