@@ -5,7 +5,11 @@
 
 
     <div class="container mt-4">
-        <h2>Turnos Activos</h2>
+        
+        <div style="justify-items:center;">
+            <h2>Turnos Activos</h2>
+        </div>
+        
 
 
 

@@ -88,7 +88,7 @@
 
 
                     <!-- Panel derecho (70%) -->
-                    <div class="col-md-8 p-3" style="background-color: #E3F2FD;">
+                    <div class="col-md-8 p-3 right-panel">
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                             <div class="container">
                                 <div class="row justify-content-center">

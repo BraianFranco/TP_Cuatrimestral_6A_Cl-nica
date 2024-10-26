@@ -6,7 +6,10 @@
 
     <div class="container">
 
-             <h2>Turnos Finalizados</h2>
+            <div style="justify-items:center;">
+                 <h2>Turnos Finalizados</h2>
+            </div>
+            
 
 
         <!-- Filtro -->

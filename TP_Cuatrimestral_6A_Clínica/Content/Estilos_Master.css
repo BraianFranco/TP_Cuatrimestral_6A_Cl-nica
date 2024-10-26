@@ -20,12 +20,19 @@ footer {
     background: linear-gradient(to right, #5B86E5, #36D1DC);
     color: white;
     padding: 0px;
-  
-    
+    margin-top: 2vh;
 }
 
 .navbar-brand img {
     max-height: 40px;
+}
+
+
+/*panel derecho */
+
+.right-panel {
+    background-color: #E3F2FD;
+    box-shadow: var(--bs-box-shadow-sm) !important;
 }
 
 
