@@ -14,28 +14,21 @@ namespace TP_Cuatrimestral_6A_Clínica
 
         }
 
-        protected void btnAgregarEspecialidad_Click(object sender, EventArgs e)
+        protected void Especilidades_Click(object sender, EventArgs e)
         {
+            Response.Redirect("AdministrarEspecialidades.aspx");
            
-            Response.Redirect("~/AgregarEspecialidad.aspx"); 
         }
 
-        protected void btnAgregarMedico_Click(object sender, EventArgs e)
+        protected void Medicos_Click(object sender, EventArgs e)
         {
-        
-            Response.Redirect("~/AgregarMedico.aspx"); 
+            Response.Redirect("AdministrarMedicos.aspx");
         }
 
-        protected void btnAgregarPaciente_Click(object sender, EventArgs e)
+        protected void Pacientes_Click(object sender, EventArgs e)
         {
-           
-            Response.Redirect("~/AgregarPaciente.aspx"); 
+            Response.Redirect("AdministrarPacientes.aspx");
+
         }
-
-
-
-
-
-
     }
 }

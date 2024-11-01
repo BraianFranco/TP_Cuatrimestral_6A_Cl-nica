@@ -66,6 +66,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Administrar.aspx" />
+    <Content Include="AdministrarEspecialidades.aspx" />
+    <Content Include="AdministrarMedicos.aspx" />
+    <Content Include="AdministrarPacientes.aspx" />
     <Content Include="AgregarEspecialidad.aspx" />
     <Content Include="AgregarMedico.aspx" />
     <Content Include="AgregarPaciente.aspx" />
@@ -145,6 +148,27 @@
     </Compile>
     <Compile Include="Administrar.aspx.designer.cs">
       <DependentUpon>Administrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrarEspecialidades.aspx.cs">
+      <DependentUpon>AdministrarEspecialidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrarEspecialidades.aspx.designer.cs">
+      <DependentUpon>AdministrarEspecialidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrarMedicos.aspx.cs">
+      <DependentUpon>AdministrarMedicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrarMedicos.aspx.designer.cs">
+      <DependentUpon>AdministrarMedicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrarPacientes.aspx.cs">
+      <DependentUpon>AdministrarPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrarPacientes.aspx.designer.cs">
+      <DependentUpon>AdministrarPacientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="AgregarEspecialidad.aspx.cs">
       <DependentUpon>AgregarEspecialidad.aspx</DependentUpon>

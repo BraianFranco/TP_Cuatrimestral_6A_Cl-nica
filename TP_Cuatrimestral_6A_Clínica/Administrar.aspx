@@ -7,9 +7,10 @@
         <h1>Administrar</h1>
         <br />
 
-        <asp:Button ID="btnAgregarEspecialidad" CssClass="btn btn-success w-100 my-2" OnClick="btnAgregarEspecialidad_Click" runat="server" Text="Agregar Especialidad" />
-        <asp:Button ID="btnAgregarMedico" CssClass="btn btn-info w-100 my-2" OnClick="btnAgregarMedico_Click" runat="server" Text="Agregar Médico" />
-        <asp:Button ID="btnAgregarPaciente" CssClass="btn btn-primary w-100 my-2" OnClick="btnAgregarPaciente_Click" runat="server" Text="Agregar Paciente" />
+        <asp:Button ID="Pacientes" CssClass="btn btn-primary w-100 my-2" OnClick="Pacientes_Click" runat="server" Text="Pacientes" />
+        <asp:Button ID="Medicos" CssClass="btn btn-info w-100 my-2" OnClick="Medicos_Click" runat="server" Text="Médicos" />
+        <asp:Button ID="Especilidades" CssClass="btn btn-success w-100 my-2" OnClick="Especilidades_Click" runat="server" Text="Especialidades" />
+
     </div>
 
 </asp:Content>

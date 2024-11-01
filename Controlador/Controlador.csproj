@@ -43,13 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControladorArticulo.cs" />
     <Compile Include="ControladorPais.cs" />
-    <Compile Include="ControladorCliente.cs" />
     <Compile Include="ControladorFormulario.cs" />
     <Compile Include="ControladorImagen.cs" />
-    <Compile Include="ControladorMarca.cs" />
-    <Compile Include="ControladorVoucher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

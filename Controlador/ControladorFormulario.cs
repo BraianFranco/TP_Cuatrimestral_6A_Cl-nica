@@ -54,7 +54,7 @@ namespace Controlador
 
             return esValido;
         }
-
+        /*
         public Cliente ObtenerClientePorDni(string dni)
         {
             try
@@ -67,5 +67,6 @@ namespace Controlador
                throw ex;
             }
         }
+        */
     }
 }
