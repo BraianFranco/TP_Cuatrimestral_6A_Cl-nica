@@ -39,9 +39,9 @@ namespace TP_Cuatrimestral_6A_Clínica
             GridView1.DataBind();
         }
 
-
-
-
-
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AgregarEspecialidad.aspx");
+        }
     }
 }

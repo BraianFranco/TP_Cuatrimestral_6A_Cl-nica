@@ -21,6 +21,10 @@
             <div class="col-auto">
                 <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" CssClass="btn btn-primary" />
             </div>
+
+            <div class ="col-auto">
+                <asp:Button ID="btnAgregar" runat="server" Text="Agregar Especialidad" CssClass="btn btn-primary"  OnClick="btnAgregar_Click"/>
+            </div>
         </div>
 
            <!-- GridView -->

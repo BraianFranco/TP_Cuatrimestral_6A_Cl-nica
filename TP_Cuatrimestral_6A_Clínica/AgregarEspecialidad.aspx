@@ -10,19 +10,19 @@
             <h1>Cargar Especialidad</h1>
             <br />
             <div class="col-md-11">
-                <asp:TextBox ID="txtNombreEspecialidad" CssClass="form-control bg-dark text-white" runat="server" placeholder="Nombre de la especialidad..."></asp:TextBox>
+                <asp:TextBox ID="txtNombreEspecialidad" CssClass="form-control  " runat="server" placeholder="Nombre de la especialidad..."></asp:TextBox>
             </div>
             <div class="col-md-11">
-                <asp:TextBox ID="txtDniEspecialidad" CssClass="form-control bg-dark text-white" runat="server" placeholder="Dni del Médico..."></asp:TextBox>
+                <asp:TextBox ID="txtDniEspecialidad" CssClass="form-control  " runat="server" placeholder="Dni del Médico..."></asp:TextBox>
             </div>
             <div class="col-md-11">
-                <asp:TextBox type="number" ID="txtEntradaMedico" min="1" max="24" CssClass="form-control bg-dark text-white" runat="server" placeholder="Hora Entrada..."></asp:TextBox>
+                <asp:TextBox type="number" ID="txtEntradaMedico" min="1" max="24" CssClass="form-control " runat="server" placeholder="Hora Entrada..."></asp:TextBox>
             </div>
             <div class="col-md-11">
-                <asp:TextBox type="number" ID="txtSalidaMedico" min="1" max="24" CssClass="form-control bg-dark text-white" runat="server" placeholder="Hora Salida..."></asp:TextBox>
+                <asp:TextBox type="number" ID="txtSalidaMedico" min="1" max="24" CssClass="form-control " runat="server" placeholder="Hora Salida..."></asp:TextBox>
             </div>
             <div class="col-md-11">
-                <select class="form-select bg-dark text-white" aria-label="Default select example">
+                <select class="form-select " aria-label="Default select example">
                     <option selected>Seleccione el Día</option>
                     <option value="1">Lunes</option>
                     <option value="2">Martes</option>
