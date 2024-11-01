@@ -24,11 +24,9 @@ body {
     border-radius: 5%;
     display: grid;
     place-content: center;
-    height: 500px;
-    width: 500px;
-    margin-left: 73vh;
-    margin-top: 5vh;
-    background: #808080;
+    height: 60vh;
+    width: auto;
+    background: #c0c7d7;
 }
 
 .col-md-12 {

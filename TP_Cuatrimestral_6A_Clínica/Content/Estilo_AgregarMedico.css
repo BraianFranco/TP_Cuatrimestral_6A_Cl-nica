@@ -25,14 +25,12 @@ body {
 }
 
 #ContenedorRegistroMedico {
-    border-radius:5%;
+    border-radius: 5%;
     display: grid;
     place-content: center;
     height: 600px;
-    width: 450px;
-    margin-left: 72vh;
-    margin-top: 4vh;
-    background: #808080;
+    width: auto;
+    background: #c0c7d7;
 }
 
 .col-md-7 {
