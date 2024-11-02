@@ -69,15 +69,6 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected global::System.Web.UI.WebControls.TextBox txtApellidoMedico;
 
         /// <summary>
-        /// txtContraseñaMedico control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContraseñaMedico;
-
-        /// <summary>
         /// lblErrorCorreoMedico control.
         /// </summary>
         /// <remarks>

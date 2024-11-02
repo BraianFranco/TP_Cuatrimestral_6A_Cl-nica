@@ -27,7 +27,7 @@ namespace TP_Cuatrimestral_6A_Clínica
                 if (!CEspecialidad.EspecialidadExistente(txtNombreEspecialidad.Text))
                 {
                     especialidad.Nombre = txtNombreEspecialidad.Text;
-                    especialidad.DniEspecialidad = Int32.Parse(txtDniEspecialidad.Text);
+                    especialidad.Descripcion = txtDescripcionEspecialidad.Text;
 
                     CEspecialidad.InsertarEspecialidad(especialidad);
                     LimpiarControles();
@@ -49,14 +49,14 @@ namespace TP_Cuatrimestral_6A_Clínica
 
         protected void btnCancelarEspecialidad_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AdministrarEspecialidades.aspx");
+            Response.Redirect("Administrar.aspx");
         }
 
 
         private void LimpiarControles()
         {
             txtNombreEspecialidad.Text = string.Empty;
-            txtDniEspecialidad.Text = string.Empty;
+            txtDescripcionEspecialidad.Text = string.Empty;
 
         }
 
@@ -74,14 +74,14 @@ namespace TP_Cuatrimestral_6A_Clínica
             {
                 lblErrorNombreEspecialidad.Text = "";
             }
-            if (string.IsNullOrEmpty(txtDniEspecialidad.Text))
+            if (string.IsNullOrEmpty(txtDescripcionEspecialidad.Text))
             {
-                lblErrorDniEspecialidad.Text = "Error - Ingrese un Dni";
+                lblErrorDesEspecialidad.Text = "Error - Ingrese una Descripcion";
                 Valido = false;
             }
             else
             {
-                lblErrorDniEspecialidad.Text = "";
+                lblErrorDesEspecialidad.Text = "";
             }
 
             return Valido;

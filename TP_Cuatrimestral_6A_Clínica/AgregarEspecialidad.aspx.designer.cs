@@ -33,58 +33,22 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected global::System.Web.UI.WebControls.TextBox txtNombreEspecialidad;
 
         /// <summary>
-        /// lblErrorDniEspecialidad control.
+        /// lblErrorDesEspecialidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorDniEspecialidad;
+        protected global::System.Web.UI.WebControls.Label lblErrorDesEspecialidad;
 
         /// <summary>
-        /// txtDniEspecialidad control.
+        /// txtDescripcionEspecialidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDniEspecialidad;
-
-        /// <summary>
-        /// lblErrorEntradaMedico control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorEntradaMedico;
-
-        /// <summary>
-        /// txtEntradaMedico control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEntradaMedico;
-
-        /// <summary>
-        /// lblErrorSalidaMedico control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorSalidaMedico;
-
-        /// <summary>
-        /// txtSalidaMedico control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSalidaMedico;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcionEspecialidad;
 
         /// <summary>
         /// btnAgregarEspecialidad control.

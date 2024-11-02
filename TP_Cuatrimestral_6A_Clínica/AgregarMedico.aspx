@@ -21,9 +21,6 @@
             <asp:TextBox ID="txtApellidoMedico" CssClass="form-control " placeholder="Apellido..." runat="server"></asp:TextBox>
         </div>
         <div class="col-md-11">
-            <asp:TextBox type="password" ID="txtContraseñaMedico" CssClass="form-control " placeholder="Contraseña..." runat="server"></asp:TextBox>
-        </div>
-        <div class="col-md-11">
             <asp:Label Style="color: red" ID="lblErrorCorreoMedico" runat="server" Text=""></asp:Label>
             <asp:TextBox type="email" ID="txtCorreoMedico" placeholder="Correo electronico..." CssClass="form-control  " runat="server"></asp:TextBox>
         </div>

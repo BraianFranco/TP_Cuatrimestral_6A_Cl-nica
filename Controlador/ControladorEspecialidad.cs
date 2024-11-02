@@ -15,7 +15,7 @@ namespace Controlador
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select Id, Nombre ,DniEspecialidad from Especialidades");
+                datos.setearConsulta("select Id, Nombre ,Descripcion from Especialidades");
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -23,7 +23,7 @@ namespace Controlador
                     Especialidad aux = new Especialidad();
                     aux.Id = (int)datos.Lector["Id"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
-                    aux.DniEspecialidad = (int)datos.Lector["DniEspecialidad"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
                     lista.Add(aux);
 
 
@@ -64,9 +64,9 @@ namespace Controlador
         {
 
             AccesoDatos Ad = new AccesoDatos();
-            Ad.setearConsulta("insert into Especialidades (Nombre , DniEspecialidad) values (@Nombre, @DniEspecialidad)");
+            Ad.setearConsulta("insert into Especialidades (Nombre , Descripcion) values (@Nombre, @Descripcion)");
             Ad.setearParametro("@Nombre", especialidad.Nombre);
-            Ad.setearParametro("@DniEspecialidad", especialidad.DniEspecialidad);
+            Ad.setearParametro("@Descripcion", especialidad.Descripcion);
 
             try
             {

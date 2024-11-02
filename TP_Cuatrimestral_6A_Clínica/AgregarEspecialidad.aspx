@@ -10,34 +10,16 @@
         <br />
         <div class="col-md-11">
             <asp:Label Style="color: red" ID="lblErrorNombreEspecialidad" runat="server" Text=""></asp:Label>
-            <asp:TextBox ID="txtNombreEspecialidad" CssClass="form-control  " runat="server" placeholder="Nombre de la especialidad..."></asp:TextBox>
+            <asp:TextBox ID="txtNombreEspecialidad" CssClass="form-control " runat="server" placeholder="Nombre de la especialidad..."></asp:TextBox>
         </div>
         <div class="col-md-11">
-            <asp:Label Style="color: red" ID="lblErrorDniEspecialidad" runat="server" Text=""></asp:Label>
-            <asp:TextBox type="number" min="10000000" max="99999999" oninvalid="this.setCustomValidity('Ingrese Un numero valido de 8 digitos')" oninput="setCustomValidity('')" ID="txtDniEspecialidad" CssClass="form-control" runat="server" placeholder="Dni del Médico..."></asp:TextBox>
-        </div>
-        <div class="col-md-11">
-            <asp:Label Style="color: red" ID="lblErrorEntradaMedico" runat="server" Text=""></asp:Label>
-            <asp:TextBox type="number" ID="txtEntradaMedico" min="1" max="24" CssClass="form-control " runat="server" placeholder="Hora Entrada..."></asp:TextBox>
-        </div>
-        <div class="col-md-11">
-            <asp:Label Style="color: red" ID="lblErrorSalidaMedico" runat="server" Text=""></asp:Label>
-            <asp:TextBox type="number" ID="txtSalidaMedico" min="1" max="24" CssClass="form-control " runat="server" placeholder="Hora Salida..."></asp:TextBox>
-        </div>
-        <div class="col-md-11">
-            <select class="form-select " aria-label="Default select example">
-                <option selected>Seleccione el Día</option>
-                <option value="1">Lunes</option>
-                <option value="2">Martes</option>
-                <option value="3">Miercoles</option>
-                <option value="1">Jueves</option>
-                <option value="2">Viernes</option>
-            </select>
+            <asp:Label Style="color: red" ID="lblErrorDesEspecialidad" runat="server" Text=""></asp:Label>
+            <asp:TextBox ID="txtDescripcionEspecialidad" CssClass="form-control " runat="server" placeholder="Descripcion de la especialidad..."></asp:TextBox>
         </div>
         <div class="col-md-12">
             <asp:Button ID="btnAgregarEspecialidad" CssClass="btn btn-danger" OnClick="btnAgregarEspecialidad_Click" runat="server" Text="AGREGAR" />
-            <asp:Button ID="btnCancelarEspecialidad" CssClass="btn btn-danger" OnClick="btnCancelarEspecialidad_Click" runat="server" Text="CANCELAR" />
-            <asp:Label ID="lblErrorEspecialidadExistente" runat="server" Text=""></asp:Label>
+            <asp:Button ID="btnCancelarEspecialidad" CssClass="btn btn-danger" OnClick="btnCancelarEspecialidad_Click"  runat="server" Text="CANCELAR" />
+            <asp:Label  ID="lblErrorEspecialidadExistente" runat="server" Text=""></asp:Label>
         </div>
     </div>
 

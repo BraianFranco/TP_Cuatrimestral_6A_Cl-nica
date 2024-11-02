@@ -10,21 +10,26 @@ namespace Modelo
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
-
-        public int DniEspecialidad { get; set; }
-
+        public string Descripcion { get; set; }
 
 
-        public Especialidad(int id, string nombre, int dniespecialidad)
+
+        public Especialidad(int id, string nombre, string descripcion)
         {
 
             Id = id;
             Nombre = nombre;
-            DniEspecialidad = dniespecialidad;
+            Descripcion = descripcion;
         }
 
         public Especialidad() { }
 
+
+        public override string ToString()
+        {
+            return Descripcion;
+
+        }
 
     }
 }
