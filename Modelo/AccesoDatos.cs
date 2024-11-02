@@ -23,7 +23,8 @@ namespace Modelo
         public AccesoDatos()
         {
 
-           conexion = new SqlConnection("server=.\\SQLEXPRESS; database=Clinica_6A_DB; integrated security=true");
+             //conexion = new SqlConnection("server=.\\SQLEXPRESS; database=Clinica_6A_DB; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=ClinicaMedica; integrated security=true");
             // conexion = new SqlConnection("server=.\\GONZA; database=Clinica_6A_DB; integrated security=true");
 
 

@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControladorEspecialidad.cs" />
+    <Compile Include="ControladorMedico.cs" />
+    <Compile Include="ControladorPaciente.cs" />
     <Compile Include="ControladorPais.cs" />
     <Compile Include="ControladorFormulario.cs" />
     <Compile Include="ControladorImagen.cs" />

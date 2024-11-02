@@ -8,11 +8,22 @@ namespace Modelo
 {
     public class Especialidad
     {
-
         public int Id { get; set; }
         public string Nombre { get; set; }
 
-        public string Descripcion { get; set; }
+        public int DniEspecialidad { get; set; }
+
+
+
+        public Especialidad(int id, string nombre, int dniespecialidad)
+        {
+
+            Id = id;
+            Nombre = nombre;
+            DniEspecialidad = dniespecialidad;
+        }
+
+        public Especialidad() { }
 
 
     }
