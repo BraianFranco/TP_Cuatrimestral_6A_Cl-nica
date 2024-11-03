@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Controlador;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace TP_Cuatrimestral_6A_Clínica
 {
     public partial class AdministrarEspecialidades : System.Web.UI.Page
     {
+        ControladorEspecialidad controladorEspecialidad = new ControladorEspecialidad();
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -22,24 +24,39 @@ namespace TP_Cuatrimestral_6A_Clínica
 
         private void CargarEspecialidades()
         {
-       
+            try
+            {
+            var listaEspecialidades = controladorEspecialidad.Listar();
+
+
+             
             DataTable dtEspecialidades = new DataTable();
             dtEspecialidades.Columns.Add("Id", typeof(int));
-            dtEspecialidades.Columns.Add("Especialidad", typeof(string));
+            dtEspecialidades.Columns.Add("Nombre", typeof(string));
             dtEspecialidades.Columns.Add("Descripcion", typeof(string));
 
-       
-            dtEspecialidades.Rows.Add(1, "Cardiología", "Diagnóstico y tratamiento de enfermedades del corazón");
-            dtEspecialidades.Rows.Add(2, "Neurología", "Trastornos del sistema nervioso");
-            dtEspecialidades.Rows.Add(3, "Dermatología", "Problemas de la piel, cabello y uñas");
-            dtEspecialidades.Rows.Add(4, "Pediatría", "Atención médica a niños y adolescentes");
-            dtEspecialidades.Rows.Add(5, "Oftalmología", "Enfermedades de los ojos");
+            foreach (var especialidad in listaEspecialidades)
+            {
+                dtEspecialidades.Rows.Add(
+                    especialidad.Id,
+                    especialidad.Nombre,
+                    especialidad.Descripcion
+                );
+            }
 
             GridView1.DataSource = dtEspecialidades;
             GridView1.DataBind();
+ 
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.Text = "Error al cargar especialidades: " + ex.Message;
+            }
         }
+    
 
-        protected void btnAgregar_Click(object sender, EventArgs e)
+
+    protected void btnAgregar_Click(object sender, EventArgs e)
         {
             Response.Redirect("AgregarEspecialidad.aspx");
         }

@@ -29,11 +29,11 @@
 
            <!-- GridView -->
 
+        <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id"
             CssClass="table table-striped table-bordered table-hover" HeaderStyle-CssClass="thead-dark">
             <Columns>
-                <asp:BoundField DataField="Id" HeaderText="ID" />
-                <asp:BoundField DataField="Especialidad" HeaderText="Especialidad" /> 
+                <asp:BoundField DataField="Nombre" HeaderText="Nombre" /> 
                 <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
                 <asp:TemplateField HeaderText="Acciones">
                     <ItemTemplate>
