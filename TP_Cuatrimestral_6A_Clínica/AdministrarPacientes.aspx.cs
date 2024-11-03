@@ -21,7 +21,18 @@ namespace TP_Cuatrimestral_6A_Clínica
                 CargarPacientes();
             }
         }
+        protected void gvPacientes_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Edit")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = gvPacientes.Rows[index];
 
+                long pacienteDni = Convert.ToInt64(gvPacientes.DataKeys[index].Value);
+
+                Response.Redirect($"AgregarPaciente.aspx?Dni={pacienteDni}");
+            }
+        }
         private void CargarPacientes()
         {
             try
@@ -57,8 +68,8 @@ namespace TP_Cuatrimestral_6A_Clínica
                     );
                 }
 
-                GridView1.DataSource = dtPacientes;
-                GridView1.DataBind();
+                gvPacientes.DataSource = dtPacientes;
+                gvPacientes.DataBind();
     
             }
             catch (Exception ex)

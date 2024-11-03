@@ -53,39 +53,56 @@ namespace Controlador
             return lista;
 
         }
+        public Paciente ObtenerPorDni(long dni)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT Dni, Nombre, Apellido, NroTelefono, Correo, FechaNac, Direccion FROM Paciente WHERE Dni = @Dni");
+                datos.setearParametro("@Dni", dni);
+                datos.ejecutarLectura();
 
-        //    public Paciente ObtenerPorDni(string dni)
-        //    {
-        //        Paciente cliente = null;
-        //        AccesoDatos Ad = new AccesoDatos();
+                if (datos.Lector.Read())
+                {
+                    return new Paciente
+                    {
+                        dni = (int)Convert.ToInt64(datos.Lector["Dni"]),
+                        nombre = datos.Lector["Nombre"].ToString(),
+                        apellido = datos.Lector["Apellido"].ToString(),
+                        tel = datos.Lector["NroTelefono"].ToString(),   
+                        correo = datos.Lector["Correo"].ToString(),
+                        fechanacimiento = Convert.ToDateTime(datos.Lector["FechaNac"]),
+                        direccion = datos.Lector["Direccion"].ToString()
+                    };
+                }
+                return null;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
-        //        Ad.setearConsulta("select Id, Documento, Nombre , Apellido , Email , Direccion , Ciudad ,CP from Clientes where Documento = @DNI");
-        //        Ad.setearParametro("@DNI", dni);
-
-        //        try
-        //        {
-        //            Ad.ejecutarLectura();
-
-        //            if (Ad.Lector.Read())
-        //            {
-        //                cliente = new Paciente
-        //                {
-        //                    Id = (int)Ad.Lector["Id"],
-        //                    Documento = (string)Ad.Lector["Documento"],
-        //                    Nombre = (string)Ad.Lector["Nombre"],
-        //                    Apellido = (string)Ad.Lector["Apellido"],
-        //                    Ciudad = (string)Ad.Lector["Ciudad"],
-        //                    Email = (string)Ad.Lector["Email"],
-        //                    Direccion = (string)Ad.Lector["Direccion"],
-        //                    CP = (int)Ad.Lector["CP"]
-        //                };
-        //            }
-        //        }
-        //        catch (Exception ex) { throw ex; }
-        //        finally { Ad.cerrarConexion(); }
-
-        //        return cliente;
-        //    }
+        public void Actualizar(Paciente paciente)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Paciente SET Nombre = @Nombre, Apellido = @Apellido, NroTelefono = @NroTelefono, Correo = @Correo, FechaNac = @FechaNac, Direccion = @Direccion WHERE Dni = @Dni");
+                datos.setearParametro("@Nombre", paciente.nombre);
+                datos.setearParametro("@Apellido", paciente.apellido);
+                datos.setearParametro("@NroTelefono", paciente.tel);
+                datos.setearParametro("@Correo", paciente.correo);
+                datos.setearParametro("@Dni", paciente.dni);
+                datos.setearParametro("@FechaNac",paciente.fechanacimiento);
+                datos.setearParametro("@Direccion", paciente.direccion);
+                datos.ejecutarAccion();
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
         public bool PacienteExiste(int dni)
         {

@@ -44,6 +44,8 @@
             <asp:Button ID="btnAgregarPaciente" CssClass="btn btn-danger" OnClick="BtnAgregarPaciente_Click" runat="server" Text="AGREGAR" />
             <asp:Button ID="btnCancelar" CssClass="btn btn-danger" OnClick="btnCancelar_Click" runat="server" Text="CANCELAR" />
             <asp:Label ID="lblErrorPacienteExistente" runat="server" Text=""></asp:Label>
+            <asp:Label ID="lblConfirmacion" runat="server" ForeColor="Green" Text=""></asp:Label>
+
         </div>
     </div>
 

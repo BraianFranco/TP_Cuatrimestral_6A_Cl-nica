@@ -23,22 +23,18 @@
 
             <!-- GridView -->
             <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Dni"
+            <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
+            <asp:GridView ID="gvPacientes" runat="server" AutoGenerateColumns="False" OnRowCommand="gvPacientes_RowCommand" DataKeyNames="Dni"
                 CssClass="table table-striped table-bordered table-hover" HeaderStyle-CssClass="thead-dark">
                 <Columns>
-                    
                     <asp:BoundField DataField="Dni" HeaderText="DNI" />
-                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
+                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" /> 
                     <asp:BoundField DataField="Apellido" HeaderText="Apellido" />
                     <asp:BoundField DataField="Correo" HeaderText="Correo" />
                     <asp:BoundField DataField="NroTelefono" HeaderText="Teléfono" />
-                    <asp:BoundField DataField="FechaNac" HeaderText="Fecha de Nacimiento" DataFormatString="{0:dd/MM/yyyy}" />
-                    <asp:BoundField DataField="IdPais" HeaderText="País" />
-                    <asp:BoundField DataField="Direccion" HeaderText="Dirección" />
-                    <asp:BoundField DataField="Activo" HeaderText="Activo" />
                     <asp:TemplateField HeaderText="Acciones">
                         <ItemTemplate>
-                            <asp:Button runat="server" Text="Editar" CommandName="Edit" CssClass="btn btn-warning btn-sm" />
+                            <asp:Button runat="server" Text="Editar" CommandName="Edit" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-warning btn-sm" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

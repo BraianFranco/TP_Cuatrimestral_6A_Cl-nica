@@ -14,64 +14,125 @@ using System.Web.UI.WebControls;
 
 namespace TP_Cuatrimestral_6A_Clínica
 {
+
     public partial class AgregarPaciente : System.Web.UI.Page
     {
+
+        ControladorPaciente controladorPaciente = new ControladorPaciente();
+
+        private long? PacienteDni
+        {
+            get
+            {
+                long dni;
+                if (long.TryParse(Request.QueryString["Dni"], out dni))
+                    return dni;
+                return null;
+            }
+        }
+
+
+        private void CargarDatosPaciente(long dni)
+        {
+            var paciente = controladorPaciente.ObtenerPorDni(dni);
+            if (paciente != null)
+            {
+                txtDniPaciente.Text = paciente.dni.ToString();
+                txtDniPaciente.Enabled = false; 
+                txtNombrePaciente.Text = paciente.nombre;
+                txtApellidoPaciente.Text = paciente.apellido;
+                txtTelPaciente.Text = paciente.tel;
+                txtFechaNacimientoPaciente.Text = paciente.fechanacimiento.ToString("yyyy-MM-dd");
+                txtCorreoPaciente.Text = paciente.correo;
+                ddlPais.SelectedValue = paciente.idPais.ToString();
+                txtDireccionPaciente.Text = paciente.direccion;
+            }
+            else
+            {
+                lblErrorPacienteExistente.Text = "Error - Paciente no encontrado.";
+                lblErrorPacienteExistente.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
             try
             {
                 if (!IsPostBack)
                 {
+                    // Cargar lista de países en el dropdown
                     ControladorPais CP = new ControladorPais();
-                    List<Pais> ListaPaises = new List<Pais>();
-                    ListaPaises = CP.Listar();
-
-                    ddlPais.DataSource = ListaPaises;
+                    ddlPais.DataSource = CP.Listar();
                     ddlPais.DataBind();
+
+                    // Si el paciente ya existe, cargar sus datos
+                    if (PacienteDni.HasValue)
+                    {
+                        CargarDatosPaciente(PacienteDni.Value);
+                    }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblErrorPacienteExistente.Text = "Error - " + ex.Message;
+                lblErrorPacienteExistente.ForeColor = System.Drawing.Color.Red;
             }
         }
 
         protected void BtnAgregarPaciente_Click(object sender, EventArgs e)
         {
-            ControladorPaciente CPaciente = new ControladorPaciente();
-            Paciente paciente = new Paciente();
-
-
-            if (ValidarCamposPaciente() == true)
+            if (ValidarCamposPaciente())
             {
-                if (!CPaciente.PacienteExiste(Int32.Parse(txtDniPaciente.Text)))
+                Paciente paciente = new Paciente
                 {
-                    paciente.dni = Int32.Parse(txtDniPaciente.Text);
-                    paciente.nombre = txtNombrePaciente.Text;
-                    paciente.apellido = txtApellidoPaciente.Text;
-                    paciente.tel = txtTelPaciente.Text;
-                    paciente.fechanacimiento = DateTime.Parse(txtFechaNacimientoPaciente.Text);
-                    paciente.correo = txtCorreoPaciente.Text;
-                    paciente.idPais = Int32.Parse(ddlPais.SelectedValue);
-                    paciente.direccion = txtDireccionPaciente.Text;
+                    dni = (int)(PacienteDni ?? long.Parse(txtDniPaciente.Text)),
+                    nombre = txtNombrePaciente.Text,
+                    apellido = txtApellidoPaciente.Text,
+                    tel = txtTelPaciente.Text,
+                    fechanacimiento = DateTime.Parse(txtFechaNacimientoPaciente.Text),
+                    correo = txtCorreoPaciente.Text,
+                    idPais = int.Parse(ddlPais.SelectedValue),
+                    direccion = txtDireccionPaciente.Text
+                };
 
-                    CPaciente.InsertarPaciente(paciente);
-                    LimpiarControles();
+                try
+                {
+                    if (PacienteDni.HasValue)
+                    {
+                        // Actualizar paciente existente
+                        controladorPaciente.Actualizar(paciente);
+                        lblConfirmacion.Text = "Paciente actualizado correctamente.";
+                        lblConfirmacion.ForeColor = System.Drawing.Color.Green;
+                        lblConfirmacion.Visible = true; 
+                    }
+                    else
+                    {
+                        // Insertar nuevo paciente
+                        if (!controladorPaciente.PacienteExiste(paciente.dni))
+                        {
+                            controladorPaciente.InsertarPaciente(paciente);
+                            LimpiarControles();
+                            lblConfirmacion.Text = "Éxito - Paciente agregado.";
+                            lblConfirmacion.ForeColor = System.Drawing.Color.Green;
+                            lblConfirmacion.Visible = true;
+                        }
+                        else
+                        {
+                            lblErrorPacienteExistente.Text = "Error - Paciente ya existe.";
+                            lblErrorPacienteExistente.ForeColor = System.Drawing.Color.Red;
+                            lblErrorPacienteExistente.Visible = true;
+                        }
+                    }
 
-
-                    lblErrorPacienteExistente.Text = "ÉXITO ! - Paciente cargado";
-                    lblErrorPacienteExistente.ForeColor = System.Drawing.Color.Green;
-
+                   // Aca iria el response redirect????;
                 }
-                else
+                catch (Exception ex)
                 {
-                    lblErrorPacienteExistente.Text = "ERROR ! - Paciente existente";
+                    lblErrorPacienteExistente.Text = "Error - " + ex.Message;
                     lblErrorPacienteExistente.ForeColor = System.Drawing.Color.Red;
-
+                    lblErrorPacienteExistente.Visible = true;
                 }
-
             }
         }
 
