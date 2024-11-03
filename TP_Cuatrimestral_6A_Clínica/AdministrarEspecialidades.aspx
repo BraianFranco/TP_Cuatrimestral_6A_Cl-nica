@@ -27,24 +27,24 @@
             </div>
         </div>
 
-           <!-- GridView -->
+               <!-- GridView -->
 
-        <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id"
-            CssClass="table table-striped table-bordered table-hover" HeaderStyle-CssClass="thead-dark">
-            <Columns>
-                <asp:BoundField DataField="Nombre" HeaderText="Nombre" /> 
-                <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
-                <asp:TemplateField HeaderText="Acciones">
-                    <ItemTemplate>
-                       
-                        <asp:Button runat="server" Text="Editar" CommandName="Edit" CssClass="btn btn-warning btn-sm" />
-                    </ItemTemplate>
-                </asp:TemplateField>
-            </Columns>
-        </asp:GridView>
+    <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
+    <asp:GridView ID="gvEspecialidades" runat="server" AutoGenerateColumns="False" OnRowCommand="gvEspecialidades_RowCommand" DataKeyNames="Id"
+        CssClass="table table-striped table-bordered table-hover" HeaderStyle-CssClass="thead-dark">
+        <Columns>
+            <asp:BoundField DataField="Id" HeaderText="ID" />
+            <asp:BoundField DataField="Nombre" HeaderText="Nombre" /> 
+            <asp:BoundField DataField="Descripcion" HeaderText="Descripción" />
+            <asp:TemplateField HeaderText="Acciones">
+                <ItemTemplate>
+                    <asp:Button runat="server" Text="Editar" CommandName="Edit" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-warning btn-sm" />
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
 
+        </div>
     </div>
-</div>
     
 </asp:Content>

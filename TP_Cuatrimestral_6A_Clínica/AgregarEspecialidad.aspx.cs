@@ -11,39 +11,89 @@ namespace TP_Cuatrimestral_6A_Clínica
 {
     public partial class AgregarEspecialidad : System.Web.UI.Page
     {
+
+        ControladorEspecialidad controladorEspecialidad = new ControladorEspecialidad();
+
+        private int? EspecialidadId
+        {
+            get
+            {
+                int id;
+                if (int.TryParse(Request.QueryString["Id"], out id))
+                    return id;
+                return null;
+            }
+        }
+
+        private void CargarDatosEspecialidad(int id)
+        {
+            var especialidad = controladorEspecialidad.ObtenerPorId(id);
+            if (especialidad != null)
+            {
+                txtNombreEspecialidad.Text = especialidad.Nombre;
+                txtDescripcionEspecialidad.Text = especialidad.Descripcion;
+            }
+            else
+            {
+                lblErrorEspecialidadExistente.Text = "Error - Especialidad no encontrada.";
+                lblErrorEspecialidadExistente.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!IsPostBack)
+            {
+                if (EspecialidadId.HasValue)
+                {
+                    CargarDatosEspecialidad(EspecialidadId.Value);
+                }
+            }
 
         }
 
         protected void btnAgregarEspecialidad_Click(object sender, EventArgs e)
         {
-            ControladorEspecialidad CEspecialidad = new ControladorEspecialidad();
-            Especialidad especialidad = new Especialidad();
 
-
-            if (ValidarCamposMedico() == true)
+            if (ValidarCamposMedico())
             {
-                if (!CEspecialidad.EspecialidadExistente(txtNombreEspecialidad.Text))
+                Especialidad especialidad = new Especialidad
                 {
-                    especialidad.Nombre = txtNombreEspecialidad.Text;
-                    especialidad.Descripcion = txtDescripcionEspecialidad.Text;
+                    Nombre = txtNombreEspecialidad.Text,
+                    Descripcion = txtDescripcionEspecialidad.Text
+                };
 
-                    CEspecialidad.InsertarEspecialidad(especialidad);
-                    LimpiarControles();
-
-
-                    lblErrorEspecialidadExistente.Text = "ÉXITO ! - Especialidad cargada";
-                    lblErrorEspecialidadExistente.ForeColor = System.Drawing.Color.Green;
-
+                try
+                {
+                    if (EspecialidadId.HasValue)
+                    {
+                        especialidad.Id = EspecialidadId.Value;
+                        controladorEspecialidad.Actualizar(especialidad);
+                        lblErrorEspecialidadExistente.Text = "Éxito - Especialidad actualizada.";
+                        lblErrorEspecialidadExistente.ForeColor = System.Drawing.Color.Green;
+                    }
+                    else
+                    {
+                        if (!controladorEspecialidad.EspecialidadExistente(txtNombreEspecialidad.Text))
+                        {
+                            controladorEspecialidad.InsertarEspecialidad(especialidad);
+                            LimpiarControles();
+                            lblErrorEspecialidadExistente.Text = "Éxito - Especialidad agregada.";
+                            lblErrorEspecialidadExistente.ForeColor = System.Drawing.Color.Green;
+                        }
+                        else
+                        {
+                            lblErrorEspecialidadExistente.Text = "Error - Especialidad ya existe.";
+                            lblErrorEspecialidadExistente.ForeColor = System.Drawing.Color.Red;
+                        }
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    lblErrorEspecialidadExistente.Text = "ERROR ! - Especialidad existente";
+                    lblErrorEspecialidadExistente.Text = "Error - " + ex.Message;
                     lblErrorEspecialidadExistente.ForeColor = System.Drawing.Color.Red;
-
                 }
-
             }
         }
 

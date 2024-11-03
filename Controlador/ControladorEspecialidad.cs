@@ -60,6 +60,50 @@ namespace Controlador
             return false;
         }
 
+        public Especialidad ObtenerPorId(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT Id, Nombre, Descripcion FROM Especialidades WHERE Id = @Id");
+                datos.setearParametro("@Id", id);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    return new Especialidad
+                    {
+                        Id = Convert.ToInt32(datos.Lector["Id"]),
+                        Nombre = datos.Lector["Nombre"].ToString(),
+                        Descripcion = datos.Lector["Descripcion"].ToString()
+                    };
+                }
+                return null;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void Actualizar(Especialidad especialidad)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Especialidades SET Nombre = @Nombre, Descripcion = @Descripcion WHERE Id = @Id");
+                datos.setearParametro("@Nombre", especialidad.Nombre);
+                datos.setearParametro("@Descripcion", especialidad.Descripcion);
+                datos.setearParametro("@Id", especialidad.Id);
+                datos.ejecutarAccion();
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+
         public void InsertarEspecialidad(Especialidad especialidad)
         {
 

@@ -22,6 +22,20 @@ namespace TP_Cuatrimestral_6A_Clínica
             }
         }
 
+        protected void gvEspecialidades_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Edit")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = gvEspecialidades.Rows[index];
+
+                int especialidadId = Convert.ToInt32(gvEspecialidades.DataKeys[index].Value);
+
+                Response.Redirect($"AgregarEspecialidad.aspx?Id={especialidadId}");
+            }
+        }
+
+
         private void CargarEspecialidades()
         {
             try
@@ -44,8 +58,8 @@ namespace TP_Cuatrimestral_6A_Clínica
                 );
             }
 
-            GridView1.DataSource = dtEspecialidades;
-            GridView1.DataBind();
+            gvEspecialidades.DataSource = dtEspecialidades;
+            gvEspecialidades.DataBind();
  
             }
             catch (Exception ex)
