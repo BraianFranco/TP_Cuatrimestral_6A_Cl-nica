@@ -22,10 +22,11 @@
             </div>
 
             <!-- GridView -->
+            <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Dni"
                 CssClass="table table-striped table-bordered table-hover" HeaderStyle-CssClass="thead-dark">
                 <Columns>
-                    <asp:BoundField DataField="Id" HeaderText="ID" />
+                    
                     <asp:BoundField DataField="Dni" HeaderText="DNI" />
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                     <asp:BoundField DataField="Apellido" HeaderText="Apellido" />
@@ -34,7 +35,6 @@
                     <asp:BoundField DataField="FechaNac" HeaderText="Fecha de Nacimiento" DataFormatString="{0:dd/MM/yyyy}" />
                     <asp:BoundField DataField="IdPais" HeaderText="País" />
                     <asp:BoundField DataField="Direccion" HeaderText="Dirección" />
-                    <asp:BoundField DataField="FechaAlta" HeaderText="Fecha de Alta" DataFormatString="{0:dd/MM/yyyy}" />
                     <asp:BoundField DataField="Activo" HeaderText="Activo" />
                     <asp:TemplateField HeaderText="Acciones">
                         <ItemTemplate>

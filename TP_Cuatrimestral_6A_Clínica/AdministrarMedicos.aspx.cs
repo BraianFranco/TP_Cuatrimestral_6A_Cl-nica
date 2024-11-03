@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Controlador;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace TP_Cuatrimestral_6A_Clínica
 {
     public partial class AdministrarMedicos : System.Web.UI.Page
     {
-
+        ControladorMedico controladorMedico = new ControladorMedico();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,26 +24,47 @@ namespace TP_Cuatrimestral_6A_Clínica
 
         private void CargarMedicos()
         {
-          
-            DataTable dtMedicos = new DataTable();
+            {
+                try
+                {
+                    
+                    var listaMedicos = controladorMedico.Listar();
 
-           
-            dtMedicos.Columns.Add("Id", typeof(int));
-            dtMedicos.Columns.Add("Dni", typeof(long));
-            dtMedicos.Columns.Add("Nombre", typeof(string));
-            dtMedicos.Columns.Add("Apellido", typeof(string));
-            dtMedicos.Columns.Add("Correo", typeof(string));
-            dtMedicos.Columns.Add("IdPais", typeof(int));
-            dtMedicos.Columns.Add("FechaAlta", typeof(DateTime));
+   
+                    DataTable dtMedicos = new DataTable();
 
-          
-            dtMedicos.Rows.Add(1, 12345678, "Juan", "Pérez", "juan.perez@example.com", 1, DateTime.Parse("2023-01-15"));
-            dtMedicos.Rows.Add(2, 87654321, "María", "García", "maria.garcia@example.com", 2, DateTime.Parse("2023-02-10"));
-            dtMedicos.Rows.Add(3, 11223344, "Carlos", "López", "carlos.lopez@example.com", 1, DateTime.Parse("2023-03-05"));
+                    dtMedicos.Columns.Add("Dni", typeof(long));
+                    dtMedicos.Columns.Add("Nombre", typeof(string));
+                    dtMedicos.Columns.Add("Apellido", typeof(string));
+                    dtMedicos.Columns.Add("NroTelefono", typeof(string));
+                    dtMedicos.Columns.Add("Correo", typeof(string));
+                    dtMedicos.Columns.Add("IdPais", typeof(int));
+                    dtMedicos.Columns.Add("Activo", typeof(bool));
 
-            
-            GridView1.DataSource = dtMedicos;
-            GridView1.DataBind();
+                        
+                    foreach (var medico in listaMedicos)
+                    {
+                        dtMedicos.Rows.Add(
+                            medico.Dni,
+                            medico.Nombre,
+                            medico.Apellido,
+                            medico.Telefono,
+                            medico.Correo,
+                            medico.IdPais,
+                            medico.Activo
+                        );
+                    }
+
+                    GridView1.DataSource = dtMedicos;
+                    GridView1.DataBind();
+
+
+                }
+                catch (Exception ex)
+                {
+                    lblMensaje.Text = "Error al cargar médicos: " + ex.Message;
+                }
+            }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)

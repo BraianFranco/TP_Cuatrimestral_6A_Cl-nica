@@ -31,13 +31,13 @@ namespace Controlador
 
                     Medico aux = new Medico();
 
-                    aux.Dni = (int)Ad.Lector["Dni"];
-                    aux.Nombre = (string)Ad.Lector["Nombre"];
-                    aux.Apellido = (string)Ad.Lector["Apellido"];
-                    aux.Telefono = (string)Ad.Lector["NroTelefono"];
-                    aux.Correo = (string)Ad.Lector["Correo"];
-                    aux.IdPais = (int)Ad.Lector["IdPais"];
-                    aux.Activo = (bool)Ad.Lector["Activo"];
+                    aux.Dni = Convert.ToInt32(Ad.Lector["Dni"]); // BIGINT -> long
+                    aux.Nombre = Ad.Lector["Nombre"].ToString(); // VARCHAR -> string
+                    aux.Apellido = Ad.Lector["Apellido"].ToString(); // VARCHAR -> string
+                    aux.Telefono = Ad.Lector["NroTelefono"].ToString(); // VARCHAR -> string
+                    aux.Correo = Ad.Lector["Correo"].ToString(); // VARCHAR -> string
+                    aux.IdPais = Convert.ToInt32(Ad.Lector["IdPais"]); // INT -> int
+                    aux.Activo = Convert.ToBoolean(Ad.Lector["Activo"]); // BIT -> bool
 
                     lista.Add(aux);
                 }

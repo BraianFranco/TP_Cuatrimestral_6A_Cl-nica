@@ -26,16 +26,18 @@
 
             <!-- GridView -->
 
+
+            <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Dni"
                 CssClass="table table-striped table-bordered table-hover" HeaderStyle-CssClass="thead-dark">
                 <Columns>
-                    <asp:BoundField DataField="Id" HeaderText="ID" />
+                  
                     <asp:BoundField DataField="Dni" HeaderText="DNI" />
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                     <asp:BoundField DataField="Apellido" HeaderText="Apellido" />
                     <asp:BoundField DataField="Correo" HeaderText="Correo" />
                     <asp:BoundField DataField="IdPais" HeaderText="País" />
-                    <asp:BoundField DataField="FechaAlta" HeaderText="Fecha de Ingreso" />
+                  
                     <asp:TemplateField HeaderText="Acciones">
                         <ItemTemplate>
 

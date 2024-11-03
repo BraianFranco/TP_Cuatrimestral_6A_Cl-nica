@@ -32,16 +32,15 @@ namespace Controlador
 
                     Paciente aux = new Paciente();
 
-                    aux.dni = (int)Ad.Lector["Dni"];
-                    aux.nombre = (string)Ad.Lector["Nombre"];
-                    aux.apellido = (string)Ad.Lector["Apellido"];
-                    aux.tel = (string)Ad.Lector["NroTelefono"];
-                    aux.fechanacimiento = (DateTime)Ad.Lector["FechaNac"];
-                    aux.correo = (string)Ad.Lector["Correo"];
-                    aux.idPais = (int)Ad.Lector["IdPais"];
-                    aux.direccion = (string)Ad.Lector["Direccion"];
-                    aux.activo = (bool)Ad.Lector["Activo"];
-
+                    aux.dni = (int)Convert.ToInt64(Ad.Lector["Dni"]); 
+                    aux.nombre = Ad.Lector["Nombre"].ToString(); 
+                    aux.apellido = Ad.Lector["Apellido"].ToString();
+                    aux.tel = Ad.Lector["NroTelefono"].ToString(); 
+                    aux.fechanacimiento = Convert.ToDateTime(Ad.Lector["FechaNac"]); 
+                    aux.correo = Ad.Lector["Correo"].ToString(); 
+                    aux.idPais = Convert.ToInt32(Ad.Lector["IdPais"]); 
+                    aux.direccion = Ad.Lector["Direccion"].ToString(); 
+                    aux.activo = Convert.ToBoolean(Ad.Lector["Activo"]); 
 
                     lista.Add(aux);
                 }
