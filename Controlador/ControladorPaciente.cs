@@ -153,6 +153,19 @@ namespace Controlador
 
         }
 
+        public void EliminarPaciente(int dni)
+        {
+            AccesoDatos Ad = new AccesoDatos();
+            Ad.setearConsulta("delete from Paciente where Dni = @DNI");
+            Ad.setearParametro("@DNI", dni);
+
+            try
+            {
+                Ad.ejecutarAccion();
+            }
+            catch (Exception ex) { throw ex; }
+            finally { Ad.cerrarConexion(); }
+        }
 
         //public int ObtenerIdCliente(Paciente cliente)
         //{

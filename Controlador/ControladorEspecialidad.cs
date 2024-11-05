@@ -122,6 +122,19 @@ namespace Controlador
 
         }
 
+        public void EliminarEspecialidad(int id)
+        {
+            AccesoDatos Ad = new AccesoDatos();
+            Ad.setearConsulta("delete from Especialidades where Id = @ID");
+            Ad.setearParametro("@ID", id);
+
+            try
+            {
+                Ad.ejecutarAccion();
+            }
+            catch (Exception ex) { throw ex; }
+            finally { Ad.cerrarConexion(); }
+        }
 
     }
 }

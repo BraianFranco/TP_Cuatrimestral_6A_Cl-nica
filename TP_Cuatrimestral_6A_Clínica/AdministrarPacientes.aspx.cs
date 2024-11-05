@@ -82,5 +82,26 @@ namespace TP_Cuatrimestral_6A_Clínica
         {
             Response.Redirect("AgregarPaciente.aspx");
         }
+
+        protected void GridView1_RowDeleting1(object sender, GridViewDeleteEventArgs e)
+        {
+
+            try
+            {
+                int indice = Convert.ToInt32(e.RowIndex);
+                int dniAux = Int32.Parse(gvPacientes.Rows[indice].Cells[0].Text);
+
+                controladorPaciente.EliminarPaciente(dniAux);
+
+                Response.Redirect("AdministrarPacientes.aspx");
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
     }
 }

@@ -1,11 +1,15 @@
 ﻿using Controlador;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+
 
 namespace TP_Cuatrimestral_6A_Clínica
 {
@@ -71,5 +75,27 @@ namespace TP_Cuatrimestral_6A_Clínica
         {
             Response.Redirect("AgregarMedico.aspx");
         }
+
+        protected void GridView1_RowDeleting1(object sender, GridViewDeleteEventArgs e)
+        {          
+
+            try
+            {
+                int indice = Convert.ToInt32(e.RowIndex);
+                int dniAux = Int32.Parse(GridView1.Rows[indice].Cells[0].Text);
+
+                controladorMedico.EliminarMedico(dniAux);
+
+                Response.Redirect("AdministrarMedicos.aspx");
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
     }
+   
 }

@@ -74,5 +74,27 @@ namespace TP_Cuatrimestral_6A_Clínica
         {
             Response.Redirect("AgregarEspecialidad.aspx");
         }
+
+
+        protected void GridView1_RowDeleting1(object sender, GridViewDeleteEventArgs e)
+        {
+
+            try
+            {
+                int indice = Convert.ToInt32(e.RowIndex);
+                int idAux = Int32.Parse(gvEspecialidades.Rows[indice].Cells[0].Text);
+
+                controladorEspecialidad.EliminarEspecialidad(idAux);
+
+                Response.Redirect("AdministrarEspecialidades.aspx");
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
     }
 }

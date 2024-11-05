@@ -94,5 +94,18 @@ namespace Controlador
 
         }
 
+        public void EliminarMedico(int dni)
+        {
+            AccesoDatos Ad = new AccesoDatos();
+            Ad.setearConsulta("delete from Medico where Dni = @DNI");
+            Ad.setearParametro("@DNI" , dni);
+
+            try
+            {
+                Ad.ejecutarAccion();
+            }
+            catch (Exception ex) { throw ex; }
+            finally { Ad.cerrarConexion(); }
+        }
     }
 }

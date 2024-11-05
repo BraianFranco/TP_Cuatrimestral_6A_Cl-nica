@@ -28,7 +28,7 @@
 
 
             <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Dni"
+            <asp:GridView ID="GridView1" DataValueField="Dni"   runat="server"  OnRowDeleting="GridView1_RowDeleting1" AutoGenerateColumns="False"
                 CssClass="table table-striped table-bordered table-hover" HeaderStyle-CssClass="thead-dark">
                 <Columns>
                   
@@ -42,6 +42,8 @@
                         <ItemTemplate>
 
                             <asp:Button runat="server" Text="Editar" CommandName="Edit" CssClass="btn btn-warning btn-sm" />
+                            <asp:Button runat="server"  CssClass="btn btn-danger btn-sm"  Text="Eliminar" CommandName="Delete" CommandArgument='<%# Eval("Dni") %>' />
+
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

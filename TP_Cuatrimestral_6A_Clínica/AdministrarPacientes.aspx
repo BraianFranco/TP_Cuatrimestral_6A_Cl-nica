@@ -24,7 +24,7 @@
             <!-- GridView -->
             <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
             <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
-            <asp:GridView ID="gvPacientes" runat="server" AutoGenerateColumns="False" OnRowCommand="gvPacientes_RowCommand" DataKeyNames="Dni"
+            <asp:GridView ID="gvPacientes" runat="server" AutoGenerateColumns="False" OnRowDeleting="GridView1_RowDeleting1" OnRowCommand="gvPacientes_RowCommand" DataKeyNames="Dni"
                 CssClass="table table-striped table-bordered table-hover" HeaderStyle-CssClass="thead-dark">
                 <Columns>
                     <asp:BoundField DataField="Dni" HeaderText="DNI" />
@@ -35,6 +35,7 @@
                     <asp:TemplateField HeaderText="Acciones">
                         <ItemTemplate>
                             <asp:Button runat="server" Text="Editar" CommandName="Edit" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-warning btn-sm" />
+                             <asp:Button runat="server"  CssClass="btn btn-danger btn-sm"  Text="Eliminar" CommandName="Delete" CommandArgument='<%# Eval("Dni") %>' />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
