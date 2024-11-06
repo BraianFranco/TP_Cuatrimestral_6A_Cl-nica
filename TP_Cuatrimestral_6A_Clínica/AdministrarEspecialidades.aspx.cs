@@ -11,11 +11,15 @@ namespace TP_Cuatrimestral_6A_Clínica
 {
     public partial class AdministrarEspecialidades : System.Web.UI.Page
     {
+
+        public bool ConfirmaEliminacion { get; set; }
+
         ControladorEspecialidad controladorEspecialidad = new ControladorEspecialidad();
 
-
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {   
+            ConfirmaEliminacion = false;
+
             if (!IsPostBack)
             {
                 CargarEspecialidades();
@@ -81,12 +85,13 @@ namespace TP_Cuatrimestral_6A_Clínica
 
             try
             {
-                int indice = Convert.ToInt32(e.RowIndex);
-                int idAux = Int32.Parse(gvEspecialidades.Rows[indice].Cells[0].Text);
+                    int indice = Convert.ToInt32(e.RowIndex);
+                    int idAux = Int32.Parse(gvEspecialidades.Rows[indice].Cells[0].Text);
 
-                controladorEspecialidad.EliminarEspecialidad(idAux);
+                    controladorEspecialidad.EliminarEspecialidad(idAux);
 
-                Response.Redirect("AdministrarEspecialidades.aspx");
+                    Response.Redirect("AdministrarEspecialidades.aspx");
+                           
 
             }
             catch (Exception ex)
@@ -95,6 +100,15 @@ namespace TP_Cuatrimestral_6A_Clínica
                 throw ex;
             }
 
+        }
+        protected void btnConfirmarEliminacionEspecialidad_Click(object sender, EventArgs e)
+        {
+            ConfirmaEliminacion = true;
+        }
+
+        protected void btnCancelarEliminacionEspecialidad_Click(object sender, EventArgs e)
+        {
+            ConfirmaEliminacion = false;
         }
     }
 }

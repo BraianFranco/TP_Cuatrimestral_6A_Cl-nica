@@ -16,9 +16,11 @@ namespace TP_Cuatrimestral_6A_Clínica
     public partial class AdministrarMedicos : System.Web.UI.Page
     {
         ControladorMedico controladorMedico = new ControladorMedico();
-
+        public bool ConfirmaEliminacion { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            ConfirmaEliminacion = false;
+
             if (!IsPostBack)
             {
                
@@ -95,6 +97,16 @@ namespace TP_Cuatrimestral_6A_Clínica
                 throw ex;
             }
 
+        }
+
+        protected void ConfirmarEliminacionMedico_Click(object sender, EventArgs e)
+        {
+            ConfirmaEliminacion = true;
+        }
+
+        protected void btnCancelarEliminacionMedico_Click(object sender, EventArgs e)
+        {
+            ConfirmaEliminacion = false;
         }
     }
    

@@ -13,9 +13,12 @@ namespace TP_Cuatrimestral_6A_Clínica
     {
 
         ControladorPaciente controladorPaciente = new ControladorPaciente();
-
+        public bool ConfirmaEliminacion { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            ConfirmaEliminacion = false;
+
             if (!IsPostBack)
             {
                 CargarPacientes();
@@ -102,6 +105,18 @@ namespace TP_Cuatrimestral_6A_Clínica
                 throw ex;
             }
 
+        }
+
+        protected void btnCancelarEliminacionPaciente_Click(object sender, EventArgs e)
+        {
+            ConfirmaEliminacion = false;
+        }
+
+        protected void btnConfirmarEliminacionPaciente_Click(object sender, EventArgs e)
+        {
+            
+
+            ConfirmaEliminacion = true;
         }
     }
 }
