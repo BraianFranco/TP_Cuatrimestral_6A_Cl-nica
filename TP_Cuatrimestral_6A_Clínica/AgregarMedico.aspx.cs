@@ -33,13 +33,13 @@ namespace TP_Cuatrimestral_6A_Clínica
 
         protected void BtnAgregarMedico_Click(object sender, EventArgs e)
         {
-            ControladorMedico CPaciente = new ControladorMedico();
+            ControladorMedico CMedico = new ControladorMedico();
             Medico medico = new Medico();
 
 
             if (ValidarCamposMedico() == true)
             {
-                if (!CPaciente.MedicoExiste(Int32.Parse(txtDniMedico.Text)))
+                if (!CMedico.MedicoExiste(Int32.Parse(txtDniMedico.Text)))
                 {
                     medico.Dni = Int32.Parse(txtDniMedico.Text);
                     medico.Nombre = txtNombreMedico.Text;
@@ -48,7 +48,7 @@ namespace TP_Cuatrimestral_6A_Clínica
                     medico.Correo = txtCorreoMedico.Text;
                     medico.IdPais = Int32.Parse(ddlPais.SelectedValue);
 
-                    CPaciente.InsertarMedico(medico);
+                    CMedico.InsertarMedico(medico);
                     LimpiarControles();
 
 

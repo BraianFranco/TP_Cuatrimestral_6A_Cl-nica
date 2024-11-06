@@ -35,7 +35,11 @@
         <div class="col-md-11">
             <asp:Button ID="btnAgregarMedico" CssClass="btn btn-danger" OnClick="BtnAgregarMedico_Click" runat="server" Text="AGREGAR" />
             <asp:Button ID="btnCancelarMedico" CssClass="btn btn-danger" OnClick="btnCancelarMedico_Click" runat="server" Text="CANCELAR" />
-            <asp:Label ID="lblErrorMedicoExistente" runat="server" Text=""></asp:Label>
+
+            <div>
+                <asp:Label ID="lblErrorMedicoExistente" runat="server" Text=""></asp:Label>
+            </div>
+            
         </div>
     </div>
 

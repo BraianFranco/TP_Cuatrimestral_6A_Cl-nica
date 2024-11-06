@@ -33,7 +33,7 @@ namespace TP_Cuatrimestral_6A_Clínica
             {
                 try
                 {
-                    
+                            
                     var listaMedicos = controladorMedico.Listar();
 
    
