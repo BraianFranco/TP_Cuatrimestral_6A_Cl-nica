@@ -14,6 +14,7 @@ namespace TP_Cuatrimestral_6A_Clínica
 
         ControladorPaciente controladorPaciente = new ControladorPaciente();
         public bool ConfirmaEliminacion { get; set; }
+        private static int DNIAUX;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -94,9 +95,9 @@ namespace TP_Cuatrimestral_6A_Clínica
                 int indice = Convert.ToInt32(e.RowIndex);
                 int dniAux = Int32.Parse(gvPacientes.Rows[indice].Cells[0].Text);
 
-                controladorPaciente.EliminarPaciente(dniAux);
+                DNIAUX = dniAux;
 
-                Response.Redirect("AdministrarPacientes.aspx");
+                ConfirmaEliminacion = true;
 
             }
             catch (Exception ex)
@@ -114,9 +115,13 @@ namespace TP_Cuatrimestral_6A_Clínica
 
         protected void btnConfirmarEliminacionPaciente_Click(object sender, EventArgs e)
         {
-            
+            if (DNIAUX.ToString() != string.Empty)
+            {
+                controladorPaciente.EliminarPaciente(DNIAUX);
 
-            ConfirmaEliminacion = true;
+                Response.Redirect("AdministrarPacientes.aspx");
+            }
+
         }
     }
 }

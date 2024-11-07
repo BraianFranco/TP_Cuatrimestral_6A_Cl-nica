@@ -28,7 +28,7 @@
 
 
             <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
-            <asp:GridView ID="GridView1" DataValueField="Dni" runat="server" OnRowDeleting="GridView1_RowDeleting1"  OnRowCommand="GridView1_RowCommand" AutoGenerateColumns="False"
+            <asp:GridView ID="GridView1" DataValueField="Dni" runat="server" OnRowDeleting="GridView1_RowDeleting1" OnRowCommand="GridView1_RowCommand" AutoGenerateColumns="False"
                 CssClass="table table-striped table-bordered table-hover" HeaderStyle-CssClass="thead-dark">
                 <Columns>
 
@@ -42,15 +42,8 @@
                         <ItemTemplate>
 
                             <asp:Button runat="server" Text="Editar" CommandName="Edit" CommandArgument='<%# Eval("Dni") %>' CssClass="btn btn-warning btn-sm" />
-                            <asp:Button runat="server" ID="ConfirmarEliminacionMedico" CssClass="btn btn-danger btn-sm" Text="Eliminar" OnClick="ConfirmarEliminacionMedico_Click" CommandArgument='<%# Eval("Dni") %>' />
+                            <asp:Button runat="server" ID="ConfirmarEliminacionMedico" CssClass="btn btn-danger btn-sm" CommandName="Delete"  Text="Eliminar"  CommandArgument='<%# Eval("Dni") %>' />
 
-
-                            <%if (ConfirmaEliminacion)
-                                {  %>
-                            <asp:Button runat="server" Text="Confirmar" CssClass="btn btn-outline-danger " CommandName="Delete" CommandArgument='<%# Eval("Dni") %>' />
-                            <asp:Button runat="server" ID="btnCancelarEliminacionMedico" Text="Cancelar" CssClass="btn btn-outline-danger " OnClick="btnCancelarEliminacionMedico_Click" />
-
-                            <% } %>
 
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -58,6 +51,14 @@
             </asp:GridView>
 
         </div>
+
+        <%if (ConfirmaEliminacion)
+            {  %>
+        <label>Esta Seguro/a de eliminar este Médico ?</label>
+        <asp:Button runat="server" Text="Confirmar" CssClass="btn btn-outline-danger " OnClick="ConfirmarEliminacionMedico_Click"/>
+        <asp:Button runat="server" ID="btnCancelarEliminacionMedico" Text="Cancelar" CssClass="btn btn-outline-danger " OnClick="btnCancelarEliminacionMedico_Click" />
+
+        <% } %>
     </div>
 
 </asp:Content>

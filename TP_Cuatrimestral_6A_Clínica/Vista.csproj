@@ -71,7 +71,7 @@
     <Content Include="AgregarEspecialidad.aspx" />
     <Content Include="AgregarMedico.aspx" />
     <Content Include="AgregarPaciente.aspx" />
-    <Content Include="AgregarUsuario.aspx" />
+    <Content Include="AgregarUsuario2.0.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\roslyn\csc.exe" />
@@ -191,12 +191,12 @@
     <Compile Include="AgregarPaciente.aspx.designer.cs">
       <DependentUpon>AgregarPaciente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AgregarUsuario.aspx.cs">
-      <DependentUpon>AgregarUsuario.aspx</DependentUpon>
+    <Compile Include="AgregarUsuario2.0.aspx.cs">
+      <DependentUpon>AgregarUsuario2.0.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AgregarUsuario.aspx.designer.cs">
-      <DependentUpon>AgregarUsuario.aspx</DependentUpon>
+    <Compile Include="AgregarUsuario2.0.aspx.designer.cs">
+      <DependentUpon>AgregarUsuario2.0.aspx</DependentUpon>
     </Compile>
     <Compile Include="CargarObservacion.aspx.cs">
       <DependentUpon>CargarObservacion.aspx</DependentUpon>

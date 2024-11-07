@@ -29,5 +29,10 @@ namespace TP_Cuatrimestral_6A_Clínica
 
             Response.Redirect("default.aspx");
         }
+
+        protected void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AgregarUsuario2.0.aspx");
+        }
     }
 }

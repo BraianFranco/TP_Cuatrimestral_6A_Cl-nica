@@ -103,9 +103,9 @@ namespace TP_Cuatrimestral_6A_Clínica
                         {
                             controladorMedico.InsertarMedico(medico);
                             LimpiarControles();
-                            lblConfirmacion.Text = "Éxito - Médico agregado.";
-                            lblConfirmacion.ForeColor = System.Drawing.Color.Green;
-                            lblConfirmacion.Visible = true;
+                            lblErrorMedicoExistente.Text = "Éxito - Médico agregado.";
+                            lblErrorMedicoExistente.ForeColor = System.Drawing.Color.Green;
+                            lblErrorMedicoExistente.Visible = true;
                         }
                         else
                         {

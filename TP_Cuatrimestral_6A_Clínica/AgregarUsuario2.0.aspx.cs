@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace TP_Cuatrimestral_6A_Clínica
 {
-    public partial class AgregarUsuario : System.Web.UI.Page
+    public partial class AgregarUsuario2__0 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +31,6 @@ namespace TP_Cuatrimestral_6A_Clínica
 
                 throw;
             }
-
         }
 
         protected void btnAgregarUsuario_Click(object sender, EventArgs e)
@@ -54,13 +53,13 @@ namespace TP_Cuatrimestral_6A_Clínica
                     LimpiarControles();
 
 
-                    lblErrorUsuarioExistente.Text = "ÉXITO ! - Médico cargado";
+                    lblErrorUsuarioExistente.Text = "ÉXITO ! - USUARIO REGISTRADO";
                     lblErrorUsuarioExistente.ForeColor = System.Drawing.Color.Green;
 
                 }
                 else
                 {
-                    lblErrorUsuarioExistente.Text = "ERROR ! - Médico existente";
+                    lblErrorUsuarioExistente.Text = "ERROR ! - USARIO EXISTENTE";
                     lblErrorUsuarioExistente.ForeColor = System.Drawing.Color.Red;
 
                 }
@@ -72,7 +71,7 @@ namespace TP_Cuatrimestral_6A_Clínica
 
         protected void btnCancelarUsuario_Click(object sender, EventArgs e)
         {
-        
+            Response.Redirect("Login.aspx");
         }
 
 

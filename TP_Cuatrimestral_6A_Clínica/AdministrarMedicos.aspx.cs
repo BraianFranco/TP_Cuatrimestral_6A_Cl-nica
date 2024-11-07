@@ -17,6 +17,7 @@ namespace TP_Cuatrimestral_6A_Clínica
     {
         ControladorMedico controladorMedico = new ControladorMedico();
         public bool ConfirmaEliminacion { get; set; }
+        private static int DNIAUX;
         protected void Page_Load(object sender, EventArgs e)
         {
             ConfirmaEliminacion = false;
@@ -89,16 +90,16 @@ namespace TP_Cuatrimestral_6A_Clínica
         }
 
         protected void GridView1_RowDeleting1(object sender, GridViewDeleteEventArgs e)
-        {          
+        {
 
             try
             {
                 int indice = Convert.ToInt32(e.RowIndex);
                 int dniAux = Int32.Parse(GridView1.Rows[indice].Cells[0].Text);
 
-                controladorMedico.EliminarMedico(dniAux);
+                DNIAUX = dniAux;
 
-                Response.Redirect("AdministrarMedicos.aspx");
+                ConfirmaEliminacion = true;
 
             }
             catch (Exception ex)
@@ -111,7 +112,12 @@ namespace TP_Cuatrimestral_6A_Clínica
 
         protected void ConfirmarEliminacionMedico_Click(object sender, EventArgs e)
         {
-            ConfirmaEliminacion = true;
+            if (DNIAUX.ToString() != string.Empty)
+            {
+                controladorMedico.EliminarMedico(DNIAUX);
+
+                Response.Redirect("AdministrarMedicos.aspx");
+            }
         }
 
         protected void btnCancelarEliminacionMedico_Click(object sender, EventArgs e)

@@ -113,13 +113,13 @@ namespace TP_Cuatrimestral_6A_Clínica
                         {
                             controladorPaciente.InsertarPaciente(paciente);
                             LimpiarControles();
-                            lblConfirmacion.Text = "Éxito - Paciente agregado.";
-                            lblConfirmacion.ForeColor = System.Drawing.Color.Green;
+                            lblErrorPacienteExistente.Text = "Éxito - PACIENTE AGREGADO.";
+                            lblErrorPacienteExistente.ForeColor = System.Drawing.Color.Green;
                             lblConfirmacion.Visible = true;
                         }
                         else
                         {
-                            lblErrorPacienteExistente.Text = "Error - Paciente ya existe.";
+                            lblErrorPacienteExistente.Text = "Error - PACIENTE YA EXISTENTE.";
                             lblErrorPacienteExistente.ForeColor = System.Drawing.Color.Red;
                             lblErrorPacienteExistente.Visible = true;
                         }

@@ -40,14 +40,7 @@
                         <ItemTemplate>
 
                             <asp:Button runat="server" Text="Editar" CommandName="Edit" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-warning btn-sm" />
-                            <asp:Button runat="server" ID="btnConfirmarEliminacionEspecialidad" CssClass="btn btn-danger btn-sm" CommandArgument='<%# Eval("Id") %>' OnClick="btnConfirmarEliminacionEspecialidad_Click" Text="Eliminar" />
-
-                            <%if (ConfirmaEliminacion)
-                                {  %>
-                            <asp:Button runat="server" Text="Confirmar" CssClass="btn btn-outline-danger " CommandName="Delete" CommandArgument='<%# Eval("Id") %>' />
-                            <asp:Button runat="server" ID="btnCancelarEliminacionEspecialidad" Text="Cancelar" CssClass="btn btn-outline-danger " OnClick="btnCancelarEliminacionEspecialidad_Click" />
-
-                            <% } %>
+                            <asp:Button runat="server" ID="btnConfirmarEliminacionEspecialidad" CssClass="btn btn-danger btn-sm" CommandArgument='<%# Eval("Id") %>' CommandName="Delete" Text="Eliminar" />
 
 
                         </ItemTemplate>
@@ -56,6 +49,14 @@
             </asp:GridView>
 
         </div>
+
+        <%if (ConfirmaEliminacion)
+            {  %>
+            <label>¿Esta Seguro/a de eliminar esta Especialidad ?</label>
+            <asp:Button runat="server" Text="Confirmar" CssClass="btn btn-outline-danger " OnClick="btnConfirmarEliminacionEspecialidad_Click" />
+            <asp:Button runat="server" ID="btnCancelarEliminacionEspecialidad" Text="Cancelar" CssClass="btn btn-outline-danger " OnClick="btnCancelarEliminacionEspecialidad_Click" />
+
+        <% } %>
     </div>
 
 </asp:Content>

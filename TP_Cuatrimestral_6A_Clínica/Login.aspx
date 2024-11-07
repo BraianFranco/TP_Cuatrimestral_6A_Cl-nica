@@ -34,6 +34,8 @@
                         </div>
                         <div id="center">
                             <asp:Button ID="btnIngresar" runat="server" CssClass="btn btn-modern" Text="Ingresar" OnClick="btnIngresar_Click" />
+                            <label></label>
+                            <asp:Button ID="btnRegistrar" CausesValidation="false" UseSubmitBehavior="false" runat="server" CssClass="btn btn-modern" Text="Registrarse" OnClick="btnRegistrar_Click" />
                         </div>
                     </div>
                 </div>
