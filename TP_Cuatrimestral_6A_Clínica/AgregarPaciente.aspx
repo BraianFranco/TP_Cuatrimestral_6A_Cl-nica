@@ -30,11 +30,11 @@
         </div>
         <div class="col-md-11">
             <asp:Label Style="color: red" ID="lblErrorNacimientoPaciente" runat="server" Text=""></asp:Label>
-            <asp:TextBox type="Date" ID="txtFechaNacimientoPaciente" CssClass="form-control" runat="server"></asp:TextBox>
+            <asp:TextBox type="Date" min="1900-01-01" max="2025-12-31" ID="txtFechaNacimientoPaciente" CssClass="form-control" runat="server"></asp:TextBox>
         </div>
         <div class="col-md-11">
             <asp:Label Style="color: red" ID="lblErrorDireccionPaciente" runat="server" Text=""></asp:Label>
-            <asp:TextBox ID="txtDireccionPaciente" CssClass="form-control " runat="server" placeholder="Direccion..."></asp:TextBox>
+            <asp:TextBox ID="txtDireccionPaciente" CssClass="form-control" runat="server" placeholder="Direccion..."></asp:TextBox>
         </div>
         <div class="col-md-11">
             <asp:Label ID="lblPaisPaciente" runat="server" Text="País" CssClass="text-black"></asp:Label>
