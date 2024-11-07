@@ -38,6 +38,7 @@
 
             <div>
                 <asp:Label ID="lblErrorMedicoExistente" runat="server" Text=""></asp:Label>
+                <asp:Label ID="lblConfirmacion" runat="server" ForeColor="Green" Text=""></asp:Label>
             </div>
             
         </div>

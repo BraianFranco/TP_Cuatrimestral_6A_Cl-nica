@@ -28,6 +28,16 @@ namespace TP_Cuatrimestral_6A_Clínica
             }
         }
 
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Edit")
+            {
+                long medicoDni = Convert.ToInt64(e.CommandArgument);
+
+                Response.Redirect($"AgregarMedico.aspx?Dni={medicoDni}");
+            }
+        }
+
         private void CargarMedicos()
         {
             {

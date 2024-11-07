@@ -31,13 +31,13 @@ namespace Controlador
 
                     Medico aux = new Medico();
 
-                    aux.Dni = Convert.ToInt32(Ad.Lector["Dni"]); // BIGINT -> long
-                    aux.Nombre = Ad.Lector["Nombre"].ToString(); // VARCHAR -> string
-                    aux.Apellido = Ad.Lector["Apellido"].ToString(); // VARCHAR -> string
-                    aux.Telefono = Ad.Lector["NroTelefono"].ToString(); // VARCHAR -> string
-                    aux.Correo = Ad.Lector["Correo"].ToString(); // VARCHAR -> string
-                    aux.IdPais = Convert.ToInt32(Ad.Lector["IdPais"]); // INT -> int
-                    aux.Activo = Convert.ToBoolean(Ad.Lector["Activo"]); // BIT -> bool
+                    aux.Dni = Convert.ToInt32(Ad.Lector["Dni"]);
+                    aux.Nombre = Ad.Lector["Nombre"].ToString(); 
+                    aux.Apellido = Ad.Lector["Apellido"].ToString();
+                    aux.Telefono = Ad.Lector["NroTelefono"].ToString(); 
+                    aux.Correo = Ad.Lector["Correo"].ToString();
+                    aux.IdPais = Convert.ToInt32(Ad.Lector["IdPais"]); 
+                    aux.Activo = Convert.ToBoolean(Ad.Lector["Activo"]);
 
                     lista.Add(aux);
                 }
@@ -49,6 +49,58 @@ namespace Controlador
 
             return lista;
 
+        }
+
+        public Medico ObtenerMedicoPorDni(long dni)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT Dni, Nombre, Apellido, NroTelefono, Correo, IdPais, Activo FROM Medico WHERE Dni = @Dni");
+                datos.setearParametro("@Dni", dni);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    return new Medico
+                    {
+                        Dni = (int)Convert.ToInt64(datos.Lector["Dni"]),
+                        Nombre = datos.Lector["Nombre"].ToString(),
+                        Apellido = datos.Lector["Apellido"].ToString(),
+                        Telefono = datos.Lector["NroTelefono"].ToString(),
+                        Correo = datos.Lector["Correo"].ToString(),
+                        IdPais = Convert.ToInt32(datos.Lector["IdPais"]),
+                        Activo = Convert.ToBoolean(datos.Lector["Activo"])
+                    };
+                }
+                return null;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+
+        public void ActualizarMedico(Medico medico)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Medico SET Nombre = @Nombre, Apellido = @Apellido, NroTelefono = @NroTelefono, Correo = @Correo, IdPais = @IdPais, Activo = @Activo WHERE Dni = @Dni");
+                datos.setearParametro("@Nombre", medico.Nombre);
+                datos.setearParametro("@Apellido", medico.Apellido);
+                datos.setearParametro("@NroTelefono", medico.Telefono);
+                datos.setearParametro("@Correo", medico.Correo);
+                datos.setearParametro("@IdPais", medico.IdPais);
+                datos.setearParametro("@Activo", medico.Activo);
+                datos.setearParametro("@Dni", medico.Dni);
+                datos.ejecutarAccion();
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
 
         public bool MedicoExiste(int dni)

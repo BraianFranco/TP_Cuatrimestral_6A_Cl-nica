@@ -8,6 +8,21 @@ namespace TP_Cuatrimestral_6A_Clínica
 {
     public partial class AgregarMedico : System.Web.UI.Page
     {
+
+        ControladorMedico controladorMedico = new ControladorMedico();
+
+        private long? MedicoDni
+        {
+            get
+            {
+                long dni;
+                if (long.TryParse(Request.QueryString["Dni"], out dni))
+                    return dni;
+                return null;
+            }
+        }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -21,6 +36,11 @@ namespace TP_Cuatrimestral_6A_Clínica
                     ddlPais.DataSource = ListaPaises;
                     ddlPais.DataBind();
 
+                    if (MedicoDni.HasValue)
+                    {
+                        CargarDatosMedico(MedicoDni.Value);
+                    }
+
                 }
             }
             catch (Exception)
@@ -31,38 +51,78 @@ namespace TP_Cuatrimestral_6A_Clínica
 
         }
 
+        private void CargarDatosMedico(long dni)
+        {
+            var medico = controladorMedico.ObtenerMedicoPorDni(dni);
+            if (medico != null)
+            {
+                txtDniMedico.Text = medico.Dni.ToString();
+                txtDniMedico.Enabled = false; 
+                txtNombreMedico.Text = medico.Nombre;
+                txtApellidoMedico.Text = medico.Apellido;
+                txtTelMedico.Text = medico.Telefono;
+                txtCorreoMedico.Text = medico.Correo;
+                ddlPais.SelectedValue = medico.IdPais.ToString();
+               // chkActivo.Checked = medico.Activo;
+            }
+            else
+            {
+                lblErrorMedicoExistente.Text = "Error - Médico no encontrado.";
+                lblErrorMedicoExistente.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+
         protected void BtnAgregarMedico_Click(object sender, EventArgs e)
         {
-            ControladorMedico CMedico = new ControladorMedico();
-            Medico medico = new Medico();
-
-
-            if (ValidarCamposMedico() == true)
+            if (ValidarCamposMedico())
             {
-                if (!CMedico.MedicoExiste(Int32.Parse(txtDniMedico.Text)))
+                Medico medico = new Medico
                 {
-                    medico.Dni = Int32.Parse(txtDniMedico.Text);
-                    medico.Nombre = txtNombreMedico.Text;
-                    medico.Apellido = txtApellidoMedico.Text;
-                    medico.Telefono = txtTelMedico.Text;
-                    medico.Correo = txtCorreoMedico.Text;
-                    medico.IdPais = Int32.Parse(ddlPais.SelectedValue);
+                    Dni = (int)(MedicoDni ?? long.Parse(txtDniMedico.Text)),
+                    Nombre = txtNombreMedico.Text,
+                    Apellido = txtApellidoMedico.Text,
+                    Telefono = txtTelMedico.Text,
+                    Correo = txtCorreoMedico.Text,
+                    IdPais = int.Parse(ddlPais.SelectedValue),
+                    //Activo = chkActivo.Checked
+                };
 
-                    CMedico.InsertarMedico(medico);
-                    LimpiarControles();
+                try
+                {
+                    if (MedicoDni.HasValue)
+                    {
+                        controladorMedico.ActualizarMedico(medico);
+                        lblConfirmacion.Text = "Médico actualizado correctamente.";
+                        lblConfirmacion.ForeColor = System.Drawing.Color.Green;
+                        lblConfirmacion.Visible = true;
+                    }
+                    else
+                    {
+                        if (!controladorMedico.MedicoExiste(medico.Dni))
+                        {
+                            controladorMedico.InsertarMedico(medico);
+                            LimpiarControles();
+                            lblConfirmacion.Text = "Éxito - Médico agregado.";
+                            lblConfirmacion.ForeColor = System.Drawing.Color.Green;
+                            lblConfirmacion.Visible = true;
+                        }
+                        else
+                        {
+                            lblErrorMedicoExistente.Text = "Error - Médico ya existe.";
+                            lblErrorMedicoExistente.ForeColor = System.Drawing.Color.Red;
+                            lblErrorMedicoExistente.Visible = true;
+                        }
+                    }
 
-
-                    lblErrorMedicoExistente.Text = "ÉXITO ! - Médico cargado";
-                    lblErrorMedicoExistente.ForeColor = System.Drawing.Color.Green;
-
+                   // Response.Redirect("AdministrarMedicos.aspx");
                 }
-                else
+                catch (Exception ex)
                 {
-                    lblErrorMedicoExistente.Text = "ERROR ! - Médico existente";
+                    lblErrorMedicoExistente.Text = "Error - " + ex.Message;
                     lblErrorMedicoExistente.ForeColor = System.Drawing.Color.Red;
-
+                    lblErrorMedicoExistente.Visible = true;
                 }
-
             }
         }
 
