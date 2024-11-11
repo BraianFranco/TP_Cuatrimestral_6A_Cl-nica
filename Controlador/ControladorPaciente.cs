@@ -167,6 +167,45 @@ namespace Controlador
             finally { Ad.cerrarConexion(); }
         }
 
+
+        public Paciente FiltrarPorDni(int dni)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+
+                string Consulta = "select Dni, Nombre, Apellido , NroTelefono , Correo , Activo , IdPais ,  FechaNac , Direccion FROM Paciente WHERE Dni like " + dni;
+
+                datos.setearConsulta(Consulta);
+                datos.ejecutarLectura();
+
+
+                datos.Lector.Read();
+
+
+                Paciente aux = new Paciente();
+
+                aux.nombre = (string)datos.Lector["Nombre"];
+                aux.dni = (int)(long)datos.Lector["Dni"];
+                aux.apellido = (string)datos.Lector["Apellido"];
+                aux.tel = (string)datos.Lector["NroTelefono"];
+                aux.correo = (string)datos.Lector["Correo"];
+                aux.idPais = (int)datos.Lector["IdPais"];
+                aux.fechanacimiento = (DateTime)datos.Lector["FechaNac"];
+                aux.direccion = (string)datos.Lector["Direccion"];
+                aux.activo = (bool)datos.Lector["Activo"];
+
+                return aux;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         //public int ObtenerIdCliente(Paciente cliente)
         //{
         //    AccesoDatos Ad = new AccesoDatos();

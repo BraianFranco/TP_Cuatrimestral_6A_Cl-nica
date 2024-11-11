@@ -1,4 +1,5 @@
 ﻿using Controlador;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -114,6 +115,51 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected void btnCancelarEliminacionEspecialidad_Click(object sender, EventArgs e)
         {
             ConfirmaEliminacion = false;
+        }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtFiltro.Text.Trim()))
+            {
+                try
+                {
+                    
+
+                    DataTable dtEspecialidadesFiltrada = new DataTable();
+                    dtEspecialidadesFiltrada.Columns.Add("Id", typeof(int));
+                    dtEspecialidadesFiltrada.Columns.Add("Nombre", typeof(string));
+                    dtEspecialidadesFiltrada.Columns.Add("Descripcion", typeof(string));
+
+                    var listaEspecialidades = controladorEspecialidad.FiltrarPorNombre(txtFiltro.Text.Trim());
+
+
+                    foreach (var especialidad in listaEspecialidades)
+                    {
+                        dtEspecialidadesFiltrada.Rows.Add(
+                            especialidad.Id,
+                            especialidad.Nombre,
+                            especialidad.Descripcion
+                        );
+                    }
+
+
+                    gvEspecialidades.DataSource = dtEspecialidadesFiltrada;
+                    gvEspecialidades.DataBind();
+
+                    lblMensaje.Text = "";
+
+
+                }
+                catch (Exception ex)
+                {
+                    lblMensaje.Text = "Error al cargar especialidades: " + ex.Message;
+                }
+            }
+            else
+            {
+                CargarEspecialidades();
+            }
+
         }
     }
 }

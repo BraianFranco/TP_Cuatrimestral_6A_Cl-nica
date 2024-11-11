@@ -9,6 +9,7 @@ using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Net;
 
 
 namespace TP_Cuatrimestral_6A_Clínica
@@ -24,7 +25,7 @@ namespace TP_Cuatrimestral_6A_Clínica
 
             if (!IsPostBack)
             {
-               
+
                 CargarMedicos();
             }
         }
@@ -44,10 +45,10 @@ namespace TP_Cuatrimestral_6A_Clínica
             {
                 try
                 {
-                            
+
                     var listaMedicos = controladorMedico.Listar();
 
-   
+
                     DataTable dtMedicos = new DataTable();
 
                     dtMedicos.Columns.Add("Dni", typeof(long));
@@ -58,7 +59,7 @@ namespace TP_Cuatrimestral_6A_Clínica
                     dtMedicos.Columns.Add("IdPais", typeof(int));
                     dtMedicos.Columns.Add("Activo", typeof(bool));
 
-                        
+
                     foreach (var medico in listaMedicos)
                     {
                         dtMedicos.Rows.Add(
@@ -124,6 +125,57 @@ namespace TP_Cuatrimestral_6A_Clínica
         {
             ConfirmaEliminacion = false;
         }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+
+
+            if (!string.IsNullOrEmpty(txtFiltrar.Text))
+            {
+                try
+                {
+
+                    DataTable dtMedicosFiltrada = new DataTable();
+
+                    dtMedicosFiltrada.Columns.Add("Dni", typeof(long));
+                    dtMedicosFiltrada.Columns.Add("Nombre", typeof(string));
+                    dtMedicosFiltrada.Columns.Add("Apellido", typeof(string));
+                    dtMedicosFiltrada.Columns.Add("NroTelefono", typeof(string));
+                    dtMedicosFiltrada.Columns.Add("Correo", typeof(string));
+                    dtMedicosFiltrada.Columns.Add("IdPais", typeof(int));
+                    dtMedicosFiltrada.Columns.Add("Activo", typeof(bool));
+
+                    Medico medico = controladorMedico.FiltrarPorDni(Int32.Parse(txtFiltrar.Text));
+
+                    dtMedicosFiltrada.Rows.Add(
+                        medico.Dni,
+                        medico.Nombre,
+                        medico.Apellido,
+                        medico.Telefono,
+                        medico.Correo,
+                        medico.IdPais,
+                        medico.Activo
+                    );
+
+
+                    GridView1.DataSource = dtMedicosFiltrada;
+                    GridView1.DataBind();
+
+                    lblMensaje.Text = "";
+
+
+                }
+                catch (Exception)
+                {
+                    lblMensaje.Text = "ERROR - NO EXISTE MÉDICO CON ESE DNI";
+                }
+            }
+            else
+            {
+                CargarMedicos();
+            }
+            
+        }
     }
-   
+
 }

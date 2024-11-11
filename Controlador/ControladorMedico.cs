@@ -32,11 +32,11 @@ namespace Controlador
                     Medico aux = new Medico();
 
                     aux.Dni = Convert.ToInt32(Ad.Lector["Dni"]);
-                    aux.Nombre = Ad.Lector["Nombre"].ToString(); 
+                    aux.Nombre = Ad.Lector["Nombre"].ToString();
                     aux.Apellido = Ad.Lector["Apellido"].ToString();
-                    aux.Telefono = Ad.Lector["NroTelefono"].ToString(); 
+                    aux.Telefono = Ad.Lector["NroTelefono"].ToString();
                     aux.Correo = Ad.Lector["Correo"].ToString();
-                    aux.IdPais = Convert.ToInt32(Ad.Lector["IdPais"]); 
+                    aux.IdPais = Convert.ToInt32(Ad.Lector["IdPais"]);
                     aux.Activo = Convert.ToBoolean(Ad.Lector["Activo"]);
 
                     lista.Add(aux);
@@ -154,7 +154,7 @@ namespace Controlador
 
 
             Ad.setearConsulta("delete from Medico where Dni = @DNI");
-            Ad.setearParametro("@DNI" , dni);
+            Ad.setearParametro("@DNI", dni);
 
             try
             {
@@ -162,6 +162,42 @@ namespace Controlador
             }
             catch (Exception ex) { throw ex; }
             finally { Ad.cerrarConexion(); }
+        }
+
+
+        public Medico FiltrarPorDni(int dni)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+
+                string Consulta = "select Dni, Nombre, Apellido , NroTelefono , Correo , Activo , IdPais FROM Medico WHERE Dni like " + dni;
+
+                datos.setearConsulta(Consulta);
+                datos.ejecutarLectura();
+
+
+                datos.Lector.Read();
+
+                Medico aux = new Medico();
+
+                aux.Nombre = (string)datos.Lector["Nombre"];
+                aux.Dni = (int)(long)datos.Lector["Dni"];
+                aux.Apellido = (string)datos.Lector["Apellido"];
+                aux.Telefono = (string)datos.Lector["NroTelefono"];
+                aux.Correo = (string)datos.Lector["Correo"];
+                aux.IdPais = (int)datos.Lector["IdPais"];
+                aux.Activo = (bool)datos.Lector["Activo"];
+
+
+                return aux;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

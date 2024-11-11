@@ -1,4 +1,5 @@
 ﻿using Controlador;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -120,6 +121,59 @@ namespace TP_Cuatrimestral_6A_Clínica
                 controladorPaciente.EliminarPaciente(DNIAUX);
 
                 Response.Redirect("AdministrarPacientes.aspx");
+            }
+
+        }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtFiltrar.Text))
+            {
+                try
+                {
+
+                    DataTable dtPacientesFiltrada = new DataTable();
+                    dtPacientesFiltrada.Columns.Add("Dni", typeof(long));
+                    dtPacientesFiltrada.Columns.Add("Nombre", typeof(string));
+                    dtPacientesFiltrada.Columns.Add("Apellido", typeof(string));
+                    dtPacientesFiltrada.Columns.Add("NroTelefono", typeof(string));
+                    dtPacientesFiltrada.Columns.Add("FechaNac", typeof(DateTime));
+                    dtPacientesFiltrada.Columns.Add("Correo", typeof(string));
+                    dtPacientesFiltrada.Columns.Add("IdPais", typeof(int));
+                    dtPacientesFiltrada.Columns.Add("Direccion", typeof(string));
+                    dtPacientesFiltrada.Columns.Add("Activo", typeof(bool));
+
+                    Paciente paciente = controladorPaciente.FiltrarPorDni(Int32.Parse(txtFiltrar.Text));
+
+
+                    dtPacientesFiltrada.Rows.Add(
+                        paciente.dni,
+                        paciente.nombre,
+                        paciente.apellido,
+                        paciente.tel,
+                        paciente.fechanacimiento,
+                        paciente.correo,
+                        paciente.idPais,
+                        paciente.direccion,
+                        paciente.activo
+                    );
+
+
+                    gvPacientes.DataSource = dtPacientesFiltrada;
+                    gvPacientes.DataBind();
+
+                    lblMensaje.Text = "";
+
+
+                }
+                catch (Exception)
+                {
+                    lblMensaje.Text = "ERROR - NO EXISTE PACIENTE CON ESE DNI";
+                }
+            }
+            else
+            {
+                CargarPacientes();
             }
 
         }

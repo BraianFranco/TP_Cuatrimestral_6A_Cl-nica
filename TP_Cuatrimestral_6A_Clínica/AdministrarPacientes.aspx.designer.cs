@@ -15,6 +15,15 @@ namespace TP_Cuatrimestral_6A_Clínica
     {
 
         /// <summary>
+        /// txtFiltrar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFiltrar;
+
+        /// <summary>
         /// btnFiltrar control.
         /// </summary>
         /// <remarks>

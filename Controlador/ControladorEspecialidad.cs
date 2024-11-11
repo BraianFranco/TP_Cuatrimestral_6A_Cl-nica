@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Modelo;
 
 namespace Controlador
@@ -136,5 +138,38 @@ namespace Controlador
             finally { Ad.cerrarConexion(); }
         }
 
+        public List<Especialidad> FiltrarPorNombre(string nombre)
+        {
+            List<Especialidad> listaFiltrada = new List<Especialidad>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+
+                string Consulta = "select Id, Nombre, Descripcion FROM Especialidades WHERE Nombre like '%" + nombre + "%'";
+
+                datos.setearConsulta(Consulta);
+                datos.ejecutarLectura();
+
+
+
+                while (datos.Lector.Read())
+                {
+                    Especialidad aux = new Especialidad();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+
+                    listaFiltrada.Add(aux);
+                }
+
+                return listaFiltrada;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

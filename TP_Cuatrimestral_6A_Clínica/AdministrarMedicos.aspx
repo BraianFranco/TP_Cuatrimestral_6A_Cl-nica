@@ -12,10 +12,10 @@
 
             <div class="row mb-3">
                 <div class="col">
-                    <input type="text" id="txtFiltro" class="form-control" placeholder="Buscar por DNI" />
+                    <asp:TextBox type="number" id="txtFiltrar"  max="99999999" CssClass="form-control"  placeholder="Buscar por DNI" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-auto">
-                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" CssClass="btn btn-primary" />
+                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Onclick="btnFiltrar_Click" CssClass="btn btn-primary" />
                 </div>
 
                 <div class="col-auto">

@@ -16,10 +16,10 @@
 
             <div class="row mb-3">
                 <div class="col">
-                    <input type="text" id="txtFiltro" class="form-control" placeholder="Buscar por Nombre" />
+                    <asp:TextBox id="txtFiltro" CssClass="form-control"  placeholder="Buscar por Nombre" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-auto">
-                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" CssClass="btn btn-primary" />
+                    <asp:Button ID="btnFiltrar" runat="server" OnClick="btnFiltrar_Click" Text="Filtrar" CssClass="btn btn-primary" />
                 </div>
 
                 <div class="col-auto">
