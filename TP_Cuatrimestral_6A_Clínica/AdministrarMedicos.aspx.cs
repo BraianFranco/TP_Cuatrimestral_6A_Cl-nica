@@ -32,11 +32,25 @@ namespace TP_Cuatrimestral_6A_Clínica
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+
+
             if (e.CommandName == "Edit")
             {
                 long medicoDni = Convert.ToInt64(e.CommandArgument);
 
                 Response.Redirect($"AgregarMedico.aspx?Dni={medicoDni}");
+            }
+
+            else if (e.CommandName == "VerHorarios")
+            {
+                long medicoDni = Convert.ToInt64(e.CommandArgument);
+
+                ControladorHorarioMedico controladorHorario = new ControladorHorarioMedico();
+
+                List<HorarioMedico> horarios = controladorHorario.ObtenerHorariosPorMedico(medicoDni);
+                lblHorarios.Text = controladorHorario.FormatearHorarios(horarios);
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "MostrarModal", "$('#modalHorarios').modal('show');", true);
             }
         }
 

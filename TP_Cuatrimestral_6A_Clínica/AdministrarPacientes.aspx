@@ -36,8 +36,6 @@
                         <ItemTemplate>
                             <asp:Button runat="server" Text="Editar" CommandName="Edit" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-warning btn-sm" />
                             <asp:Button runat="server" ID="btnConfirmarEliminacionPaciente" CssClass="btn btn-danger btn-sm" Text="Eliminar" CommandName="Delete" CommandArgument='<%# Eval("Dni") %>' />
-
-
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

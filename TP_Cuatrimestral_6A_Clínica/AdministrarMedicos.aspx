@@ -1,9 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AdministrarMedicos.aspx.cs" Inherits="TP_Cuatrimestral_6A_Clínica.AdministrarMedicos" %>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentRight" runat="server">
-
     <div class="container mt-4">
-
         <div style="justify-items: center;">
             <h2>Médicos</h2>
         </div>
@@ -43,13 +41,11 @@
 
                             <asp:Button runat="server" Text="Editar" CommandName="Edit" CommandArgument='<%# Eval("Dni") %>' CssClass="btn btn-warning btn-sm" />
                             <asp:Button runat="server" ID="ConfirmarEliminacionMedico" CssClass="btn btn-danger btn-sm" CommandName="Delete"  Text="Eliminar"  CommandArgument='<%# Eval("Dni") %>' />
-
-
+                            <asp:Button runat="server" Text="Ver Horarios" CommandName="VerHorarios" CommandArgument='<%# Eval("Dni") %>' CssClass="btn btn-info btn-sm" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-
         </div>
 
         <%if (ConfirmaEliminacion)
@@ -60,6 +56,27 @@
 
         <% } %>
     </div>
+
+    <!-- Modal para el horario de los medicos -->
+
+    <div class="modal fade" id="modalHorarios" tabindex="-1" role="dialog" aria-labelledby="modalHorariosLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalHorariosLabel">Horarios del Médico</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <asp:Label ID="lblHorarios" CssClass="text-center" runat="server" Text="Horarios aquí..."></asp:Label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </asp:Content>
 
