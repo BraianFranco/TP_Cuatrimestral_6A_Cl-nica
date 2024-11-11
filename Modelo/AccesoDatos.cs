@@ -6,37 +6,37 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace Modelo
-{
-    public class AccesoDatos
+    namespace Modelo
     {
-        private SqlConnection conexion;
-        private SqlCommand comando;
-        private SqlDataReader lector;
-
-        public SqlDataReader Lector
+        public class AccesoDatos
         {
-            get { return lector; }
-        }
+            private SqlConnection conexion;
+            private SqlCommand comando;
+            private SqlDataReader lector;
+
+            public SqlDataReader Lector
+            {
+                get { return lector; }
+            }
 
 
-        public AccesoDatos()
-        {
+            public AccesoDatos()
+            {
 
-             //conexion = new SqlConnection("server=.\\SQLEXPRESS; database=Clinica_6A_DB; integrated security=true");
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=ClinicaMedica; integrated security=true");
-            //conexion = new SqlConnection("server=.\\GONZA; database=ClinicaMedica; integrated security=true");
-
-
-            comando = new SqlCommand();
-        }
+                 //conexion = new SqlConnection("server=.\\SQLEXPRESS; database=Clinica_6A_DB; integrated security=true");
+                //conexion = new SqlConnection("server=.\\SQLEXPRESS; database=ClinicaMedica; integrated security=true");
+                conexion = new SqlConnection("server=.\\GONZA; database=ClinicaMedica; integrated security=true");
 
 
-        public void setearConsulta(string consulta)
-        {
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = consulta;
-        }
+                comando = new SqlCommand();
+            }
+
+
+            public void setearConsulta(string consulta)
+            {
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = consulta;
+            }
 
 
         public void ejecutarLectura()
@@ -50,6 +50,13 @@ namespace Modelo
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                if (lector == null || lector.IsClosed)
+                {
+                    cerrarConexion();
+                }
             }
         }
 
@@ -65,20 +72,29 @@ namespace Modelo
             {
                 throw ex;
             }
+            finally
+            {
+                cerrarConexion();
+            }
         }
 
 
         public void setearParametro(string nombre, object valor)
-        {
-            comando.Parameters.AddWithValue(nombre, valor);
-        }
+            {
+                comando.Parameters.AddWithValue(nombre, valor);
+            }
 
-        public void cerrarConexion()
-        {
-            if (lector != null)
-                lector.Close();
-            conexion.Close();
-        }
+            public void cerrarConexion()
+            {
+                if (lector != null)
+                    lector.Close();
+                conexion.Close();
+            }
+
+            public void limpiarParametros()
+            {
+                comando.Parameters.Clear();
+            }
 
     }
-}
+    }

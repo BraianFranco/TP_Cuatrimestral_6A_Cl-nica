@@ -32,17 +32,21 @@
             <asp:Label ID="lblPaisMedico" runat="server" Text="País" CssClass="text-black"></asp:Label>
             <asp:DropDownList ID="ddlPais" DataTextField="Nombre" DataValueField="ID" CssClass="btn btn-secondary dropdown-toggle " runat="server"></asp:DropDownList>
         </div>
+
+        <div class="col-md-11">
+    <asp:Button ID="btnHorariosMedico" CssClass="btn btn-secondary" runat="server" Text="HorariosMedico" OnClick="BtnHorariosMedico_Click" />
+    </div>
+
+
         <div class="col-md-11">
             <asp:Button ID="btnAgregarMedico" CssClass="btn btn-danger" OnClick="BtnAgregarMedico_Click" runat="server" Text="AGREGAR" />
             <asp:Button ID="btnCancelarMedico" CssClass="btn btn-danger" OnClick="btnCancelarMedico_Click" runat="server" Text="CANCELAR" />
-
+        </div>
             <div>
                 <asp:Label ID="lblErrorMedicoExistente" runat="server" Text=""></asp:Label>
                 <asp:Label ID="lblConfirmacion" runat="server" ForeColor="Green" Text=""></asp:Label>
             </div>
-            
-        </div>
-    </div>
+     
 
 </asp:Content>
 

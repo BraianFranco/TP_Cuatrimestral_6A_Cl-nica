@@ -140,6 +140,7 @@
     <Content Include="NuevoTurno.aspx" />
     <Content Include="AcercaDe.aspx" />
     <Content Include="MisGestiones.aspx" />
+    <Content Include="HorariosMedico.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrar.aspx.cs">
@@ -292,6 +293,13 @@
     </Compile>
     <Compile Include="VerPacientes.aspx.designer.cs">
       <DependentUpon>VerPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HorariosMedico.aspx.cs">
+      <DependentUpon>HorariosMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HorariosMedico.aspx.designer.cs">
+      <DependentUpon>HorariosMedico.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

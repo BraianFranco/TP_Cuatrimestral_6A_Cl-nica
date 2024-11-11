@@ -11,160 +11,142 @@ namespace TP_Cuatrimestral_6A_Clínica
 {
 
 
-    public partial class AgregarMedico
+    public partial class WebForm3
     {
 
         /// <summary>
-        /// Control lblErrorDniMedico.
+        /// Control chkLunes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorDniMedico;
+        protected global::System.Web.UI.WebControls.CheckBox chkLunes;
 
         /// <summary>
-        /// Control txtDniMedico.
+        /// Control ddlTurnoLunes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDniMedico;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTurnoLunes;
 
         /// <summary>
-        /// Control lblErrorNombreMedico.
+        /// Control chkMartes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorNombreMedico;
+        protected global::System.Web.UI.WebControls.CheckBox chkMartes;
 
         /// <summary>
-        /// Control txtNombreMedico.
+        /// Control ddlTurnoMartes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreMedico;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTurnoMartes;
 
         /// <summary>
-        /// Control lblErrorApellidoMedico.
+        /// Control chkMiercoles.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorApellidoMedico;
+        protected global::System.Web.UI.WebControls.CheckBox chkMiercoles;
 
         /// <summary>
-        /// Control txtApellidoMedico.
+        /// Control ddlTurnoMiercoles.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoMedico;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTurnoMiercoles;
 
         /// <summary>
-        /// Control lblErrorCorreoMedico.
+        /// Control chkJueves.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorCorreoMedico;
+        protected global::System.Web.UI.WebControls.CheckBox chkJueves;
 
         /// <summary>
-        /// Control txtCorreoMedico.
+        /// Control ddlTurnoJueves.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCorreoMedico;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTurnoJueves;
 
         /// <summary>
-        /// Control lblErrorMedicoTel.
+        /// Control chkViernes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorMedicoTel;
+        protected global::System.Web.UI.WebControls.CheckBox chkViernes;
 
         /// <summary>
-        /// Control txtTelMedico.
+        /// Control ddlTurnoViernes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelMedico;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTurnoViernes;
 
         /// <summary>
-        /// Control lblPaisMedico.
+        /// Control chkSabado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPaisMedico;
+        protected global::System.Web.UI.WebControls.CheckBox chkSabado;
 
         /// <summary>
-        /// Control ddlPais.
+        /// Control ddlTurnoSabado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPais;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTurnoSabado;
 
         /// <summary>
-        /// Control btnHorariosMedico.
+        /// Control chkDomingo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHorariosMedico;
+        protected global::System.Web.UI.WebControls.CheckBox chkDomingo;
 
         /// <summary>
-        /// Control btnAgregarMedico.
+        /// Control ddlTurnoDomingo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarMedico;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTurnoDomingo;
 
         /// <summary>
-        /// Control btnCancelarMedico.
+        /// Control btnGuardarHorarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelarMedico;
-
-        /// <summary>
-        /// Control lblErrorMedicoExistente.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorMedicoExistente;
-
-        /// <summary>
-        /// Control lblConfirmacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblConfirmacion;
+        protected global::System.Web.UI.WebControls.Button btnGuardarHorarios;
     }
 }

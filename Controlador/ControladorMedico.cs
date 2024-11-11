@@ -149,6 +149,10 @@ namespace Controlador
         public void EliminarMedico(int dni)
         {
             AccesoDatos Ad = new AccesoDatos();
+            ControladorHorarioMedico controladorHorario = new ControladorHorarioMedico();
+            controladorHorario.EliminarHorariosMedico(dni);
+
+
             Ad.setearConsulta("delete from Medico where Dni = @DNI");
             Ad.setearParametro("@DNI" , dni);
 

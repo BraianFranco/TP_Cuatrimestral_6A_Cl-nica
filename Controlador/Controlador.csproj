@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControladorEspecialidad.cs" />
+    <Compile Include="ControladorHorarioMedico.cs" />
     <Compile Include="ControladorMedico.cs" />
     <Compile Include="ControladorPaciente.cs" />
     <Compile Include="ControladorPais.cs" />
