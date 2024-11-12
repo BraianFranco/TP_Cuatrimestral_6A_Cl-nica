@@ -51,6 +51,7 @@
     <Compile Include="ControladorFormulario.cs" />
     <Compile Include="ControladorImagen.cs" />
     <Compile Include="ControladorRoles.cs" />
+    <Compile Include="ControladorTurno.cs" />
     <Compile Include="ControladorUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
