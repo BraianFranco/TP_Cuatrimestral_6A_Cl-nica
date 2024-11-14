@@ -5,11 +5,11 @@
 
 
     <div class="container mt-4">
-        
-        <div style="justify-items:center;">
+
+        <div style="justify-items: center;">
             <h2>Turnos Activos</h2>
         </div>
-        
+
 
 
 
@@ -18,7 +18,7 @@
 
             <div class="row mb-3">
                 <div class="col">
-                     <asp:TextBox type="number" id="txtFiltrar" max="99999999" CssClass="form-control"  placeholder="Buscar por DNI del Paciente..." runat="server"></asp:TextBox>
+                    <asp:TextBox type="number" ID="txtFiltrar" max="99999999" CssClass="form-control" placeholder="Buscar por DNI del Paciente..." runat="server"></asp:TextBox>
                 </div>
                 <div class="col-auto">
                     <asp:Button ID="btnFiltrar" OnClick="btnFiltrar_Click" runat="server" Text="Filtrar" CssClass="btn btn-primary" />
@@ -26,10 +26,10 @@
             </div>
 
 
-               <!-- GridView -->
+            <!-- GridView -->
 
             <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id"
+            <asp:GridView ID="GridView1" runat="server" OnRowDeleting="GridView1_RowDeleting" AutoGenerateColumns="False" DataKeyNames="Id"
                 CssClass="table table-striped table-bordered table-hover" HeaderStyle-CssClass="thead-dark">
                 <Columns>
                     <asp:BoundField DataField="Id" HeaderText="Turno" />
@@ -45,7 +45,7 @@
                         <ItemTemplate>
                             <asp:Button runat="server" Text="Detalles" CommandName="Select" CssClass="btn btn-info btn-sm" />
                             <asp:Button runat="server" Text="Editar" CommandName="Edit" CssClass="btn btn-warning btn-sm" />
-                            <asp:Button runat="server" Text="Cancelar" CommandName="delete" CssClass="btn btn-danger btn-sm" />
+                            <asp:Button runat="server" Text="Cancelar o Finalizar" CommandArgument='<%# Eval("Id") %>' CommandName="delete" CssClass="btn btn-danger btn-sm" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -54,6 +54,17 @@
 
 
         </div>
+
+        <%if (ConfirmaEliminacion)
+
+            {  %>
+        <label>¿Esta Seguro/a de Cancelar o Finalizar este turno ?</label>
+        <asp:Button runat="server" Text="Confirmar Cancelacion" CssClass="btn btn-outline-danger " OnClick="btnConfirmarCancelacionTurno_Click" />
+        <asp:Button runat="server" Text="Confirmar Finalizacion" CssClass="btn btn-outline-danger " OnClick="btnConfirmarFinalizacionTurno_Click" />
+        <asp:Button runat="server" ID="btnCancelarEliminacionTurno" Text="Cancelar" CssClass="btn btn-outline-danger " OnClick="btnCancelarEliminacionTurno_Click" />
+
+        <% } %>
+
     </div>
 
 </asp:Content>

@@ -49,6 +49,21 @@ namespace Controlador
 
         }
 
+        public void FinalizarOCancelarturno(int id , string estado)
+        {
+            AccesoDatos Ad = new AccesoDatos();
+            Ad.setearConsulta("UPDATE Turnos SET EstadoTurno = @ESTADO WHERE Id = @Id");
+            Ad.setearParametro("@ID", id);
+            Ad.setearParametro("@ESTADO", estado);
+
+            try
+            {
+                Ad.ejecutarAccion();
+            }
+            catch (Exception ex) { throw ex; }
+            finally { Ad.cerrarConexion(); }
+        }
+
         public List<Turno> FiltrarPorDniPaciente(int dni)
         {
 

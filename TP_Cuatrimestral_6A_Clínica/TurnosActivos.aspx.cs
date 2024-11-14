@@ -12,6 +12,8 @@ namespace TP_Cuatrimestral_6A_Clínica
 {
     public partial class TurnosActivos : System.Web.UI.Page
     {
+        public bool ConfirmaEliminacion { get; set; }
+        private static int IDAUX;
 
         ControladorTurno controladorTurno = new ControladorTurno();
         ControladorPaciente controladorPaciente = new ControladorPaciente();
@@ -64,7 +66,7 @@ namespace TP_Cuatrimestral_6A_Clínica
             try
             {
                 var listaTurnos = controladorTurno.Listar();
-                
+
 
                 DataTable dtTurnos = new DataTable();
 
@@ -83,7 +85,9 @@ namespace TP_Cuatrimestral_6A_Clínica
                     Medico medico = controladorMedico.FiltrarPorDni(Turno.DniMedico);
                     Especialidad especialidad = controladorEspecialidad.ObtenerPorId(Turno.IdEspecialidad);
 
-                    dtTurnos.Rows.Add(
+                    if (Turno.Estado.Equals("Nuevo"))
+                    {
+                        dtTurnos.Rows.Add(
                         Turno.Id,
                         paciente.nombre,
                         medico.Nombre,
@@ -91,8 +95,8 @@ namespace TP_Cuatrimestral_6A_Clínica
                         Turno.Observaciones,
                         Turno.FechaTurno,
                         Turno.Estado
-
-                    );
+                        );
+                    }
                 }
 
                 GridView1.DataSource = dtTurnos;
@@ -122,14 +126,14 @@ namespace TP_Cuatrimestral_6A_Clínica
                     dtTurnosFiltrada.Columns.Add("FechaTurno", typeof(DateTime));
                     dtTurnosFiltrada.Columns.Add("Estado", typeof(string));
 
-                    List<Turno>  listaTurnos = controladorTurno.FiltrarPorDniPaciente(Int32.Parse(txtFiltrar.Text));
+                    List<Turno> listaTurnos = controladorTurno.FiltrarPorDniPaciente(Int32.Parse(txtFiltrar.Text));
 
 
                     foreach (var Turno in listaTurnos)
                     {
-                         Paciente paciente = controladorPaciente.FiltrarPorDni(Turno.DniPaciente);
-                         Medico medico = controladorMedico.FiltrarPorDni(Turno.DniMedico);
-                         Especialidad especialidad = controladorEspecialidad.ObtenerPorId(Turno.IdEspecialidad);
+                        Paciente paciente = controladorPaciente.FiltrarPorDni(Turno.DniPaciente);
+                        Medico medico = controladorMedico.FiltrarPorDni(Turno.DniMedico);
+                        Especialidad especialidad = controladorEspecialidad.ObtenerPorId(Turno.IdEspecialidad);
 
                         dtTurnosFiltrada.Rows.Add(
                             Turno.Id,
@@ -144,7 +148,7 @@ namespace TP_Cuatrimestral_6A_Clínica
                     }
 
 
-                    if(listaTurnos.Count > 0)
+                    if (listaTurnos.Count > 0)
                     {
                         GridView1.DataSource = dtTurnosFiltrada;
                         GridView1.DataBind();
@@ -155,7 +159,7 @@ namespace TP_Cuatrimestral_6A_Clínica
                     {
                         lblMensaje.Text = "ERROR - NO EXISTE TURNO CON ESE DNI";
                     }
-                    
+
 
 
 
@@ -171,6 +175,51 @@ namespace TP_Cuatrimestral_6A_Clínica
                 CargarTurnos();
             }
 
+        }
+
+        protected void btnCancelarEliminacionTurno_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            try
+            {
+                int indice = Convert.ToInt32(e.RowIndex);
+                int idAux = Int32.Parse(GridView1.Rows[indice].Cells[0].Text);
+
+                IDAUX = idAux;
+
+                ConfirmaEliminacion = true;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        protected void btnConfirmarCancelacionTurno_Click(object sender, EventArgs e)
+        {
+            if (IDAUX.ToString() != string.Empty)
+            {
+                controladorTurno.FinalizarOCancelarturno(IDAUX , "Cancelado");
+
+                Response.Redirect("TurnosActivos.aspx");
+            }
+        }
+
+
+        protected void btnConfirmarFinalizacionTurno_Click(object sender, EventArgs e)
+        {
+            if (IDAUX.ToString() != string.Empty)
+            {
+                controladorTurno.FinalizarOCancelarturno(IDAUX, "Finalizado");
+
+                Response.Redirect("TurnosActivos.aspx");
+            }
         }
     }
 }
