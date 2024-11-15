@@ -22,6 +22,12 @@ namespace TP_Cuatrimestral_6A_Clínica
         {   
             ConfirmaEliminacion = false;
 
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("Login.aspx");
+
+            }
+
             if (!IsPostBack)
             {
                 CargarEspecialidades();

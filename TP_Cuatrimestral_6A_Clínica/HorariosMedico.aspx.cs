@@ -12,6 +12,11 @@ namespace TP_Cuatrimestral_6A_Clínica
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("Login.aspx");
+
+            }
 
             // Chequear que antes tengo el DNI
             if (!IsPostBack)

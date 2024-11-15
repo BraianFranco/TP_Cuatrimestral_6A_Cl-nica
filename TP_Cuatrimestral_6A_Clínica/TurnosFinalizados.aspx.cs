@@ -20,6 +20,12 @@ namespace TP_Cuatrimestral_6A_Clínica
         ControladorEspecialidad controladorEspecialidad = new ControladorEspecialidad();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("Login.aspx");
+
+            }
+
             if (!IsPostBack)
             {
                 CargarTurnosFinalizados();

@@ -30,7 +30,7 @@
             <!-- GridView -->
 
             <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
-            <asp:GridView ID="gvEspecialidades" runat="server" AutoGenerateColumns="False" OnRowDeleting="GridView1_RowDeleting1" OnRowCommand="gvEspecialidades_RowCommand" DataKeyNames="Id"
+            <asp:GridView ID="gvEspecialidades" runat="server" AutoGenerateColumns="False"  OnRowDeleting="GridView1_RowDeleting1" OnRowCommand="gvEspecialidades_RowCommand" DataKeyNames="Id"
                 CssClass="table table-striped table-bordered table-hover" HeaderStyle-CssClass="thead-dark">
                 <Columns>
                     <asp:BoundField DataField="Id" HeaderText="ID" />

@@ -17,6 +17,8 @@ namespace Modelo
         public string Contraseña { get; set; }
         public int IdRol { get; set; }
         public bool Activo { get; set; }
+        public string Verificacion {  get; set; }
+         
 
         public Usuario() { }
 

@@ -11,34 +11,25 @@ namespace TP_Cuatrimestral_6A_Clínica
 {
 
 
-    public partial class Administrar
+    public partial class WebForm6
     {
 
         /// <summary>
-        /// Pacientes control.
+        /// lblMensaje control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Pacientes;
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
 
         /// <summary>
-        /// Medicos control.
+        /// gvUsuariosPendientes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Medicos;
-
-        /// <summary>
-        /// Especilidades control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Especilidades;
+        protected global::System.Web.UI.WebControls.GridView gvUsuariosPendientes;
     }
 }

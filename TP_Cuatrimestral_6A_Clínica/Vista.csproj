@@ -141,6 +141,7 @@
     <Content Include="AcercaDe.aspx" />
     <Content Include="MisGestiones.aspx" />
     <Content Include="HorariosMedico.aspx" />
+    <Content Include="ValidarUsuarios.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrar.aspx.cs">
@@ -300,6 +301,13 @@
     </Compile>
     <Compile Include="HorariosMedico.aspx.designer.cs">
       <DependentUpon>HorariosMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ValidarUsuarios.aspx.cs">
+      <DependentUpon>ValidarUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ValidarUsuarios.aspx.designer.cs">
+      <DependentUpon>ValidarUsuarios.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
