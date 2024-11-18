@@ -40,5 +40,31 @@ namespace Controlador
                 datos.cerrarConexion();
             }
         }
+
+        public string ObtenerNombreRolPorId(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("select Nombre from Roles where Id = @id");
+                datos.setearParametro("@id", id);
+                datos.ejecutarLectura();
+                datos.Lector.Read();
+
+                string Nombre = (string)datos.Lector["Nombre"];
+
+                return Nombre;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
     }
+
+
 }

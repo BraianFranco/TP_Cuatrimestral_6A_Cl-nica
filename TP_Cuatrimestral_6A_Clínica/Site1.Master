@@ -42,12 +42,13 @@
                 <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="assets/perfil.png" alt="Perfil" class="rounded-circle me-2" width="40" height="40" />
-                        <asp:Label runat="server" Text="Nombre de Usuario"></asp:Label>
+           
+                        <asp:Label id="RolUsuario" runat="server" Text=""></asp:Label>
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
                         <li><a class="dropdown-item" href="#">Ajustes de Cuenta</a></li>
-                        <li><a class="dropdown-item" href="Login.aspx">Cerrar Sesión</a></li>
+                        <li><a class="dropdown-item" href="Login.aspx">Cerrar Sesión"</a></li>
                     </ul>
 
                 </div>
@@ -88,7 +89,9 @@
                             <asp:Button runat="server" PostBackUrl="~/Administrar.aspx" CssClass="btn btn-warning w-100 my-2" Text="Administrar"></asp:Button>
                             <asp:Button runat="server" PostBackUrl="~/AcercaDe.aspx" CssClass="btn btn-info w-100 my-2" Text="Acerca de"></asp:Button>
                             <asp:Button runat="server" PostBackUrl="~/Opciones.aspx" CssClass="btn btn-warning w-100 my-2" Text="Opciones"></asp:Button>
-                            <asp:Button runat="server" PostBackUrl="~/ValidarUsuarios.aspx" CssClass="btn btn-success w-100 my-2" Text="Validar Usuarios"></asp:Button>
+
+
+
                         </asp:ContentPlaceHolder>
                     </div>
 

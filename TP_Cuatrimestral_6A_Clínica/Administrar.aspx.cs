@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -33,6 +34,14 @@ namespace TP_Cuatrimestral_6A_Clínica
         {
             Response.Redirect("AdministrarPacientes.aspx");
 
+        }
+
+
+        public int ObtenerRolUsuarioSession()
+        {
+            int rol = ((Usuario)Session["Usuario"]).IdRol;
+
+            return rol;
         }
     }
 }

@@ -25,8 +25,6 @@
                         <ItemTemplate>
 
                             <asp:Button runat="server" Text="Aceptar" CommandName="Edit" CommandArgument='<%# Eval("Id") %>' CssClass="btn btn-success btn-sm" />
-                            <asp:Button runat="server" Text="Ignorar" ID="btnConfirmarEliminacionEspecialidad" CssClass="btn btn-danger btn-sm"  />
-
 
                         </ItemTemplate>
                     </asp:TemplateField>

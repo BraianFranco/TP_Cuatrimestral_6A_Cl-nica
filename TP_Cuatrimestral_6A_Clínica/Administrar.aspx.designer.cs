@@ -15,30 +15,66 @@ namespace TP_Cuatrimestral_6A_Clínica
     {
 
         /// <summary>
-        /// Pacientes control.
+        /// PacientesAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Pacientes;
+        protected global::System.Web.UI.WebControls.Button PacientesAdmin;
 
         /// <summary>
-        /// Medicos control.
+        /// MedicosAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Medicos;
+        protected global::System.Web.UI.WebControls.Button MedicosAdmin;
 
         /// <summary>
-        /// Especilidades control.
+        /// EspecilidadesAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Especilidades;
+        protected global::System.Web.UI.WebControls.Button EspecilidadesAdmin;
+
+        /// <summary>
+        /// PacientesRecepcista control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button PacientesRecepcista;
+
+        /// <summary>
+        /// MedicosRecepcista control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button MedicosRecepcista;
+
+        /// <summary>
+        /// EspecilidadesRecepcista control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button EspecilidadesRecepcista;
+
+        /// <summary>
+        /// PacientesMedico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button PacientesMedico;
     }
 }
