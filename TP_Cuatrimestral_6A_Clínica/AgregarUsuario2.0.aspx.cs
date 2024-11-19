@@ -37,11 +37,13 @@ namespace TP_Cuatrimestral_6A_Clínica
         {
 
             ControladorUsuarios CUsuario = new ControladorUsuarios();
+            ControladorMedico CMedico = new ControladorMedico();
             Usuario usuario = new Usuario();
 
 
             if (ValidarCamposUsuario() == true)
-            {
+            {  
+
                 if (!CUsuario.UsuarioExistente(Int32.Parse(txtDniUsuario.Text)))
                 {
                     usuario.Dni = Int32.Parse(txtDniUsuario.Text);
@@ -49,11 +51,35 @@ namespace TP_Cuatrimestral_6A_Clínica
                     usuario.Contraseña = txtContraseñaUsuario.Text;
                     usuario.IdRol = Int32.Parse(dllRolUsuario.SelectedValue);
 
+                   //-- Aca Verifica si es médico
+
+                    if (usuario.IdRol == 0)
+                    {
+                        if (CMedico.MedicoExiste(int.Parse(txtDniUsuario.Text)) == true)
+                        {
+                            CUsuario.InsertarUsuario(usuario);
+                            LimpiarControles();
+
+
+                            lblErrorUsuarioExistente.Text = "ÉXITO ! - USUARIO REGISTRADO (Espere a que un administrador verifique su cuenta)";
+                            lblErrorUsuarioExistente.ForeColor = System.Drawing.Color.Green;
+
+                            return;
+                        }
+                        else
+                        {
+                            lblErrorUsuarioExistente.Text = "ERROR ! - PRIMERO REGISTRE SU PERFIL DE MEDICO CON EL O LA RECEPCIONISTA";
+                            lblErrorUsuarioExistente.ForeColor = System.Drawing.Color.Red;
+
+                            return;
+                        }
+                    }
+
                     CUsuario.InsertarUsuario(usuario);
                     LimpiarControles();
 
 
-                    lblErrorUsuarioExistente.Text = "ÉXITO ! - USUARIO REGISTRADO";
+                    lblErrorUsuarioExistente.Text = "ÉXITO ! - USUARIO REGISTRADO (Espere a que un administrador verifique su cuenta)";
                     lblErrorUsuarioExistente.ForeColor = System.Drawing.Color.Green;
 
                 }

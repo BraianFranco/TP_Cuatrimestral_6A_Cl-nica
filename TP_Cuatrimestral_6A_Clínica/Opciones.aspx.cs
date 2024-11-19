@@ -16,9 +16,8 @@ namespace TP_Cuatrimestral_6A_Clínica
                 Response.Redirect("Login.aspx");
 
             }
+
         }
-
-
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -36,8 +35,8 @@ namespace TP_Cuatrimestral_6A_Clínica
 
         protected void btnSoporte_Click(object sender, EventArgs e)
         {
-           
-            Response.Redirect("Soporte.aspx");
+            lblSoporteTel.Text = "TELEFONO : 03484 12345";
+            lblSoporteMAIL.Text = "CORREO  : SWISSCLINICALSOPORTE@SWISSCLINICAL.COM";
         }
 
         protected void btnAjustes_Click(object sender, EventArgs e)

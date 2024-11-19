@@ -7,7 +7,7 @@
 
 
             <div class="form-group">
-                <asp:Button ID="btnAjustes" runat="server" CssClass="btn btn-info w-100 my-2" OnClick="btnAjustes_Click" Text="Ajustes" />
+                <asp:Button ID="btnAjustes" runat="server" CssClass="btn btn-info w-100 my-2" OnClick="btnAjustes_Click" Text="Ajustes de cuenta" />
             </div>
 
             <div class="form-group">
@@ -17,7 +17,13 @@
             <div class="form-group">
                 <asp:Button ID="btnCerrarSesion" runat="server" CssClass="btn btn-danger w-100 my-2" OnClick="btnCerrarSesion_Click" Text="Cerrar Sesión" />
             </div>
-
+            <div>
+                <asp:label id="lblSoporteTel" runat="server"></asp:label>
+                
+            </div>
+            <div>
+                <asp:label id="lblSoporteMAIL" runat="server"></asp:label>
+            </div>
         </div>
     </div>
 </asp:Content>
