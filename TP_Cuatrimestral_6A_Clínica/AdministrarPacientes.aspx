@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row mb-3">
                 <div class="col">
-                    <asp:TextBox type="number" id="txtFiltrar" max="99999999" CssClass="form-control"  placeholder="Buscar por DNI" runat="server"></asp:TextBox>
+                    <asp:TextBox type="number" ID="txtFiltrar" max="99999999" CssClass="form-control" placeholder="Buscar por DNI" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-auto">
                     <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" CssClass="btn btn-primary" />
@@ -34,8 +34,22 @@
                     <asp:BoundField DataField="NroTelefono" HeaderText="Teléfono" />
                     <asp:TemplateField HeaderText="Acciones">
                         <ItemTemplate>
+
+                            <%if (ObtenerRolUsuarioSession() == 2)
+                                { %>
+
                             <asp:Button runat="server" Text="Editar" CommandName="Edit" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-warning btn-sm" />
-                            <asp:Button runat="server" ID="btnConfirmarEliminacionPaciente" CssClass="btn btn-danger btn-sm" Text="Eliminar" CommandName="Delete" CommandArgument='<%# Eval("Dni") %>' />
+                            <asp:Button runat="server" ID="btnConfirmarEliminacionPacienteAdmin" CssClass="btn btn-danger btn-sm" Text="Eliminar" CommandName="Delete" CommandArgument='<%# Eval("Dni") %>' />
+
+                            <% } %>
+
+
+                            <%if (ObtenerRolUsuarioSession() == 1)
+                                { %>
+
+                            <asp:Button runat="server" Text="Editar" CommandName="Edit" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-warning btn-sm" />
+
+                            <% } %>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -45,9 +59,9 @@
         <%if (ConfirmaEliminacion)
             {  %>
 
-             <label>Esta Seguro/a de eliminar este Paciente?</label>
-             <asp:Button runat="server" Text="Confirmar" CssClass="btn btn-outline-danger " OnClick="btnConfirmarEliminacionPaciente_Click" />
-             <asp:Button runat="server" ID="btnCancelarEliminacionPaciente" Text="Cancelar" CssClass="btn btn-outline-danger " OnClick="btnCancelarEliminacionPaciente_Click" />
+        <label>Esta Seguro/a de eliminar este Paciente?</label>
+        <asp:Button runat="server" Text="Confirmar" CssClass="btn btn-outline-danger " OnClick="btnConfirmarEliminacionPaciente_Click" />
+        <asp:Button runat="server" ID="btnCancelarEliminacionPaciente" Text="Cancelar" CssClass="btn btn-outline-danger " OnClick="btnCancelarEliminacionPaciente_Click" />
 
         <% } %>
     </div>

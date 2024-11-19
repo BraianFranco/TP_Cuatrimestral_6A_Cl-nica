@@ -83,7 +83,9 @@ namespace TP_Cuatrimestral_6A_Clínica
 
                     foreach (var medico in listaMedicos)
                     {
-                        dtMedicos.Rows.Add(
+                        if (medico.Activo == true)
+                        {
+                            dtMedicos.Rows.Add(
                             medico.Dni,
                             medico.Nombre,
                             medico.Apellido,
@@ -92,6 +94,8 @@ namespace TP_Cuatrimestral_6A_Clínica
                             medico.IdPais,
                             medico.Activo
                         );
+                        }
+
                     }
 
                     GridView1.DataSource = dtMedicos;
@@ -104,6 +108,14 @@ namespace TP_Cuatrimestral_6A_Clínica
                     lblMensaje.Text = "Error al cargar médicos: " + ex.Message;
                 }
             }
+        }
+
+
+        public int ObtenerRolUsuarioSession()
+        {
+            int rol = ((Usuario)Session["Usuario"]).IdRol;
+
+            return rol;
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -168,7 +180,9 @@ namespace TP_Cuatrimestral_6A_Clínica
 
                     Medico medico = controladorMedico.FiltrarPorDni(Int32.Parse(txtFiltrar.Text));
 
-                    dtMedicosFiltrada.Rows.Add(
+                    if (medico.Activo == true)
+                    {
+                        dtMedicosFiltrada.Rows.Add(
                         medico.Dni,
                         medico.Nombre,
                         medico.Apellido,
@@ -176,8 +190,9 @@ namespace TP_Cuatrimestral_6A_Clínica
                         medico.Correo,
                         medico.IdPais,
                         medico.Activo
-                    );
+                        );
 
+                    }
 
                     GridView1.DataSource = dtMedicosFiltrada;
                     GridView1.DataBind();
@@ -195,7 +210,7 @@ namespace TP_Cuatrimestral_6A_Clínica
             {
                 CargarMedicos();
             }
-            
+
         }
     }
 

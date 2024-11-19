@@ -77,7 +77,7 @@ namespace Controlador
                     {
                         Id = Convert.ToInt32(datos.Lector["Id"]),
                         Nombre = datos.Lector["Nombre"].ToString(),
-                        Descripcion = datos.Lector["Descripcion"].ToString()
+                        Descripcion = datos.Lector["Descripcion"].ToString(),
                     };
                 }
                 return null;
@@ -110,7 +110,7 @@ namespace Controlador
         {
 
             AccesoDatos Ad = new AccesoDatos();
-            Ad.setearConsulta("insert into Especialidades (Nombre , Descripcion) values (@Nombre, @Descripcion)");
+            Ad.setearConsulta("insert into Especialidades (Nombre , Descripcion , Activo) values (@Nombre, @Descripcion)");
             Ad.setearParametro("@Nombre", especialidad.Nombre);
             Ad.setearParametro("@Descripcion", especialidad.Descripcion);
 
@@ -127,7 +127,7 @@ namespace Controlador
         public void EliminarEspecialidad(int id)
         {
             AccesoDatos Ad = new AccesoDatos();
-            Ad.setearConsulta("delete from Especialidades where Id = @ID");
+            Ad.setearConsulta("UPDATE Especialidades SET Activo = 0 WHERE Dni= @DNI");
             Ad.setearParametro("@ID", id);
 
             try
@@ -146,7 +146,7 @@ namespace Controlador
             try
             {
 
-                string Consulta = "select Id, Nombre, Descripcion FROM Especialidades WHERE Nombre like '%" + nombre + "%'";
+                string Consulta = "select Id, Nombre, Descripcion , Activo FROM Especialidades WHERE Nombre like '%" + nombre + "%'";
 
                 datos.setearConsulta(Consulta);
                 datos.ejecutarLectura();

@@ -28,7 +28,7 @@ namespace Controlador
 
                 while (Ad.Lector.Read())
                 {
-
+                    
                     Medico aux = new Medico();
 
                     aux.Dni = Convert.ToInt32(Ad.Lector["Dni"]);
@@ -106,7 +106,7 @@ namespace Controlador
         public bool MedicoExiste(int dni)
         {
             AccesoDatos Ad = new AccesoDatos();
-            Ad.setearConsulta("select count(*) from Medico where Dni = @DNI");
+            Ad.setearConsulta("select count(*) from Medico where Dni = @DNI AND Activo = 1");
             Ad.setearParametro("@DNI", dni);
 
             try
@@ -153,7 +153,7 @@ namespace Controlador
             controladorHorario.EliminarHorariosMedico(dni);
 
 
-            Ad.setearConsulta("delete from Medico where Dni = @DNI");
+            Ad.setearConsulta("UPDATE Medico SET Activo = 0 WHERE Dni= @DNI");
             Ad.setearParametro("@DNI", dni);
 
             try

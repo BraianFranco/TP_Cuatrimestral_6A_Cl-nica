@@ -16,7 +16,7 @@
 
             <div class="row mb-3">
                 <div class="col">
-                    <asp:TextBox id="txtFiltro" CssClass="form-control"  placeholder="Buscar por Nombre" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtFiltro" CssClass="form-control" placeholder="Buscar por Nombre" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-auto">
                     <asp:Button ID="btnFiltrar" runat="server" OnClick="btnFiltrar_Click" Text="Filtrar" CssClass="btn btn-primary" />
@@ -30,7 +30,7 @@
             <!-- GridView -->
 
             <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
-            <asp:GridView ID="gvEspecialidades" runat="server" AutoGenerateColumns="False"  OnRowDeleting="GridView1_RowDeleting1" OnRowCommand="gvEspecialidades_RowCommand" DataKeyNames="Id"
+            <asp:GridView ID="gvEspecialidades" runat="server" AutoGenerateColumns="False" OnRowDeleting="GridView1_RowDeleting1" OnRowCommand="gvEspecialidades_RowCommand" DataKeyNames="Id"
                 CssClass="table table-striped table-bordered table-hover" HeaderStyle-CssClass="thead-dark">
                 <Columns>
                     <asp:BoundField DataField="Id" HeaderText="ID" />
@@ -40,8 +40,12 @@
                         <ItemTemplate>
 
                             <asp:Button runat="server" Text="Editar" CommandName="Edit" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-warning btn-sm" />
+
+                            <%if (ObtenerRolUsuarioSession() == 2)
+                                {  %>
                             <asp:Button runat="server" ID="btnConfirmarEliminacionEspecialidad" CssClass="btn btn-danger btn-sm" CommandArgument='<%# Eval("Id") %>' CommandName="Delete" Text="Eliminar" />
 
+                            <% } %>
 
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -52,9 +56,9 @@
 
         <%if (ConfirmaEliminacion)
             {  %>
-            <label>¿Esta Seguro/a de eliminar esta Especialidad ?</label>
-            <asp:Button runat="server" Text="Confirmar" CssClass="btn btn-outline-danger " OnClick="btnConfirmarEliminacionEspecialidad_Click" />
-            <asp:Button runat="server" ID="btnCancelarEliminacionEspecialidad" Text="Cancelar" CssClass="btn btn-outline-danger " OnClick="btnCancelarEliminacionEspecialidad_Click" />
+        <label>¿Esta Seguro/a de eliminar esta Especialidad ?</label>
+        <asp:Button runat="server" Text="Confirmar" CssClass="btn btn-outline-danger " OnClick="btnConfirmarEliminacionEspecialidad_Click" />
+        <asp:Button runat="server" ID="btnCancelarEliminacionEspecialidad" Text="Cancelar" CssClass="btn btn-outline-danger " OnClick="btnCancelarEliminacionEspecialidad_Click" />
 
         <% } %>
     </div>

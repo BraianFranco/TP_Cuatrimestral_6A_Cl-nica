@@ -25,12 +25,6 @@
 
         <% } %>
 
-        <%if (ObtenerRolUsuarioSession() == 0)
-            { %>
-
-        <asp:Button ID="PacientesMedico" CssClass="btn btn-primary w-100 my-2" OnClick="Pacientes_Click" runat="server" Text="Pacientes" />
-
-        <% } %>
     </div>
 
 </asp:Content>

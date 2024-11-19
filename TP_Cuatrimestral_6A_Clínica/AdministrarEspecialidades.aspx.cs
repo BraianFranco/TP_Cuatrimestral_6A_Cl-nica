@@ -19,7 +19,7 @@ namespace TP_Cuatrimestral_6A_Clínica
         ControladorEspecialidad controladorEspecialidad = new ControladorEspecialidad();
 
         protected void Page_Load(object sender, EventArgs e)
-        {   
+        {
             ConfirmaEliminacion = false;
 
             if (Session["Usuario"] == null)
@@ -47,42 +47,51 @@ namespace TP_Cuatrimestral_6A_Clínica
             }
         }
 
+        public int ObtenerRolUsuarioSession()
+        {
+            int rol = ((Usuario)Session["Usuario"]).IdRol;
+
+            return rol;
+        }
 
         private void CargarEspecialidades()
         {
             try
             {
-            var listaEspecialidades = controladorEspecialidad.Listar();
+                var listaEspecialidades = controladorEspecialidad.Listar();
 
 
-             
-            DataTable dtEspecialidades = new DataTable();
-            dtEspecialidades.Columns.Add("Id", typeof(int));
-            dtEspecialidades.Columns.Add("Nombre", typeof(string));
-            dtEspecialidades.Columns.Add("Descripcion", typeof(string));
 
-            foreach (var especialidad in listaEspecialidades)
-            {
-                dtEspecialidades.Rows.Add(
-                    especialidad.Id,
-                    especialidad.Nombre,
-                    especialidad.Descripcion
-                );
-            }
+                DataTable dtEspecialidades = new DataTable();
+                dtEspecialidades.Columns.Add("Id", typeof(int));
+                dtEspecialidades.Columns.Add("Nombre", typeof(string));
+                dtEspecialidades.Columns.Add("Descripcion", typeof(string));
 
-            gvEspecialidades.DataSource = dtEspecialidades;
-            gvEspecialidades.DataBind();
- 
+                foreach (var especialidad in listaEspecialidades)
+                {
+
+                        dtEspecialidades.Rows.Add(
+                        especialidad.Id,
+                        especialidad.Nombre,
+                        especialidad.Descripcion
+                        );
+                    
+
+                }
+
+                gvEspecialidades.DataSource = dtEspecialidades;
+                gvEspecialidades.DataBind();
+
             }
             catch (Exception ex)
             {
                 lblMensaje.Text = "Error al cargar especialidades: " + ex.Message;
             }
         }
-    
 
 
-    protected void btnAgregar_Click(object sender, EventArgs e)
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
         {
             Response.Redirect("AgregarEspecialidad.aspx");
         }
@@ -129,7 +138,7 @@ namespace TP_Cuatrimestral_6A_Clínica
             {
                 try
                 {
-                    
+
 
                     DataTable dtEspecialidadesFiltrada = new DataTable();
                     dtEspecialidadesFiltrada.Columns.Add("Id", typeof(int));
@@ -141,11 +150,14 @@ namespace TP_Cuatrimestral_6A_Clínica
 
                     foreach (var especialidad in listaEspecialidades)
                     {
-                        dtEspecialidadesFiltrada.Rows.Add(
+
+                            dtEspecialidadesFiltrada.Rows.Add(
                             especialidad.Id,
                             especialidad.Nombre,
                             especialidad.Descripcion
-                        );
+                            );
+                        
+
                     }
 
 

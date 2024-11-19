@@ -34,7 +34,7 @@ namespace Controlador
         public bool UsuarioExistente(int dni)
         {
             AccesoDatos Ad = new AccesoDatos();
-            Ad.setearConsulta("select count(*) from Usuarios where Dni = @Dni");
+            Ad.setearConsulta("select count(*) from Usuarios where Dni = @Dni AND Activo = 1");
             Ad.setearParametro("@Dni", dni);
 
             try
@@ -76,7 +76,7 @@ namespace Controlador
         public Usuario ObtenerUsuarioPorDni(int dni)
         {
             AccesoDatos Ad = new AccesoDatos();
-            Ad.setearConsulta("select  IdUsuario , Correo , Dni , Verificacion , Contraseña , IdRol , Activo from Usuarios where Dni = @Dni");
+            Ad.setearConsulta("select  IdUsuario , Correo , Dni , Verificacion , Contraseña , IdRol , Activo from Usuarios where Dni = @Dni AND Activo = 1 ");
             Ad.setearParametro("@Dni", dni);
             Ad.ejecutarLectura();
 
@@ -130,15 +130,18 @@ namespace Controlador
 
                     Usuario aux = new Usuario();
 
-                    aux.IdUsuario = Convert.ToInt32(Ad.Lector["IdUsuario"]);
-                    aux.Dni = Convert.ToInt32(Ad.Lector["Dni"]);
-                    aux.Correo = Ad.Lector["Correo"].ToString();
-                    aux.Contraseña = Ad.Lector["Contraseña"].ToString();
-                    aux.IdRol = Convert.ToInt32(Ad.Lector["IdRol"]);
-                    aux.Activo = Convert.ToBoolean(Ad.Lector["Activo"]);
-                    aux.Verificacion = Ad.Lector["Verificacion"].ToString();
-                    
-                    lista.Add(aux);
+                    if (aux.Activo == true)
+                    {
+                        aux.IdUsuario = Convert.ToInt32(Ad.Lector["IdUsuario"]);
+                        aux.Dni = Convert.ToInt32(Ad.Lector["Dni"]);
+                        aux.Correo = Ad.Lector["Correo"].ToString();
+                        aux.Contraseña = Ad.Lector["Contraseña"].ToString();
+                        aux.IdRol = Convert.ToInt32(Ad.Lector["IdRol"]);
+                        aux.Activo = Convert.ToBoolean(Ad.Lector["Activo"]);
+                        aux.Verificacion = Ad.Lector["Verificacion"].ToString();
+
+                        lista.Add(aux);
+                    }
 
                 }
 

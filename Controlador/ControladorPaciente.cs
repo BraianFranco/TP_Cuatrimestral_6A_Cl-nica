@@ -107,7 +107,7 @@ namespace Controlador
         public bool PacienteExiste(int dni)
         {
             AccesoDatos Ad = new AccesoDatos();
-            Ad.setearConsulta("select count(*) from Paciente where Dni = @DNI");
+            Ad.setearConsulta("select count(*) from Paciente where Dni = @DNI AND Activo = 1 ");
             Ad.setearParametro("@DNI", dni);
 
             try
@@ -176,7 +176,7 @@ namespace Controlador
             try
             {
 
-                string Consulta = "select Dni, Nombre, Apellido , NroTelefono , Correo , Activo , IdPais ,  FechaNac , Direccion FROM Paciente WHERE Dni like " + dni;
+                string Consulta = "select Dni, Nombre, Apellido , NroTelefono , Correo , Activo , IdPais ,  FechaNac , Direccion FROM Paciente WHERE Dni like " + dni + "AND Activo = 1";
 
                 datos.setearConsulta(Consulta);
                 datos.ejecutarLectura();

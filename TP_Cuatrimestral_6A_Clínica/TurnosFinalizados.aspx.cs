@@ -28,7 +28,14 @@ namespace TP_Cuatrimestral_6A_Clínica
 
             if (!IsPostBack)
             {
-                CargarTurnosFinalizados();
+                if (ObtenerIdRolUsuarioSession() == 0)
+                {
+                    CargarTurnosFinalizadosParaMedico();
+                }
+                else
+                {
+                    CargarTurnosFinalizados();
+                }
             }
         }
 
@@ -77,17 +84,20 @@ namespace TP_Cuatrimestral_6A_Clínica
                     Medico medico = controladorMedico.FiltrarPorDni(Turno.DniMedico);
                     Especialidad especialidad = controladorEspecialidad.ObtenerPorId(Turno.IdEspecialidad);
 
-                    if (Turno.Estado.Equals("Cancelado") || Turno.Estado.Equals("Finalizado"))
+                    if (Turno.Activo == true)
                     {
-                       dtTurnos.Rows.Add(
-                       Turno.Id,
-                       paciente.nombre,
-                       medico.Nombre,
-                       especialidad.Nombre,
-                       Turno.Observaciones,
-                       Turno.FechaTurno,
-                       Turno.Estado
-                       );
+                        if (Turno.Estado.Equals("Cancelado") || Turno.Estado.Equals("Finalizado"))
+                        {
+                            dtTurnos.Rows.Add(
+                            Turno.Id,
+                            paciente.nombre,
+                            medico.Nombre,
+                            especialidad.Nombre,
+                            Turno.Observaciones,
+                            Turno.FechaTurno,
+                            Turno.Estado
+                            );
+                        }
                     }
 
                 }
@@ -100,6 +110,80 @@ namespace TP_Cuatrimestral_6A_Clínica
             {
                 lblMensaje.Text = "Error al cargar Turnos: " + ex.Message;
             }
+        }
+
+        private void CargarTurnosFinalizadosParaMedico()
+        {
+            try
+            {
+                var listaTurnos = controladorTurno.Listar();
+
+
+                DataTable dtTurnos = new DataTable();
+
+                dtTurnos.Columns.Add("Id", typeof(int));
+                dtTurnos.Columns.Add("nombrepaciente", typeof(string));
+                dtTurnos.Columns.Add("nombremedico", typeof(string));
+                dtTurnos.Columns.Add("especialidad", typeof(string));
+                dtTurnos.Columns.Add("Observaciones", typeof(string));
+                dtTurnos.Columns.Add("FechaTurno", typeof(DateTime));
+                dtTurnos.Columns.Add("Estado", typeof(string));
+
+                int DniMedicoSession = ObtenerDniUsuarioSession();
+
+                foreach (var Turno in listaTurnos)
+                {
+                    Paciente paciente = controladorPaciente.FiltrarPorDni(Turno.DniPaciente);
+                    Medico medico = controladorMedico.FiltrarPorDni(Turno.DniMedico);
+                    Especialidad especialidad = controladorEspecialidad.ObtenerPorId(Turno.IdEspecialidad);
+
+
+                    if (Turno.Activo == true)
+                    {
+                        if (Turno.Estado.Equals("Cancelado") || Turno.Estado.Equals("Finalizado"))
+                        {
+                            if (Turno.DniMedico == DniMedicoSession)
+                            {
+                                dtTurnos.Rows.Add(
+                                Turno.Id,
+                                paciente.nombre,
+                                medico.Nombre,
+                                especialidad.Nombre,
+                                Turno.Observaciones,
+                                Turno.FechaTurno,
+                                Turno.Estado
+                              );
+                            }
+
+
+                        }
+                    }
+
+
+                }
+
+                gvTurnos.DataSource = dtTurnos;
+                gvTurnos.DataBind();
+
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.Text = "Error al cargar Turnos: " + ex.Message;
+            }
+        }
+
+        public int ObtenerDniUsuarioSession()
+        {
+            int rol = ((Usuario)Session["Usuario"]).Dni;
+
+            return rol;
+        }
+
+        public int ObtenerIdRolUsuarioSession()
+        {
+            int rol = ((Usuario)Session["Usuario"]).IdRol;
+
+            return rol;
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)

@@ -42,8 +42,8 @@
                 <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="assets/perfil.png" alt="Perfil" class="rounded-circle me-2" width="40" height="40" />
-           
-                        <asp:Label id="RolUsuario" runat="server" Text=""></asp:Label>
+
+                        <asp:Label ID="RolUsuario" runat="server" Text=""></asp:Label>
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
@@ -77,7 +77,7 @@
                             <div class="btn-group w-100 my-2">
                                 <button type="button" class="btn btn-success dropdown-toggle w-100" data-bs-toggle="dropdown" aria-expanded="false">
                                     Turnos
-                               
+    
                                 </button>
                                 <ul class="dropdown-menu w-100">
                                     <li><a class="dropdown-item" href="TurnosActivos.aspx">Activos</a></li>
@@ -86,9 +86,14 @@
                                 </ul>
                             </div>
 
+                            <%if (ObtenerRolUsuarioSession() != 0)
+                                { %>
                             <asp:Button runat="server" PostBackUrl="~/Administrar.aspx" CssClass="btn btn-warning w-100 my-2" Text="Administrar"></asp:Button>
+                            <% } %>
+
                             <asp:Button runat="server" PostBackUrl="~/AcercaDe.aspx" CssClass="btn btn-info w-100 my-2" Text="Acerca de"></asp:Button>
                             <asp:Button runat="server" PostBackUrl="~/Opciones.aspx" CssClass="btn btn-warning w-100 my-2" Text="Opciones"></asp:Button>
+
 
 
 

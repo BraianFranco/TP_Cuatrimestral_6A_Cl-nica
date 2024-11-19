@@ -10,10 +10,10 @@
 
             <div class="row mb-3">
                 <div class="col">
-                    <asp:TextBox type="number" id="txtFiltrar"  max="99999999" CssClass="form-control"  placeholder="Buscar por DNI" runat="server"></asp:TextBox>
+                    <asp:TextBox type="number" ID="txtFiltrar" max="99999999" CssClass="form-control" placeholder="Buscar por DNI" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-auto">
-                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" Onclick="btnFiltrar_Click" CssClass="btn btn-primary" />
+                    <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" CssClass="btn btn-primary" />
                 </div>
 
                 <div class="col-auto">
@@ -40,7 +40,12 @@
                         <ItemTemplate>
 
                             <asp:Button runat="server" Text="Editar" CommandName="Edit" CommandArgument='<%# Eval("Dni") %>' CssClass="btn btn-warning btn-sm" />
-                            <asp:Button runat="server" ID="ConfirmarEliminacionMedico" CssClass="btn btn-danger btn-sm" CommandName="Delete"  Text="Eliminar"  CommandArgument='<%# Eval("Dni") %>' />
+
+                            <% if (ObtenerRolUsuarioSession() == 2)
+                                {  %>
+                            <asp:Button runat="server" ID="ConfirmarEliminacionMedico" CssClass="btn btn-danger btn-sm" CommandName="Delete" Text="Eliminar" CommandArgument='<%# Eval("Dni") %>' />
+                            <% } %>
+
                             <asp:Button runat="server" Text="Ver Horarios" CommandName="VerHorarios" CommandArgument='<%# Eval("Dni") %>' CssClass="btn btn-info btn-sm" />
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -51,7 +56,7 @@
         <%if (ConfirmaEliminacion)
             {  %>
         <label>Esta Seguro/a de eliminar este Médico ?</label>
-        <asp:Button runat="server" Text="Confirmar" CssClass="btn btn-outline-danger " OnClick="ConfirmarEliminacionMedico_Click"/>
+        <asp:Button runat="server" Text="Confirmar" CssClass="btn btn-outline-danger " OnClick="ConfirmarEliminacionMedico_Click" />
         <asp:Button runat="server" ID="btnCancelarEliminacionMedico" Text="Cancelar" CssClass="btn btn-outline-danger " OnClick="btnCancelarEliminacionMedico_Click" />
 
         <% } %>
@@ -60,23 +65,23 @@
     <!-- Modal para el horario de los medicos -->
 
     <div class="modal fade" id="modalHorarios" tabindex="-1" role="dialog" aria-labelledby="modalHorariosLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalHorariosLabel">Horarios del Médico</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body text-center">
-                <asp:Label ID="lblHorarios" CssClass="text-center" runat="server" Text="Horarios aquí..."></asp:Label>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalHorariosLabel">Horarios del Médico</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <asp:Label ID="lblHorarios" CssClass="text-center" runat="server" Text="Horarios aquí..."></asp:Label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 </asp:Content>
 

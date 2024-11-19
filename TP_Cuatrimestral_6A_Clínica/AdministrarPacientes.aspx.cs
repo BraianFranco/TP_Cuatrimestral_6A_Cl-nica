@@ -47,11 +47,11 @@ namespace TP_Cuatrimestral_6A_Clínica
         {
             try
             {
-                
+
                 var listaPacientes = controladorPaciente.Listar();
 
 
-      
+
                 DataTable dtPacientes = new DataTable();
                 dtPacientes.Columns.Add("Dni", typeof(long));
                 dtPacientes.Columns.Add("Nombre", typeof(string));
@@ -65,7 +65,9 @@ namespace TP_Cuatrimestral_6A_Clínica
 
                 foreach (var paciente in listaPacientes)
                 {
-                    dtPacientes.Rows.Add(
+                    if (paciente.activo == true)
+                    {
+                        dtPacientes.Rows.Add(
                         paciente.dni,
                         paciente.nombre,
                         paciente.apellido,
@@ -75,12 +77,15 @@ namespace TP_Cuatrimestral_6A_Clínica
                         paciente.idPais,
                         paciente.direccion,
                         paciente.activo
-                    );
+                        );
+
+                    }
+
                 }
 
                 gvPacientes.DataSource = dtPacientes;
                 gvPacientes.DataBind();
-    
+
             }
             catch (Exception ex)
             {
@@ -91,6 +96,14 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             Response.Redirect("AgregarPaciente.aspx");
+        }
+
+
+        public int ObtenerRolUsuarioSession()
+        {
+            int rol = ((Usuario)Session["Usuario"]).IdRol;
+
+            return rol;
         }
 
         protected void GridView1_RowDeleting1(object sender, GridViewDeleteEventArgs e)
@@ -150,8 +163,9 @@ namespace TP_Cuatrimestral_6A_Clínica
 
                     Paciente paciente = controladorPaciente.FiltrarPorDni(Int32.Parse(txtFiltrar.Text));
 
-
-                    dtPacientesFiltrada.Rows.Add(
+                    if (paciente.activo == true)
+                    {
+                        dtPacientesFiltrada.Rows.Add(
                         paciente.dni,
                         paciente.nombre,
                         paciente.apellido,
@@ -161,8 +175,8 @@ namespace TP_Cuatrimestral_6A_Clínica
                         paciente.idPais,
                         paciente.direccion,
                         paciente.activo
-                    );
-
+                        );
+                    }
 
                     gvPacientes.DataSource = dtPacientesFiltrada;
                     gvPacientes.DataBind();
@@ -180,6 +194,8 @@ namespace TP_Cuatrimestral_6A_Clínica
             {
                 CargarPacientes();
             }
+
+
 
         }
     }

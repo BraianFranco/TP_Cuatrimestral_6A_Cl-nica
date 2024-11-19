@@ -22,7 +22,7 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected void Especilidades_Click(object sender, EventArgs e)
         {
             Response.Redirect("AdministrarEspecialidades.aspx");
-           
+
         }
 
         protected void Medicos_Click(object sender, EventArgs e)

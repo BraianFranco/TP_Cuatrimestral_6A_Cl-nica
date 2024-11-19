@@ -12,8 +12,6 @@ namespace Modelo
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
 
-
-
         public Especialidad(int id, string nombre, string descripcion)
         {
 

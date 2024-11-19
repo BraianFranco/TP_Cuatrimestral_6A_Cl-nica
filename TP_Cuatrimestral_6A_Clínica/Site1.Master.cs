@@ -34,5 +34,12 @@ namespace TP_Cuatrimestral_6A_Clínica
 
             return nombrerol;
         }
+
+        public int ObtenerRolUsuarioSession()
+        {
+            int rol = ((Usuario)Session["Usuario"]).IdRol;
+
+            return rol;
+        }
     }
 }
