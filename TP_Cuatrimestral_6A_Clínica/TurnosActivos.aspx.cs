@@ -41,26 +41,6 @@ namespace TP_Cuatrimestral_6A_Clínica
             }
         }
 
-        //private void BindGrid()
-        //{
-
-        //    DataTable dt = new DataTable();
-        //    dt.Columns.Add("TurnoID", typeof(int));
-        //    dt.Columns.Add("Paciente", typeof(string));
-        //    dt.Columns.Add("Fecha", typeof(DateTime));
-        //    dt.Columns.Add("Hora", typeof(string));
-
-
-        //    dt.Rows.Add(1, "Juan Pérez", DateTime.Now.AddDays(1), "10:00 AM");
-        //    dt.Rows.Add(2, "María Gómez", DateTime.Now.AddDays(2), "11:00 AM");
-        //    dt.Rows.Add(3, "Luis Fernández", DateTime.Now.AddDays(3), "02:00 PM");
-        //    dt.Rows.Add(4, "Ana Martínez", DateTime.Now.AddDays(4), "03:00 PM");
-
-
-        //    GridView1.DataSource = dt;
-        //    GridView1.DataBind();
-        //}
-
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -300,6 +280,8 @@ namespace TP_Cuatrimestral_6A_Clínica
                 Response.Redirect("TurnosActivos.aspx");
             }
         }
+
+
 
         protected void btnNuevo_Click(object sender, EventArgs e)
         {

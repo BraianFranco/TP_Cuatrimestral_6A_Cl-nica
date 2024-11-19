@@ -130,7 +130,7 @@ namespace Controlador
 
                     Usuario aux = new Usuario();
 
-                    if (aux.Activo == true)
+                    if (Convert.ToBoolean(Ad.Lector["Activo"]) == true)
                     {
                         aux.IdUsuario = Convert.ToInt32(Ad.Lector["IdUsuario"]);
                         aux.Dni = Convert.ToInt32(Ad.Lector["Dni"]);

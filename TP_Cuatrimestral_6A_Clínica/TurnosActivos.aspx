@@ -26,9 +26,22 @@
                     <asp:Button ID="btnFiltrar" OnClick="btnFiltrar_Click" runat="server" Text="Filtrar" CssClass="btn btn-primary" />
                 </div>
 
+
+                <%
+                    if (ObtenerIdRolUsuarioSession() != 0)
+                    {
+
+                    %>
+
                 <div class="col-auto">
                     <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" CssClass="btn btn-primary" OnClick="btnNuevo_Click" />
                 </div>
+
+                <%
+
+                    }
+                    %>
+
 
             </div>
 

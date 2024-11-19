@@ -39,26 +39,7 @@ namespace TP_Cuatrimestral_6A_Clínica
             }
         }
 
-        //private void BindGrid()
-        //{
-
-        //    DataTable dt = new DataTable();
-        //    dt.Columns.Add("TurnoID", typeof(int));
-        //    dt.Columns.Add("Paciente", typeof(string));
-        //    dt.Columns.Add("Fecha", typeof(DateTime));
-        //    dt.Columns.Add("Hora", typeof(string));
-
-
-        //    dt.Rows.Add(1, "Juan Pérez", DateTime.Now.AddDays(1), "10:00 AM");
-        //    dt.Rows.Add(2, "María Gómez", DateTime.Now.AddDays(2), "11:00 AM");
-        //    dt.Rows.Add(3, "Luis Fernández", DateTime.Now.AddDays(3), "02:00 PM");
-        //    dt.Rows.Add(4, "Ana Martínez", DateTime.Now.AddDays(4), "03:00 PM");
-
-        //    // Enlazar el DataTable al GridView
-        //    gvTurnos.DataSource = dt;
-        //    gvTurnos.DataBind();
-        //
-
+   
 
         private void CargarTurnosFinalizados()
         {
@@ -84,8 +65,8 @@ namespace TP_Cuatrimestral_6A_Clínica
                     Medico medico = controladorMedico.FiltrarPorDni(Turno.DniMedico);
                     Especialidad especialidad = controladorEspecialidad.ObtenerPorId(Turno.IdEspecialidad);
 
-                    if (Turno.Activo == true)
-                    {
+                    
+                    
                         if (Turno.Estado.Equals("Cancelado") || Turno.Estado.Equals("Finalizado"))
                         {
                             dtTurnos.Rows.Add(
@@ -98,7 +79,7 @@ namespace TP_Cuatrimestral_6A_Clínica
                             Turno.Estado
                             );
                         }
-                    }
+                    
 
                 }
 

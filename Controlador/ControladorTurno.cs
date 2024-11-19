@@ -52,10 +52,13 @@ namespace Controlador
 
         public void FinalizarOCancelarturno(int id, string estado)
         {
+
+
             AccesoDatos Ad = new AccesoDatos();
-            Ad.setearConsulta("UPDATE Turnos SET EstadoTurno = @ESTADO WHERE Id = @Id");
-            Ad.setearParametro("@ID", id);
-            Ad.setearParametro("@ESTADO", estado);
+            Ad.setearConsulta("SP_Finalizar_Cancelar");
+            Ad.comando.CommandType = System.Data.CommandType.StoredProcedure;
+            Ad.setearParametro("@IdTurno", id);
+            Ad.setearParametro("@Estado", estado);
 
             try
             {
@@ -64,6 +67,7 @@ namespace Controlador
             catch (Exception ex) { throw ex; }
             finally { Ad.cerrarConexion(); }
         }
+
 
         public List<Turno> FiltrarPorDniPaciente(int dni)
         {
