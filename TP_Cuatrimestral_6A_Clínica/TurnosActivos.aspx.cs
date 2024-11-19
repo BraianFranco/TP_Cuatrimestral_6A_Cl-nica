@@ -227,5 +227,10 @@ namespace TP_Cuatrimestral_6A_Clínica
                 Response.Redirect("TurnosActivos.aspx");
             }
         }
+
+        protected void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("NuevoTurno.aspx");
+        }
     }
 }

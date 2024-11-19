@@ -11,7 +11,7 @@ using System.Configuration;
         public class AccesoDatos
         {
             private SqlConnection conexion;
-            private SqlCommand comando;
+            public SqlCommand comando { get; set; }
             private SqlDataReader lector;
 
             public SqlDataReader Lector
@@ -37,6 +37,8 @@ using System.Configuration;
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = consulta;
             }
+
+          
 
 
         public void ejecutarLectura()

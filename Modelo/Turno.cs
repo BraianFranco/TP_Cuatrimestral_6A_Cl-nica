@@ -27,7 +27,7 @@ namespace Modelo
 
         public Turno() { }
 
-
+        //lectura
         public Turno(int id, int dnimedico, int dnipaciente, int idEspecialidad, DateTime fechaturno, string estado, string observaciones ,bool activo)
         {
 
@@ -41,6 +41,21 @@ namespace Modelo
             Activo = activo;
             Observaciones = observaciones;
         }
+
+
+        // insert
+        public Turno(int dnimedico, int dnipaciente, int idEspecialidad, DateTime fechaturno, string observaciones, bool activo)
+        {
+            Id = 0; // El Id lo asigna la base de datos
+            DniMedico = dnimedico;
+            DniPaciente = dnipaciente;
+            IdEspecialidad = idEspecialidad;
+            FechaTurno = fechaturno;
+            Estado = "Nuevo";
+            Observaciones = observaciones;
+            Activo = activo;
+        }
+
 
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -49,7 +50,7 @@ namespace Controlador
 
         }
 
-        public void FinalizarOCancelarturno(int id , string estado)
+        public void FinalizarOCancelarturno(int id, string estado)
         {
             AccesoDatos Ad = new AccesoDatos();
             Ad.setearConsulta("UPDATE Turnos SET EstadoTurno = @ESTADO WHERE Id = @Id");
@@ -106,5 +107,41 @@ namespace Controlador
             }
 
         }
+        public bool AgregarNuevoTurno(Turno nuevoTurno)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+            
+                datos.setearConsulta("SP_InsertarNuevoTurno");
+                datos.comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                
+                datos.setearParametro("@DniMedico", nuevoTurno.DniMedico);
+                datos.setearParametro("@DniPaciente", nuevoTurno.DniPaciente);
+                datos.setearParametro("@IdEspecialidad", nuevoTurno.IdEspecialidad);
+                datos.setearParametro("@FechaTurno", nuevoTurno.FechaTurno);
+                datos.setearParametro("@EstadoTurno", nuevoTurno.Estado ?? "Nuevo"); 
+                datos.setearParametro("@Observaciones", nuevoTurno.Observaciones ?? string.Empty);
+                datos.setearParametro("@Activo", nuevoTurno.Activo);
+
+               
+                datos.ejecutarAccion();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+             
+                throw ex;
+            }
+            finally
+            {
+                
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }

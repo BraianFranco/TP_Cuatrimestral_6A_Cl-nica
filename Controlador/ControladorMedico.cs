@@ -202,6 +202,54 @@ namespace Controlador
 
 
 
+        public List<Medico> ObtenerMedicosDisponiblesSP(int idEspecialidad, DateTime fechaTurno)
+        {
+            List<Medico> medicosDisponibles = new List<Medico>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                // Configurar el nombre del Stored Procedure
+                datos.setearConsulta("SP_ObtenerMedicosDisponibles");
+                datos.comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+
+                // Configurar parámetros
+                datos.setearParametro("@IdEspecialidad", idEspecialidad);
+                datos.setearParametro("@FechaTurno", fechaTurno);
+
+                // Ejecutar lectura
+                datos.ejecutarLectura();
+
+                // Leer los resultados
+                while (datos.Lector.Read())
+                {
+                    Medico medico = new Medico
+                    {
+                        Dni = Int32.Parse(datos.Lector["Dni"].ToString()),
+                        Nombre = datos.Lector["Nombre"].ToString(),
+                        Apellido = datos.Lector["Apellido"].ToString()
+                    };
+                    medicosDisponibles.Add(medico);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex; 
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+            return medicosDisponibles;
+        }
+
+
+
+
+
+
 
     }
 }

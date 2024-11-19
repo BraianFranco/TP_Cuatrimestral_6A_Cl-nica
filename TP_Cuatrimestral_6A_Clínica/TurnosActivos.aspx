@@ -17,12 +17,19 @@
 
 
             <div class="row mb-3">
+
                 <div class="col">
                     <asp:TextBox type="number" ID="txtFiltrar" max="99999999" CssClass="form-control" placeholder="Buscar por DNI del Paciente..." runat="server"></asp:TextBox>
                 </div>
+
                 <div class="col-auto">
                     <asp:Button ID="btnFiltrar" OnClick="btnFiltrar_Click" runat="server" Text="Filtrar" CssClass="btn btn-primary" />
                 </div>
+
+                <div class="col-auto">
+                    <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" CssClass="btn btn-primary" OnClick="btnNuevo_Click" />
+                </div>
+
             </div>
 
 
