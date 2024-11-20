@@ -10,6 +10,8 @@ namespace Modelo
     {
         public long DniMedico { get; set; }
         public int DiaSemana { get; set; }  
-        public int IdTurno { get; set; }   
+        public TimeSpan HoraInicio { get; set; }   
+
+        public TimeSpan HoraFin { get; set; }   
     }
 }

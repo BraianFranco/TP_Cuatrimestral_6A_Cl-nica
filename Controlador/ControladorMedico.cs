@@ -150,7 +150,7 @@ namespace Controlador
         {
             AccesoDatos Ad = new AccesoDatos();
             ControladorHorarioMedico controladorHorario = new ControladorHorarioMedico();
-            controladorHorario.EliminarHorariosMedico(dni);
+         
 
 
             Ad.setearConsulta("UPDATE Medico SET Activo = 0 WHERE Dni= @DNI");

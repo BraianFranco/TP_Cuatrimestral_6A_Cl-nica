@@ -39,14 +39,15 @@
                     <asp:TemplateField HeaderText="Acciones">
                         <ItemTemplate>
 
-                            <asp:Button runat="server" Text="Editar" CommandName="Edit" CommandArgument='<%# Eval("Dni") %>' CssClass="btn btn-warning btn-sm" />
+                     <asp:Button runat="server" Text="Editar" CommandName="Edit" CommandArgument='<%# Eval("Dni") %>' CssClass="btn btn-warning btn-sm" /> 
 
                             <% if (ObtenerRolUsuarioSession() == 2)
                                 {  %>
                             <asp:Button runat="server" ID="ConfirmarEliminacionMedico" CssClass="btn btn-danger btn-sm" CommandName="Delete" Text="Eliminar" CommandArgument='<%# Eval("Dni") %>' />
                             <% } %>
 
-                            <asp:Button runat="server" Text="Ver Horarios" CommandName="VerHorarios" CommandArgument='<%# Eval("Dni") %>' CssClass="btn btn-info btn-sm" />
+                            <asp:Button runat="server" Text="Horarios" CommandName="Horarios" CommandArgument='<%# Eval("Dni") %>' CssClass="btn btn-info btn-sm" />
+
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

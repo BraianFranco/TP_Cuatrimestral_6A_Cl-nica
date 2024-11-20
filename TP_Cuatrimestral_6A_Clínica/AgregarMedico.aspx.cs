@@ -23,6 +23,7 @@ namespace TP_Cuatrimestral_6A_Clínica
         }
 
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -77,13 +78,13 @@ namespace TP_Cuatrimestral_6A_Clínica
             if (medico != null)
             {
                 txtDniMedico.Text = medico.Dni.ToString();
-                txtDniMedico.Enabled = false; 
+                txtDniMedico.Enabled = false;
                 txtNombreMedico.Text = medico.Nombre;
                 txtApellidoMedico.Text = medico.Apellido;
                 txtTelMedico.Text = medico.Telefono;
                 txtCorreoMedico.Text = medico.Correo;
                 ddlPais.SelectedValue = medico.IdPais.ToString();
-               // chkActivo.Checked = medico.Activo;
+                // chkActivo.Checked = medico.Activo;
             }
             else
             {
@@ -94,47 +95,19 @@ namespace TP_Cuatrimestral_6A_Clínica
 
 
 
-        protected void BtnHorariosMedico_Click(object sender, EventArgs e)
-        {
-           
-            if (string.IsNullOrEmpty(txtDniMedico.Text))
-            {
-                lblErrorDniMedico.Text = "Por favor, ingrese el DNI del médico antes de configurar los horarios.";
-                lblErrorDniMedico.ForeColor = System.Drawing.Color.Red;
-                lblErrorDniMedico.Visible = true;
-                return;
-            }
-
-            
-            Session["MedicoDni"] = txtDniMedico.Text;
-            Session["MedicoNombre"] = txtNombreMedico.Text;
-            Session["MedicoApellido"] = txtApellidoMedico.Text;
-            Session["MedicoCorreo"] = txtCorreoMedico.Text;
-            Session["MedicoTelefono"] = txtTelMedico.Text;
-            Session["MedicoPais"] = ddlPais.SelectedValue;
-
-            
-            string dniMedico = txtDniMedico.Text;
-            Response.Redirect($"HorariosMedico.aspx?Dni={dniMedico}");
-        }
+       
 
 
 
 
         protected void BtnAgregarMedico_Click(object sender, EventArgs e)
         {
+
+
             if (ValidarCamposMedico())
             {
-                // Verifico que se haya generado el horario en su correspondiente form 
-                if (Session["HorariosMedico"] == null)
-                {
-                    lblErrorMedicoExistente.Text = "Error: Debe configurar los horarios del médico antes de agregarlo.";
-                    lblErrorMedicoExistente.ForeColor = System.Drawing.Color.Red;
-                    lblErrorMedicoExistente.Visible = true;
-                    return;
-                }
-
                 
+
                 Medico medico = new Medico
                 {
                     Dni = (int)(MedicoDni ?? long.Parse(txtDniMedico.Text)),
@@ -145,17 +118,18 @@ namespace TP_Cuatrimestral_6A_Clínica
                     IdPais = int.Parse(ddlPais.SelectedValue)
                 };
 
-                // Capturo los horarios desde sesion
-                List<HorarioMedico> horarios = (List<HorarioMedico>)Session["HorariosMedico"];
-                ControladorHorarioMedico controladorHorario = new ControladorHorarioMedico();
-
+                /*
+                    // Capturo los horarios desde sesion
+                    List<HorarioMedico> horarios = (List<HorarioMedico>)Session["HorariosMedico"];
+                    ControladorHorarioMedico controladorHorario = new ControladorHorarioMedico();
+                */
                 try
                 {
                     if (MedicoDni.HasValue)
                     {
-                        
+
                         controladorMedico.ActualizarMedico(medico);
-                        controladorHorario.ActualizarHorariosMedico(medico.Dni, horarios); 
+                        //  controladorHorario.ActualizarHorariosMedico(medico.Dni, horarios); 
                         lblConfirmacion.Text = "Médico actualizado correctamente.";
                         lblConfirmacion.ForeColor = System.Drawing.Color.Green;
                         lblConfirmacion.Visible = true;
@@ -165,8 +139,8 @@ namespace TP_Cuatrimestral_6A_Clínica
                         if (!controladorMedico.MedicoExiste(medico.Dni))
                         {
                             controladorMedico.InsertarMedico(medico);
-                            controladorHorario.InsertarHorariosMedico(medico.Dni, horarios); 
-                            LimpiarControles();
+                            //      controladorHorario.InsertarHorariosMedico(medico.Dni, horarios); 
+                            //     LimpiarControles();
                             lblErrorMedicoExistente.Text = "Éxito - Médico agregado.";
                             lblErrorMedicoExistente.ForeColor = System.Drawing.Color.Green;
                             lblErrorMedicoExistente.Visible = true;
@@ -179,7 +153,7 @@ namespace TP_Cuatrimestral_6A_Clínica
                         }
                     }
 
-                    Session["HorariosMedico"] = null;
+                    //    Session["HorariosMedico"] = null;
                 }
                 catch (Exception ex)
                 {
@@ -191,16 +165,7 @@ namespace TP_Cuatrimestral_6A_Clínica
         }
 
 
-        private void LimpiarControles()
-        {
-            txtDniMedico.Text = string.Empty;
-            txtNombreMedico.Text = string.Empty;
-            txtApellidoMedico.Text = string.Empty;
-            txtCorreoMedico.Text = string.Empty;
-            txtTelMedico.Text = string.Empty;
-            ddlPais.SelectedIndex = 0;
 
-        }
 
         private bool ValidarCamposMedico()
         {
@@ -251,6 +216,8 @@ namespace TP_Cuatrimestral_6A_Clínica
             else
             {
                 lblErrorMedicoTel.Text = "";
+
+
             }
 
             return Valido;
@@ -260,6 +227,10 @@ namespace TP_Cuatrimestral_6A_Clínica
         {
             Response.Redirect("AdministrarMedicos.aspx");
         }
-    }
 
+    }
 }
+
+
+
+

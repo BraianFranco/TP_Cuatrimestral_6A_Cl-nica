@@ -24,13 +24,31 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected global::System.Web.UI.WebControls.CheckBox chkLunes;
 
         /// <summary>
-        /// Control ddlTurnoLunes.
+        /// Control lblLunes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTurnoLunes;
+        protected global::System.Web.UI.WebControls.Label lblLunes;
+
+        /// <summary>
+        /// Control horaInicioLunes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horaInicioLunes;
+
+        /// <summary>
+        /// Control horaFinLunes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horaFinLunes;
 
         /// <summary>
         /// Control chkMartes.
@@ -42,13 +60,31 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected global::System.Web.UI.WebControls.CheckBox chkMartes;
 
         /// <summary>
-        /// Control ddlTurnoMartes.
+        /// Control lblMartes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTurnoMartes;
+        protected global::System.Web.UI.WebControls.Label lblMartes;
+
+        /// <summary>
+        /// Control horaInicioMartes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horaInicioMartes;
+
+        /// <summary>
+        /// Control horaFinMartes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horaFinMartes;
 
         /// <summary>
         /// Control chkMiercoles.
@@ -60,13 +96,31 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected global::System.Web.UI.WebControls.CheckBox chkMiercoles;
 
         /// <summary>
-        /// Control ddlTurnoMiercoles.
+        /// Control lblMiercoles.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTurnoMiercoles;
+        protected global::System.Web.UI.WebControls.Label lblMiercoles;
+
+        /// <summary>
+        /// Control horaInicioMiercoles.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horaInicioMiercoles;
+
+        /// <summary>
+        /// Control horaFinMiercoles.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horaFinMiercoles;
 
         /// <summary>
         /// Control chkJueves.
@@ -78,13 +132,31 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected global::System.Web.UI.WebControls.CheckBox chkJueves;
 
         /// <summary>
-        /// Control ddlTurnoJueves.
+        /// Control lblJueves.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTurnoJueves;
+        protected global::System.Web.UI.WebControls.Label lblJueves;
+
+        /// <summary>
+        /// Control horaInicioJueves.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horaInicioJueves;
+
+        /// <summary>
+        /// Control horaFinJueves.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horaFinJueves;
 
         /// <summary>
         /// Control chkViernes.
@@ -96,13 +168,31 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected global::System.Web.UI.WebControls.CheckBox chkViernes;
 
         /// <summary>
-        /// Control ddlTurnoViernes.
+        /// Control lblViernes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTurnoViernes;
+        protected global::System.Web.UI.WebControls.Label lblViernes;
+
+        /// <summary>
+        /// Control horaInicioViernes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horaInicioViernes;
+
+        /// <summary>
+        /// Control horaFinViernes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horaFinViernes;
 
         /// <summary>
         /// Control chkSabado.
@@ -114,13 +204,31 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected global::System.Web.UI.WebControls.CheckBox chkSabado;
 
         /// <summary>
-        /// Control ddlTurnoSabado.
+        /// Control lblSabado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTurnoSabado;
+        protected global::System.Web.UI.WebControls.Label lblSabado;
+
+        /// <summary>
+        /// Control horaInicioSabado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horaInicioSabado;
+
+        /// <summary>
+        /// Control horaFinSabado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horaFinSabado;
 
         /// <summary>
         /// Control chkDomingo.
@@ -132,13 +240,31 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected global::System.Web.UI.WebControls.CheckBox chkDomingo;
 
         /// <summary>
-        /// Control ddlTurnoDomingo.
+        /// Control lblDomingo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTurnoDomingo;
+        protected global::System.Web.UI.WebControls.Label lblDomingo;
+
+        /// <summary>
+        /// Control horaInicioDomingo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horaInicioDomingo;
+
+        /// <summary>
+        /// Control horaFinDomingo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl horaFinDomingo;
 
         /// <summary>
         /// Control btnGuardarHorarios.
@@ -148,5 +274,14 @@ namespace TP_Cuatrimestral_6A_Clínica
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardarHorarios;
+
+        /// <summary>
+        /// Control lblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
     }
 }

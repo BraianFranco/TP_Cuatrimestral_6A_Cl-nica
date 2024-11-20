@@ -34,19 +34,20 @@
         </div>
 
         <div class="col-md-11">
-    <asp:Button ID="btnHorariosMedico" CssClass="btn btn-secondary" runat="server" Text="HorariosMedico" OnClick="BtnHorariosMedico_Click" />
-    </div>
 
-
-        <div class="col-md-11">
-            <asp:Button ID="btnAgregarMedico" CssClass="btn btn-danger" OnClick="BtnAgregarMedico_Click" runat="server" Text="AGREGAR" />
-            <asp:Button ID="btnCancelarMedico" CssClass="btn btn-danger" OnClick="btnCancelarMedico_Click" runat="server" Text="CANCELAR" />
-        </div>
+            <div class="col-md-11">
+                <asp:Button ID="btnAgregarMedico" CssClass="btn btn-danger" OnClick="BtnAgregarMedico_Click" runat="server" Text="AGREGAR" />
+                <asp:Button ID="btnCancelarMedico" CssClass="btn btn-danger" OnClick="btnCancelarMedico_Click" runat="server" Text="CANCELAR" />
+            </div>
             <div>
                 <asp:Label ID="lblErrorMedicoExistente" runat="server" Text=""></asp:Label>
                 <asp:Label ID="lblConfirmacion" runat="server" ForeColor="Green" Text=""></asp:Label>
             </div>
-     </div>
+        </div>
+
+    </div>
+
+
 
 </asp:Content>
 
