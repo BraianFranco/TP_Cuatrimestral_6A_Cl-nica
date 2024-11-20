@@ -41,7 +41,7 @@ namespace TP_Cuatrimestral_6A_Clínica
 
         protected void btnAjustes_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("EditarUsuario.aspx");
         }
     }
 }

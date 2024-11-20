@@ -46,5 +46,10 @@ namespace TP_Cuatrimestral_6A_Clínica
         {
             Response.Redirect("AgregarUsuario2.0.aspx");
         }
+
+        protected void btnRestablecerContraseña_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RestablecerContraseña.aspx");
+        }
     }
 }

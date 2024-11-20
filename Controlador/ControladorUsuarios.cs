@@ -168,5 +168,69 @@ namespace Controlador
             finally { Ad.cerrarConexion(); }
         }
 
+        public void CambiarApendienteUsuario(int id)
+        {
+            AccesoDatos Ad = new AccesoDatos();
+            Ad.setearConsulta("UPDATE Usuarios SET Verificacion = 'Pendiente' where IdUsuario = @Id");
+            Ad.setearParametro("@Id", id);
+
+            try
+            {
+                Ad.ejecutarAccion();
+            }
+            catch (Exception ex) { throw ex; }
+            finally { Ad.cerrarConexion(); }
+        }
+
+        public bool ActualizarUsuario(int DniAux, string ContraAux, string CorreoAux)
+        {
+
+            bool Actualizado = false;
+
+            AccesoDatos Ad = new AccesoDatos();
+            Ad.setearConsulta("UPDATE Usuarios SET Correo = @CORREO , Contraseña = @CONTRASEÑA where Dni = @DNI");
+            Ad.setearParametro("@DNI", DniAux);
+            Ad.setearParametro("@CORREO", CorreoAux);
+            Ad.setearParametro("@CONTRASEÑA", ContraAux);
+
+            try
+            {
+                Ad.ejecutarAccion();
+
+                Actualizado = true;
+                return Actualizado;
+            }
+            catch (Exception ex) { throw ex; }
+            finally { Ad.cerrarConexion(); }
+
+
+        }
+
+
+        public bool CambiarContraseña(int DniAux, string Contraseña)
+        {
+
+            bool Actualizado = false;
+
+            AccesoDatos Ad = new AccesoDatos();
+            Ad.setearConsulta("UPDATE Usuarios SET Contraseña = @CONTRASEÑA where Dni = @DNI");
+            Ad.setearParametro("@DNI", DniAux);
+            Ad.setearParametro("@CONTRASEÑA", Contraseña);
+
+
+            try
+            {
+                Ad.ejecutarAccion();
+
+                Actualizado = true;
+                return Actualizado;
+            }
+            catch (Exception ex) { throw ex; }
+            finally { Ad.cerrarConexion(); }
+
+
+        }
     }
+
 }
+

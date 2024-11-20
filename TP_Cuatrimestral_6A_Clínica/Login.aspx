@@ -21,7 +21,7 @@
                     <div id="ContenidoRectangulo">
 
                         <div class="mb-3">
-                            <asp:TextBox type="number" ID="txtDni"  max="99999999" CssClass="form-control modern-input" runat="server" placeholder="DNI..." required="true"></asp:TextBox>
+                            <asp:TextBox type="number" ID="txtDni" max="99999999" CssClass="form-control modern-input" runat="server" placeholder="DNI..." required="true"></asp:TextBox>
                         </div>
                         <div class="mb-3">
                             <asp:TextBox ID="txtContraseña" CssClass="form-control modern-input" runat="server" TextMode="Password" placeholder="Contraseña..." required="true"></asp:TextBox>
@@ -42,7 +42,11 @@
                             </div>
 
                         </div>
-                    </div >
+
+                        <div>
+                            <asp:Button ID="btnRestablecerContraseña" CausesValidation="false" UseSubmitBehavior="false" runat="server" CssClass="btn btn-danger" Text="Restablecer Contraseña" OnClick="btnRestablecerContraseña_Click" />
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="image-column">

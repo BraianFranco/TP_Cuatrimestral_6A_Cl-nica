@@ -11,7 +11,7 @@ namespace TP_Cuatrimestral_6A_Clínica
 {
 
 
-    public partial class Login
+    public partial class NuevaContraseña
     {
 
         /// <summary>
@@ -24,66 +24,66 @@ namespace TP_Cuatrimestral_6A_Clínica
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// txtDni control.
+        /// lblErrorContraNueva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDni;
+        protected global::System.Web.UI.WebControls.Label lblErrorContraNueva;
 
         /// <summary>
-        /// txtContraseña control.
+        /// txtContraNueva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContraseña;
+        protected global::System.Web.UI.WebControls.TextBox txtContraNueva;
 
         /// <summary>
-        /// chkRecuerdame control.
+        /// lblErrorContraNueva2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkRecuerdame;
+        protected global::System.Web.UI.WebControls.Label lblErrorContraNueva2;
 
         /// <summary>
-        /// btnIngresar control.
+        /// txtContraNueva2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIngresar;
+        protected global::System.Web.UI.WebControls.TextBox txtContraNueva2;
 
         /// <summary>
-        /// btnRegistrar control.
+        /// btnAceptarRestablecer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrar;
+        protected global::System.Web.UI.WebControls.Button btnAceptarRestablecer;
 
         /// <summary>
-        /// lblErrorLogin control.
+        /// btnCancelarRestablecer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorLogin;
+        protected global::System.Web.UI.WebControls.Button btnCancelarRestablecer;
 
         /// <summary>
-        /// btnRestablecerContraseña control.
+        /// lblMensajeRestablecer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRestablecerContraseña;
+        protected global::System.Web.UI.WebControls.Label lblMensajeRestablecer;
     }
 }

@@ -47,7 +47,7 @@
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
-                        <li><a class="dropdown-item" href="#">Ajustes de Cuenta</a></li>
+                        <li><a class="dropdown-item" href="EditarUsuario.aspx">Ajustes de Cuenta</a></li>
                         <li><a class="dropdown-item" href="Login.aspx">Cerrar Sesión"</a></li>
                     </ul>
 

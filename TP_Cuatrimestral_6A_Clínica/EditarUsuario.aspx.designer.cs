@@ -11,79 +11,88 @@ namespace TP_Cuatrimestral_6A_Clínica
 {
 
 
-    public partial class Login
+    public partial class EditarUsuario
     {
 
         /// <summary>
-        /// form1 control.
+        /// lblErrorDniUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblErrorDniUsuario;
 
         /// <summary>
-        /// txtDni control.
+        /// txtDniUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDni;
+        protected global::System.Web.UI.WebControls.TextBox txtDniUsuario;
 
         /// <summary>
-        /// txtContraseña control.
+        /// lblErrorContraseñaUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContraseña;
+        protected global::System.Web.UI.WebControls.Label lblErrorContraseñaUsuario;
 
         /// <summary>
-        /// chkRecuerdame control.
+        /// txtContraseñaUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkRecuerdame;
+        protected global::System.Web.UI.WebControls.TextBox txtContraseñaUsuario;
 
         /// <summary>
-        /// btnIngresar control.
+        /// lblErrorCorreoUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIngresar;
+        protected global::System.Web.UI.WebControls.Label lblErrorCorreoUsuario;
 
         /// <summary>
-        /// btnRegistrar control.
+        /// txtCorreoUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrar;
+        protected global::System.Web.UI.WebControls.TextBox txtCorreoUsuario;
 
         /// <summary>
-        /// lblErrorLogin control.
+        /// btnAceptarUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorLogin;
+        protected global::System.Web.UI.WebControls.Button btnAceptarUsuario;
 
         /// <summary>
-        /// btnRestablecerContraseña control.
+        /// btnCancelarUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRestablecerContraseña;
+        protected global::System.Web.UI.WebControls.Button btnCancelarUsuario;
+
+        /// <summary>
+        /// lblErrorUsuarioExistente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorUsuarioExistente;
     }
 }
