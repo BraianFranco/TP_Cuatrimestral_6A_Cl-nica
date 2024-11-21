@@ -39,7 +39,7 @@
                 <asp:BoundField DataField="Estado" HeaderText="Estado" />
                 <asp:TemplateField HeaderText="Acciones">
                     <ItemTemplate>
-                        <asp:Button runat="server" Text="Ver Detalles" CommandName="Select" CssClass="btn btn-info btn-sm" />
+                      <!--  <asp:Button runat="server" Text="Ver Detalles" CommandName="Select" CssClass="btn btn-info btn-sm" />  -->
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

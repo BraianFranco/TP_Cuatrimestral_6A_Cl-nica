@@ -63,8 +63,8 @@
 
                     <asp:TemplateField HeaderText="Acciones">
                         <ItemTemplate>
-                            <asp:Button runat="server" Text="Detalles" CommandName="Select" CssClass="btn btn-info btn-sm" />
-                            <asp:Button runat="server" Text="Editar" CommandName="Edit" CssClass="btn btn-warning btn-sm" />
+                           <!--  <asp:Button runat="server" Text="Detalles" CommandName="Select" CssClass="btn btn-info btn-sm" />  -->
+                             <!--<asp:Button runat="server" Text="Editar" CommandName="Edit" CssClass="btn btn-warning btn-sm" /> -->
                             <asp:Button runat="server" Text="Cancelar o Finalizar" CommandArgument='<%# Eval("Id") %>' CommandName="delete" CssClass="btn btn-danger btn-sm" />
                         </ItemTemplate>
                     </asp:TemplateField>

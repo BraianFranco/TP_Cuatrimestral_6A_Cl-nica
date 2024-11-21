@@ -44,7 +44,7 @@
                         </div>
 
                         <div>
-                            <asp:Button ID="btnRestablecerContraseña" CausesValidation="false" UseSubmitBehavior="false" runat="server" CssClass="btn btn-danger" Text="Restablecer Contraseña" OnClick="btnRestablecerContraseña_Click" />
+                            <asp:Button ID="btnRestablecerContraseña" CausesValidation="false" UseSubmitBehavior="false" runat="server" CssClass="btn btn-modern" Text="Restablecer Contraseña" OnClick="btnRestablecerContraseña_Click" />
                         </div>
                     </div>
                 </div>
